@@ -1,22 +1,19 @@
-@import '@fontsource/cormorant-garamond/latin-500.css';
-@import '@fontsource/cormorant-garamond/latin-500-italic.css';
-@import '@fontsource/cormorant-garamond/latin-600.css';
+@import '@fontsource/cormorant-garamond/latin-300.css';
+@import '@fontsource/cormorant-garamond/latin-300-italic.css';
+@import '@fontsource/cormorant-garamond/latin-400.css';
+@import '@fontsource/cormorant-garamond/latin-400-italic.css';
 @import '@fontsource-variable/jost/index.css';
 @import 'tailwindcss';
 
 @theme {
-  --color-crema: #f3ede3;
-  --color-crema-claro: #faf6ef;
-  --color-crema-oscuro: #e7ddcd;
-  --color-oliva: #6b6b47;
-  --color-oliva-oscuro: #55553a;
-  --color-tierra: #a0714f;
-  /* Tierra oscurecido para textos pequeños y botones: contraste AA sobre crema */
-  --color-tierra-texto: #8a5e3f;
-  /* Tierra aclarado para usar sobre fondo cacao */
-  --color-tierra-claro: #e3c4a6;
-  --color-cacao: #3b2f27;
-  --color-cacao-suave: #5a4a3f;
+  --color-marfil: #fbf9f6;
+  --color-lino: #f1ece4;
+  --color-tinta: #1c1714;
+  --color-tinta-suave: #5f554e;
+  --color-vino: #6b0f1a;
+  --color-vino-oscuro: #4e0a13;
+  /* Texto sobre fondo vino */
+  --color-rosa-palido: #f3e3df;
 
   --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   --font-sans: 'Jost Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -28,15 +25,16 @@
     -webkit-text-size-adjust: 100%;
   }
   body {
-    @apply bg-crema font-sans text-cacao antialiased;
-    font-size: 1.0625rem;
-    line-height: 1.7;
+    @apply bg-marfil font-sans text-tinta antialiased;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.75;
   }
   h1,
   h2,
   h3 {
-    @apply font-serif font-medium text-cacao;
-    line-height: 1.1;
+    @apply font-serif font-light;
+    line-height: 1.05;
     text-wrap: balance;
   }
   h1,
@@ -45,9 +43,12 @@
   .font-serif {
     font-variant-numeric: lining-nums;
   }
+  ::selection {
+    @apply bg-vino text-rosa-palido;
+  }
   :focus-visible {
-    outline: 2px solid var(--color-tierra-texto);
-    outline-offset: 3px;
+    outline: 1px solid currentColor;
+    outline-offset: 4px;
   }
   @media (prefers-reduced-motion: reduce) {
     html {
@@ -58,29 +59,36 @@
     *::after {
       transition-duration: 0.01ms !important;
       animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
     }
   }
 }
 
 @utility contenedor {
-  @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  @apply mx-auto w-full max-w-7xl px-6 sm:px-10;
 }
-@utility eyebrow {
-  @apply text-xs font-medium tracking-[0.25em] text-tierra-texto uppercase;
+@utility etiqueta {
+  @apply text-[0.7rem] font-normal tracking-[0.32em] uppercase;
 }
-@utility btn {
-  @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium tracking-wide transition-colors duration-200;
-  min-height: 48px;
+@utility enlace {
+  @apply etiqueta inline-flex items-center gap-3 border-b border-current pb-1 transition-opacity duration-300 hover:opacity-60;
 }
-@utility btn-primario {
-  @apply btn bg-oliva text-crema-claro hover:bg-oliva-oscuro;
+
+@keyframes desfile {
+  to {
+    transform: translateX(-50%);
+  }
 }
-@utility btn-secundario {
-  @apply btn border border-cacao/40 text-cacao hover:border-cacao hover:bg-cacao hover:text-crema;
+@utility desfile {
+  animation: desfile 40s linear infinite;
 }
-@utility btn-claro {
-  @apply btn bg-crema text-cacao hover:bg-crema-claro;
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
 }
-@utility btn-linea-clara {
-  @apply btn border border-crema/60 text-crema hover:bg-crema hover:text-cacao;
+@utility aparece {
+  animation: aparecer 1.2s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }

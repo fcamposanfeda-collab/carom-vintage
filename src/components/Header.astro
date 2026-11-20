@@ -1,76 +1,49 @@
 ---
 import Logo from './Logo.astro';
-import { whatsappLink, rutaLimpia } from '../data/site';
-
-const actual = rutaLimpia(Astro.url.pathname);
-const enlaces = [
-  { href: '/', texto: 'Inicio' },
-  { href: '/vestidos', texto: 'Vestidos' },
-  { href: '/black-friday', texto: 'Black Friday', destacado: true },
-  { href: '/#regala-carom', texto: 'Regala Càrom' },
-];
+import IconInstagram from './IconInstagram.astro';
+import { site, whatsappLink } from '../data/site';
 ---
-<header class="sticky top-0 z-30 border-b border-cacao/10 bg-crema/95 backdrop-blur-sm">
-  <div class="contenedor flex h-16 items-center justify-between sm:h-20">
-    <a href="/" aria-label="CÀROM Studio, ir al inicio">
-      <Logo />
+<header class="contenedor flex flex-col items-center gap-6 pt-8 pb-4 sm:grid sm:grid-cols-[1fr_auto_1fr] sm:gap-0 sm:pt-9">
+  <a href="/" aria-label={`${site.nombre}, ir al inicio`} class="sm:col-start-2 sm:row-start-1">
+    <Logo />
+  </a>
+
+  <nav aria-label="Principal" class="etiqueta flex gap-8 sm:col-start-1 sm:row-start-1">
+    <a href="/#coleccion" class="transition-opacity hover:opacity-60">Colección</a>
+    <a href="/#nosotros" class="transition-opacity hover:opacity-60">Nosotros</a>
+    <a
+      href={whatsappLink()}
+      target="_blank"
+      rel="noopener"
+      class="transition-opacity hover:opacity-60 sm:hidden"
+      data-umami-event="whatsapp-click"
+      data-umami-event-origen="cabecera"
+    >
+      Contacto
     </a>
+  </nav>
 
-    <nav aria-label="Principal" class="hidden md:block">
-      <ul class="flex items-center gap-8 text-sm tracking-wide">
-        {enlaces.map((e) => (
-          <li>
-            <a
-              href={e.href}
-              aria-current={actual === e.href ? 'page' : undefined}
-              class:list={[
-                'border-b py-1 transition-colors',
-                actual === e.href ? 'border-cacao' : 'border-transparent hover:border-cacao/40',
-                e.destacado && 'font-medium text-tierra-texto',
-              ]}
-            >
-              {e.texto}
-            </a>
-          </li>
-        ))}
-        <li>
-          <a
-            href={whatsappLink()}
-            target="_blank"
-            rel="noopener"
-            class="btn-primario !min-h-0 !py-2"
-            data-umami-event="whatsapp-click"
-            data-umami-event-origen="menu"
-          >
-            WhatsApp
-          </a>
-        </li>
-      </ul>
-    </nav>
-
-    <details class="group relative md:hidden">
-      <summary class="flex h-11 w-11 cursor-pointer list-none items-center justify-center [&::-webkit-details-marker]:hidden" aria-label="Abrir menú">
-        <span class="flex w-6 flex-col gap-1.5" aria-hidden="true">
-          <span class="h-px w-full bg-cacao transition group-open:translate-y-[7px] group-open:rotate-45"></span>
-          <span class="h-px w-full bg-cacao transition group-open:opacity-0"></span>
-          <span class="h-px w-full bg-cacao transition group-open:-translate-y-[7px] group-open:-rotate-45"></span>
-        </span>
-      </summary>
-      <nav aria-label="Principal móvil" class="absolute top-14 right-0 w-64 rounded-2xl border border-cacao/10 bg-crema-claro p-4 shadow-xl shadow-cacao/10">
-        <ul class="flex flex-col">
-          {enlaces.map((e) => (
-            <li>
-              <a
-                href={e.href}
-                aria-current={actual === e.href ? 'page' : undefined}
-                class:list={['block rounded-lg px-3 py-3 font-serif text-xl', e.destacado && 'text-tierra-texto']}
-              >
-                {e.texto}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </details>
+  <div class="etiqueta hidden items-center justify-end gap-8 sm:col-start-3 sm:row-start-1 sm:flex">
+    <a
+      href={whatsappLink()}
+      target="_blank"
+      rel="noopener"
+      class="transition-opacity hover:opacity-60"
+      data-umami-event="whatsapp-click"
+      data-umami-event-origen="cabecera"
+    >
+      Contacto
+    </a>
+    <a
+      href={site.instagram}
+      target="_blank"
+      rel="noopener"
+      aria-label={`Instagram ${site.instagramUsuario}`}
+      class="transition-opacity hover:opacity-60"
+      data-umami-event="instagram-click"
+      data-umami-event-origen="cabecera"
+    >
+      <IconInstagram class="h-5 w-5" />
+    </a>
   </div>
 </header>

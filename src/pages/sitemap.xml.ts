@@ -1,11 +1,7 @@
 import type { APIRoute } from 'astro';
 
 // lastmod se actualiza solo con cada publicación (fecha del build)
-const paginas = [
-  { ruta: '/', prioridad: '1.0', frecuencia: 'weekly' },
-  { ruta: '/black-friday', prioridad: '0.9', frecuencia: 'daily' },
-  { ruta: '/vestidos', prioridad: '0.8', frecuencia: 'weekly' },
-];
+const paginas = [{ ruta: '/', prioridad: '1.0', frecuencia: 'daily' }];
 
 export const GET: APIRoute = ({ site }) => {
   const lastmod = new Date().toISOString();

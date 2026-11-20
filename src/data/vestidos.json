@@ -1,137 +1,125 @@
 {
-  "_PROVISIONAL": "// PROVISIONAL: TODO este archivo es de ejemplo. Cambia nombres, precios, tallas, eventos, textos y fotos. 'imagen' apunta a /public/img (sustituye el archivo manteniendo el nombre o cambia la ruta). 'oferta': true = entra en Black Friday. Eventos válidos: boda, invitada, gala, comunion.",
+  "_PROVISIONAL": "// PROVISIONAL: TODO este archivo es de ejemplo. Cada vestido es una pieza única con UNA sola talla. 'estado': disponible | reservado | vendido. 'imagen' apunta a /public/img (sustituye el archivo manteniendo el nombre o cambia la ruta). El orden de la lista es el orden en la web.",
   "vestidos": [
     {
       "id": "alhambra",
-      "nombre": "Vestido Alhambra",
+      "nombre": "Alhambra",
       "precio": 139,
-      "tallas": ["36", "38", "40"],
-      "eventos": ["gala", "boda"],
-      "descripcion": "Escote barco y caída larga en un morado profundo. Para galas y bodas de noche.",
+      "talla": "38",
+      "estado": "disponible",
+      "descripcion": "Escote barco y caída larga en un morado profundo.",
       "imagen": "/img/vestido-alhambra-vintage-gala.webp",
-      "alt": "Vestido vintage de gala Alhambra, largo y morado con escote barco",
-      "oferta": true
+      "alt": "Vestido vintage Alhambra, largo y morado con escote barco"
     },
     {
       "id": "triana",
-      "nombre": "Vestido Triana",
+      "nombre": "Triana",
       "precio": 69,
-      "tallas": ["36", "38", "40", "42"],
-      "eventos": ["invitada"],
-      "descripcion": "Lunares de los de siempre y volante suave. El vestido de invitada que nunca falla.",
+      "talla": "36",
+      "estado": "disponible",
+      "descripcion": "Lunares de los de siempre y un volante suave.",
       "imagen": "/img/vestido-triana-lunares-invitada.webp",
-      "alt": "Vestido de invitada vintage Triana, rojo de lunares con volante",
-      "oferta": true
-    },
-    {
-      "id": "albaicin",
-      "nombre": "Vestido Albaicín",
-      "precio": 59,
-      "tallas": ["38", "40", "42"],
-      "eventos": ["invitada", "comunion"],
-      "descripcion": "Estampado floral, ligero y fresco. Perfecto para comuniones y bodas de día.",
-      "imagen": "/img/vestido-albaicin-floral-invitada.webp",
-      "alt": "Vestido vintage de flores Albaicín para invitada de boda de día",
-      "oferta": false
-    },
-    {
-      "id": "toledo",
-      "nombre": "Vestido Toledo",
-      "precio": 89,
-      "tallas": ["36", "38", "40", "42", "44"],
-      "eventos": ["gala"],
-      "descripcion": "Negro, manga larga y falda con textura. Elegancia sin esfuerzo.",
-      "imagen": "/img/vestido-toledo-negro-gala.webp",
-      "alt": "Vestido vintage negro Toledo de manga larga para gala",
-      "oferta": false
-    },
-    {
-      "id": "giralda",
-      "nombre": "Vestido Giralda",
-      "precio": 79,
-      "tallas": ["38", "40", "42", "44"],
-      "eventos": ["invitada"],
-      "descripcion": "Cintura marcada y falda con vuelo, muy años 50. Para invitadas con carácter.",
-      "imagen": "/img/vestido-giralda-vintage-lunares.webp",
-      "alt": "Vestido de invitada estilo años 50 Giralda, rojo con falda de vuelo",
-      "oferta": true
-    },
-    {
-      "id": "almagro",
-      "nombre": "Vestido Almagro",
-      "precio": 65,
-      "tallas": ["38", "40", "42", "44", "46"],
-      "eventos": ["comunion", "invitada"],
-      "descripcion": "Burdeos, midi y con botones delante. Cómodo para estar todo el día guapa.",
-      "imagen": "/img/vestido-almagro-burdeos-comunion.webp",
-      "alt": "Vestido midi burdeos Almagro para madre de comunión",
-      "oferta": false
-    },
-    {
-      "id": "consuegra",
-      "nombre": "Vestido Consuegra",
-      "precio": 49,
-      "tallas": ["36", "38", "40"],
-      "eventos": ["comunion"],
-      "descripcion": "Blanco roto, hombros al aire y corto. Fresco y luminoso para celebraciones de primavera.",
-      "imagen": "/img/vestido-consuegra-blanco-comunion.webp",
-      "alt": "Vestido corto blanco roto Consuegra con hombros al aire",
-      "oferta": false
-    },
-    {
-      "id": "donana",
-      "nombre": "Vestido Doñana",
-      "precio": 99,
-      "tallas": ["36", "38", "40", "42"],
-      "eventos": ["invitada", "boda"],
-      "descripcion": "Largo, azul cielo y con abertura. Para bodas en el campo o junto al mar.",
-      "imagen": "/img/vestido-donana-largo-invitada-boda.webp",
-      "alt": "Vestido largo azul Doñana para invitada de boda de día",
-      "oferta": true
+      "alt": "Vestido vintage Triana, rojo de lunares con volante"
     },
     {
       "id": "azahar",
-      "nombre": "Vestido Azahar",
+      "nombre": "Azahar",
       "precio": 149,
-      "tallas": ["36", "38", "40", "42"],
-      "eventos": ["boda"],
-      "descripcion": "Blanco vaporoso y bordado. Para novias de boda civil que quieren algo distinto.",
+      "talla": "38",
+      "estado": "disponible",
+      "descripcion": "Blanco vaporoso y bordado a mano.",
       "imagen": "/img/vestido-azahar-novia-vintage.webp",
-      "alt": "Vestido de novia vintage Azahar, blanco y vaporoso para boda civil",
-      "oferta": true
+      "alt": "Vestido vintage Azahar, blanco y vaporoso con bordados"
+    },
+    {
+      "id": "toledo",
+      "nombre": "Toledo",
+      "precio": 89,
+      "talla": "40",
+      "estado": "reservado",
+      "descripcion": "Negro, manga larga y falda con textura.",
+      "imagen": "/img/vestido-toledo-negro-gala.webp",
+      "alt": "Vestido vintage negro Toledo de manga larga"
+    },
+    {
+      "id": "donana",
+      "nombre": "Doñana",
+      "precio": 99,
+      "talla": "38",
+      "estado": "disponible",
+      "descripcion": "Largo, azul cielo y con abertura.",
+      "imagen": "/img/vestido-donana-largo-invitada-boda.webp",
+      "alt": "Vestido vintage largo azul cielo Doñana"
+    },
+    {
+      "id": "giralda",
+      "nombre": "Giralda",
+      "precio": 79,
+      "talla": "40",
+      "estado": "disponible",
+      "descripcion": "Cintura marcada y falda con vuelo, muy años cincuenta.",
+      "imagen": "/img/vestido-giralda-vintage-lunares.webp",
+      "alt": "Vestido vintage Giralda estilo años 50, rojo con falda de vuelo"
     },
     {
       "id": "cuenca",
-      "nombre": "Vestido Cuenca",
+      "nombre": "Cuenca",
       "precio": 119,
-      "tallas": ["38", "40", "42"],
-      "eventos": ["gala", "boda"],
-      "descripcion": "Encaje morado y detalles calados. Una pieza única para noches importantes.",
+      "talla": "36",
+      "estado": "disponible",
+      "descripcion": "Encaje morado y detalles calados.",
       "imagen": "/img/vestido-cuenca-encaje-gala.webp",
-      "alt": "Vestido vintage de encaje morado Cuenca para gala o boda de noche",
-      "oferta": false
-    },
-    {
-      "id": "guadalquivir",
-      "nombre": "Vestido Guadalquivir",
-      "precio": 75,
-      "tallas": ["36", "38", "40", "42", "44"],
-      "eventos": ["invitada"],
-      "descripcion": "Naranja atardecer, tirantes finos y mucho movimiento. Bodas de verano, sin duda.",
-      "imagen": "/img/vestido-guadalquivir-naranja-invitada.webp",
-      "alt": "Vestido largo naranja Guadalquivir para invitada de boda de verano",
-      "oferta": false
+      "alt": "Vestido vintage Cuenca de encaje morado"
     },
     {
       "id": "sierra-morena",
-      "nombre": "Vestido Sierra Morena",
+      "nombre": "Sierra Morena",
       "precio": 109,
-      "tallas": ["36", "38", "40"],
-      "eventos": ["gala"],
-      "descripcion": "Rojo intenso y silueta sirena. Para entrar en la sala y que se haga el silencio.",
+      "talla": "38",
+      "estado": "vendido",
+      "descripcion": "Rojo intenso y silueta sirena.",
       "imagen": "/img/vestido-sierra-morena-rojo-gala.webp",
-      "alt": "Vestido rojo de gala Sierra Morena con silueta sirena",
-      "oferta": true
+      "alt": "Vestido vintage rojo Sierra Morena con silueta sirena"
+    },
+    {
+      "id": "albaicin",
+      "nombre": "Albaicín",
+      "precio": 59,
+      "talla": "42",
+      "estado": "disponible",
+      "descripcion": "Estampado floral, ligero y fresco.",
+      "imagen": "/img/vestido-albaicin-floral-invitada.webp",
+      "alt": "Vestido vintage Albaicín de estampado floral"
+    },
+    {
+      "id": "guadalquivir",
+      "nombre": "Guadalquivir",
+      "precio": 75,
+      "talla": "38",
+      "estado": "disponible",
+      "descripcion": "Naranja atardecer, tirantes finos y mucho movimiento.",
+      "imagen": "/img/vestido-guadalquivir-naranja-invitada.webp",
+      "alt": "Vestido vintage largo naranja Guadalquivir de tirantes"
+    },
+    {
+      "id": "almagro",
+      "nombre": "Almagro",
+      "precio": 65,
+      "talla": "40",
+      "estado": "disponible",
+      "descripcion": "Burdeos, midi y con botones delante.",
+      "imagen": "/img/vestido-almagro-burdeos-comunion.webp",
+      "alt": "Vestido vintage midi burdeos Almagro con botones"
+    },
+    {
+      "id": "consuegra",
+      "nombre": "Consuegra",
+      "precio": 49,
+      "talla": "36",
+      "estado": "disponible",
+      "descripcion": "Blanco roto, hombros al aire y corto.",
+      "imagen": "/img/vestido-consuegra-blanco-comunion.webp",
+      "alt": "Vestido vintage corto blanco roto Consuegra con hombros al aire"
     }
   ]
 }

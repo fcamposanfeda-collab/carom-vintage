@@ -1,33 +1,24 @@
 ﻿// Genera las imágenes para compartir (Open Graph 1200x630) y los favicons.
 // Uso: npm run imagenes
-// Usa como fondo las fotos del hero del inicio y de Black Friday: sustitúyelas y vuelve a ejecutarlo.
+// Usa como fondo la foto principal de la portada: sustitúyela y vuelve a ejecutarlo.
 import sharp from 'sharp';
 import fs from 'node:fs/promises';
 
 const OUT = 'public/img/';
-const crema = '#F3EDE3';
-const cacao = '#3B2F27';
-const oliva = '#6B6B47';
+const crema = '#F3E3DF';
+const cacao = '#4E0A13';
+const oliva = '#6B0F1A';
 
-// PROVISIONAL: textos de las imágenes para compartir
+// PROVISIONAL: textos de la imagen para compartir
 const imagenes = [
-  {
-    base: 'public/img/vestido-vintage-invitada-black-friday.webp',
-    salida: `${OUT}og-black-friday-vestidos-vintage.jpg`,
-    antetitulo: 'DEL 20 AL 30 DE NOVIEMBRE',
-    titulo: 'Black Friday',
-    destacado: '−20 %',
-    subtitulo: 'Vestidos vintage para bodas e invitadas',
-    pie: 'Envíos a toda España · caromstudio.es',
-  },
   {
     base: 'public/img/hero-vestido-vintage-invitada-boda.webp',
     salida: `${OUT}og-carom-studio-vestidos-vintage.jpg`,
-    antetitulo: 'VESTIDOS VINTAGE PARA EVENTOS',
+    antetitulo: 'BLACK FRIDAY · DEL 20 AL 30 DE NOVIEMBRE',
     titulo: 'CÀROM Studio',
-    destacado: '',
-    subtitulo: 'Vestidos con historia para tus días especiales',
-    pie: 'Envíos a toda España · caromstudio.es',
+    destacado: '−20 %',
+    subtitulo: 'Una talla. Una pieza. Una sola vez.',
+    pie: 'Vestidos vintage de pieza única',
   },
 ];
 

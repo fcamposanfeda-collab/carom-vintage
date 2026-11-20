@@ -1,8 +1,9 @@
 ---
 interface Props {
   fin: string;
+  class?: string;
 }
-const { fin } = Astro.props;
+const { fin, class: className = '' } = Astro.props;
 const unidades = [
   ['dias', 'días'],
   ['horas', 'horas'],
@@ -10,16 +11,15 @@ const unidades = [
   ['seg', 'seg'],
 ];
 ---
-<div class="cuenta-atras" data-fin={fin} role="timer" aria-label="Tiempo restante de la promoción">
-  <ul class="flex gap-3 sm:gap-4">
+<div class:list={['cuenta-atras', className]} data-fin={fin} role="timer" aria-label="Tiempo restante del Black Friday">
+  <ul class="flex gap-6 sm:gap-9">
     {unidades.map(([clave, texto]) => (
-      <li class="flex min-w-16 flex-col items-center rounded-lg border border-crema/25 px-3 py-3 sm:min-w-20">
+      <li class="flex flex-col items-center">
         <span class="font-serif text-4xl leading-none tabular-nums sm:text-5xl" data-unidad={clave}>--</span>
-        <span class="mt-1.5 text-[0.7rem] tracking-[0.2em] uppercase opacity-80">{texto}</span>
+        <span class="etiqueta mt-2 opacity-70">{texto}</span>
       </li>
     ))}
   </ul>
-  <p class="cuenta-atras-fin mt-3 hidden text-sm">La promoción ha terminado. ¡Escríbenos y te avisamos de la próxima!</p>
 </div>
 
 <script>
@@ -36,10 +36,7 @@ const unidades = [
       celdas.horas.textContent = pad(Math.floor((s % 86400) / 3600));
       celdas.min.textContent = pad(Math.floor((s % 3600) / 60));
       celdas.seg.textContent = pad(s % 60);
-      if (resto === 0) {
-        el.querySelector('.cuenta-atras-fin')?.classList.remove('hidden');
-        clearInterval(timer);
-      }
+      if (resto === 0) clearInterval(timer);
     };
     const timer = setInterval(tick, 1000);
     tick();

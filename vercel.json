@@ -1,6 +1,10 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/black-friday", "destination": "/#coleccion", "permanent": true },
+    { "source": "/vestidos", "destination": "/#coleccion", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/_astro/(.*)",

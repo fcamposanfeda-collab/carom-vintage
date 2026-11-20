@@ -1,93 +1,161 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import WhatsAppButton from '../components/WhatsAppButton.astro';
 import DressCard from '../components/DressCard.astro';
-import HowItWorks from '../components/HowItWorks.astro';
-import BlackFridayBanner from '../components/BlackFridayBanner.astro';
-import RegalaCarom from '../components/RegalaCarom.astro';
-import InstagramGallery from '../components/InstagramGallery.astro';
-import { textos } from '../data/site';
-import { vestidos } from '../data/blackfriday';
+import Countdown from '../components/Countdown.astro';
+import { site, textos } from '../data/site';
+import { blackFriday as bf, vestidos, precioFinal } from '../data/blackfriday';
 
-// PROVISIONAL: ids de los vestidos destacados en el inicio (de 3 a 6)
-const idsDestacados = ['triana', 'alhambra', 'donana', 'giralda', 'azahar', 'albaicin'];
-const destacados = idsDestacados.map((id) => vestidos.find((v) => v.id === id)).filter((v) => v !== undefined);
+// PROVISIONAL: fotos de la portada y de «Nosotros»
+const fotoPortada = '/img/hero-vestido-vintage-invitada-boda.webp';
+const fotoPortadaSecundaria = '/img/vestido-vintage-invitada-black-friday.webp';
+const fotoNosotros = '/img/quienes-somos-vestidos-vintage-carom.webp';
 
-const heroImg = '/img/hero-vestido-vintage-invitada-boda.webp';
+const base = Astro.site ?? new URL(site.url);
+const abs = (ruta: string) => new URL(ruta, base).href;
+
+const disponibilidad = {
+  disponible: 'https://schema.org/InStock',
+  reservado: 'https://schema.org/LimitedAvailability',
+  vendido: 'https://schema.org/SoldOut',
+};
+
+const schemaColeccion = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: bf.activo ? `Black Friday ${site.nombre}` : `Colección ${site.nombre}`,
+  itemListElement: vestidos.map((v, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: {
+      '@type': 'Product',
+      name: `Vestido ${v.nombre}`,
+      description: v.descripcion,
+      image: abs(v.imagen),
+      size: v.talla,
+      brand: { '@type': 'Brand', name: site.nombre },
+      offers: {
+        '@type': 'Offer',
+        price: precioFinal(v.precio).toFixed(2),
+        priceCurrency: 'EUR',
+        availability: disponibilidad[v.estado],
+        itemCondition: 'https://schema.org/UsedCondition',
+        ...(bf.activo && { priceValidUntil: bf.fin.slice(0, 10) }),
+      },
+    },
+  })),
+};
+
+const desfile = [...textos.desfile, ...textos.desfile];
 ---
 <BaseLayout
-  title="Vestidos vintage para bodas e invitadas | CÀROM Studio"
-  description="Vestidos vintage para bodas, comuniones, galas e invitadas. Piezas únicas y elegantes con envíos a toda España desde Castilla-La Mancha y Sevilla. Escríbenos por WhatsApp."
-  preloadImage={heroImg}
+  title={bf.activo ? `Black Friday · Vestidos vintage de pieza única | ${site.nombre}` : `Vestidos vintage de pieza única | ${site.nombre}`}
+  description={`${textos.portada.texto}${bf.activo ? ` Black Friday: −${bf.descuento} % ${bf.fechasTexto.toLowerCase()}.` : ''}`}
+  preloadImage={fotoPortada}
+  schemas={[schemaColeccion]}
 >
-  <!-- HERO -->
-  <section class="contenedor grid items-center gap-8 pt-5 pb-16 md:grid-cols-[1fr_1.05fr] md:gap-16 md:pt-12 md:pb-24">
-    <div class="order-2 md:order-1">
-      <p class="eyebrow">Vestidos vintage para eventos</p>
-      <h1 class="mt-4 text-[2.6rem] sm:text-6xl lg:text-7xl">{textos.claim}</h1>
-      <p class="mt-6 max-w-md text-lg text-cacao-suave">{textos.subclaim}</p>
-      <div class="mt-9 flex flex-col gap-3 sm:flex-row">
-        <WhatsAppButton origen="hero" mensaje="Hola, me gustaría información sobre vuestros vestidos" />
-        <a href="/vestidos" class="btn-secundario">Ver vestidos</a>
+  <!-- PORTADA -->
+  <section class="contenedor pt-16 pb-24 sm:pt-24 sm:pb-36">
+    <div class="aparece text-center">
+      {bf.activo && (
+        <p class="etiqueta text-vino">Black Friday · {bf.fechasTexto} · −{bf.descuento} %</p>
+      )}
+      <h1 class="mt-7 text-[3.2rem] sm:text-7xl lg:text-[6.5rem]">
+        {textos.portada.titulo.map((linea, i) => (
+          <span class:list={['block', i === 1 && 'italic']}>{linea}</span>
+        ))}
+      </h1>
+    </div>
+
+    <div class="mt-16 grid grid-cols-12 gap-x-4 sm:mt-24 sm:gap-x-8">
+      <div class="col-span-5 flex translate-y-12 flex-col justify-end sm:col-span-4 sm:col-start-2 sm:translate-y-28">
+        <p class="mb-8 hidden max-w-xs text-tinta-suave sm:block">{textos.portada.texto}</p>
+        <img
+          src={fotoPortadaSecundaria}
+          alt="Vestido vintage largo rojo de la colección CÀROM"
+          width="960"
+          height="1200"
+          decoding="async"
+          class="aparece aspect-[3/4] w-full object-cover [animation-delay:300ms]"
+        />
+      </div>
+      <div class="col-span-7 sm:col-span-6">
+        <img
+          src={fotoPortada}
+          alt="Invitada con vestido vintage de tul con flores bordadas"
+          width="960"
+          height="1200"
+          fetchpriority="high"
+          decoding="async"
+          class="aparece aspect-[4/5] w-full object-cover object-[50%_25%] [animation-delay:150ms]"
+        />
       </div>
     </div>
-    <div class="order-1 md:order-2">
-      <img
-        src={heroImg}
-        alt="Invitada de boda con vestido vintage de tul con flores bordadas"
-        width="960"
-        height="1200"
-        fetchpriority="high"
-        decoding="async"
-        class="aspect-[5/4] w-full rounded-sm object-cover object-[50%_25%] md:aspect-[4/5]"
-      />
+    <p class="mt-10 text-center text-tinta-suave sm:hidden">{textos.portada.texto}</p>
+
+    <p class="mt-24 text-center sm:mt-40">
+      <a href="#coleccion" class="enlace">Ver la colección</a>
+    </p>
+  </section>
+
+  <!-- TEXTO EN MOVIMIENTO -->
+  <div class="overflow-hidden bg-vino py-7 text-rosa-palido" aria-hidden="true">
+    <div class="desfile flex w-max">
+      {desfile.map((frase) => (
+        <span class="flex items-center font-serif text-3xl whitespace-nowrap italic sm:text-4xl">
+          <span class="px-10">{frase}</span>
+          <span class="text-base not-italic opacity-60">✦</span>
+        </span>
+      ))}
+    </div>
+  </div>
+
+  <!-- COLECCIÓN -->
+  <section id="coleccion" class="scroll-mt-8 py-24 sm:py-36" aria-labelledby="titulo-coleccion">
+    <div class="contenedor">
+      <div class="flex flex-col items-center text-center">
+        {bf.activo && <p class="etiqueta text-vino">Black Friday · −{bf.descuento} %</p>}
+        <h2 id="titulo-coleccion" class="mt-6 text-6xl sm:text-8xl">{textos.coleccion.titulo}</h2>
+        <p class="mt-6 max-w-md font-serif text-2xl italic text-tinta-suave">{textos.coleccion.texto}</p>
+        {bf.activo && (
+          <div class="mt-14">
+            <p class="etiqueta mb-5 text-tinta-suave">Termina en</p>
+            <Countdown fin={bf.fin} />
+          </div>
+        )}
+      </div>
+
+      <div class="mt-20 grid gap-x-8 gap-y-20 pb-28 sm:mt-28 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-12">
+        {vestidos.map((v, i) => (
+          <DressCard
+            vestido={v}
+            numero={i + 1}
+            class:list={[i % 2 === 1 && 'md:max-lg:translate-y-24', i % 3 === 1 && 'lg:translate-y-28']}
+          />
+        ))}
+      </div>
     </div>
   </section>
 
-  <!-- QUIÉNES SOMOS -->
-  <section class="bg-crema-claro py-20 sm:py-28" aria-labelledby="quienes-somos">
-    <div class="contenedor grid items-center gap-12 md:grid-cols-[0.8fr_1fr] md:gap-20">
+  <!-- NOSOTROS -->
+  <section id="nosotros" class="scroll-mt-8 bg-vino py-24 text-rosa-palido sm:py-36" aria-labelledby="titulo-nosotros">
+    <div class="contenedor grid items-center gap-14 md:grid-cols-12 md:gap-8">
       <img
-        src="/img/quienes-somos-vestidos-vintage-carom.webp"
+        src={fotoNosotros}
         alt="Vestidos vintage colgados en el estudio de CÀROM Studio"
         width="800"
         height="1000"
         loading="lazy"
         decoding="async"
-        class="aspect-[4/5] w-full max-w-sm rounded-sm object-cover"
+        class="aspect-[4/5] w-full object-cover md:col-span-5"
       />
-      <div>
-        <p class="eyebrow">CÀROM Studio</p>
-        <h2 id="quienes-somos" class="mt-3 text-4xl sm:text-5xl">{textos.quienesSomos.titulo}</h2>
-        <p class="mt-6 max-w-lg font-serif text-2xl leading-snug text-cacao sm:text-[1.7rem]">
-          {textos.quienesSomos.texto}
-        </p>
-        <p class="mt-5 text-sm text-cacao-suave">{textos.modalidad}</p>
+      <div class="md:col-span-6 md:col-start-7">
+        <p class="etiqueta opacity-70">CÀROM Studio</p>
+        <h2 id="titulo-nosotros" class="mt-6 text-6xl sm:text-8xl">{textos.nosotros.titulo}</h2>
+        <p class="mt-10 font-serif text-3xl leading-snug italic sm:text-4xl">{textos.nosotros.entradilla}</p>
+        {textos.nosotros.parrafos.map((p) => (
+          <p class="mt-6 max-w-lg opacity-85">{p}</p>
+        ))}
       </div>
     </div>
   </section>
-
-  <!-- DESTACADOS -->
-  <section class="py-20 sm:py-28" aria-labelledby="destacados">
-    <div class="contenedor">
-      <div class="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
-        <div>
-          <p class="eyebrow">Recién llegados</p>
-          <h2 id="destacados" class="mt-3 text-4xl sm:text-5xl">Vestidos destacados</h2>
-        </div>
-        <a href="/vestidos" class="text-sm tracking-wide underline underline-offset-4 hover:text-tierra-texto">Ver todos los vestidos</a>
-      </div>
-      <div class="mt-12 grid gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
-        {destacados.map((v) => <DressCard vestido={v} origen="inicio-destacados" />)}
-      </div>
-    </div>
-  </section>
-
-  <HowItWorks />
-
-  <BlackFridayBanner />
-
-  <RegalaCarom />
-
-  <InstagramGallery />
 </BaseLayout>

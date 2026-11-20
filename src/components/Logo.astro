@@ -4,13 +4,14 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { site } from '../data/site';
 
-const { claro = false } = Astro.props;
+const { class: className = '' } = Astro.props;
 const hayLogo = fs.existsSync(path.join(process.cwd(), 'public', site.logo));
 ---
 {hayLogo ? (
-  <img src={site.logo} alt={site.nombre} class="h-10 w-auto" width="160" height="40" />
+  <img src={site.logo} alt={site.nombre} class:list={['h-12 w-auto', className]} width="160" height="48" />
 ) : (
-  <span class:list={['font-serif text-2xl leading-none font-semibold tracking-wide sm:text-[1.7rem]', claro ? 'text-crema' : 'text-cacao']}>
-    CÀROM <span class="font-medium italic">Studio</span>
+  <span class:list={['flex flex-col items-center font-serif leading-[0.8]', className]}>
+    <span class="text-[1.9rem] tracking-[0.12em]">CÀROM</span>
+    <span class="text-[1.55rem] italic">studio</span>
   </span>
 )}
