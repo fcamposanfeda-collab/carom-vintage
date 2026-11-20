@@ -4,16 +4,16 @@
 // ─────────────────────────────────────────────────────────────
 
 export const site = {
-  nombre: 'CÀROM Studio',
+  nombre: 'Càrom Studio Vintage',
 
   // PROVISIONAL: dominio definitivo (cámbialo también en astro.config.mjs → site)
-  url: 'https://caromstudio.es',
+  url: 'https://caromvintage.es',
 
-  // PROVISIONAL: perfil de Instagram
+  // Perfil de Instagram
   instagram: 'https://www.instagram.com/carom_vintage/',
   instagramUsuario: '@carom_vintage',
-  // PROVISIONAL: enlace directo a mensaje privado (MD) de Instagram
-  instagramMD: 'https://ig.me/m/carom_vintage',
+  // Contacto: perfil (ig.me redirigía a otra cuenta)
+  instagramMD: 'https://www.instagram.com/carom_vintage/',
   // PROVISIONAL: email de contacto
   email: 'hola@caromstudio.es',
 

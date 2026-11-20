@@ -31,7 +31,7 @@ const schemaProducto = {
   '@context': 'https://schema.org',
   '@type': 'Product',
   name: v.nombre,
-  description: v.descripcion || `${v.nombre}: pieza vintage única de Càrom Studio.`,
+  description: v.descripcion || `${v.nombre}: pieza vintage única de Càrom Studio Vintage.`,
   image: v.imagenes.filter((ruta) => !esVideo(ruta)).map(abs),
   brand: { '@type': 'Brand', name: site.nombre },
   ...(v.talla && { size: v.talla }),

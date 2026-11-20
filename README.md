@@ -1,4 +1,4 @@
-# CÀROM Studio · Web
+# Càrom Studio Vintage · Web
 
 Web informativa de vestidos vintage para eventos. Astro 6 + Tailwind CSS 4, 100 % estática.
 
