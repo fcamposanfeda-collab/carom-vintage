@@ -1,0 +1,40 @@
+---
+import WhatsAppButton from './WhatsAppButton.astro';
+import { textos } from '../data/site';
+
+interface Props {
+  titulo?: string;
+  headingId?: string;
+}
+const { titulo = textos.regalaCarom.titulo, headingId = 'regala-carom-titulo' } = Astro.props;
+const r = textos.regalaCarom;
+---
+<section id="regala-carom" class="py-20 sm:py-28" aria-labelledby={headingId}>
+  <div class="contenedor grid items-center gap-12 md:grid-cols-2">
+    <div class="relative mx-auto w-full max-w-md" aria-hidden="true">
+      <div class="absolute inset-0 translate-x-4 translate-y-4 rounded-2xl bg-tierra/25"></div>
+      <div class="relative flex aspect-[1.6/1] flex-col justify-between rounded-2xl bg-oliva p-7 text-crema-claro shadow-xl shadow-cacao/15 sm:p-9">
+        <div class="flex items-start justify-between">
+          <span class="font-serif text-2xl font-semibold tracking-wide">CÀROM <span class="font-medium italic">Studio</span></span>
+          <span class="text-xs tracking-[0.25em] uppercase">Tarjeta regalo</span>
+        </div>
+        <div>
+          <p class="font-serif text-4xl italic sm:text-5xl">Regala Càrom</p>
+          <p class="mt-2 text-sm">Para tus días especiales</p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <p class="eyebrow">Tarjeta regalo</p>
+      <h2 id={headingId} class="mt-3 text-4xl sm:text-5xl">{titulo}</h2>
+      <p class="mt-5 max-w-md text-cacao-suave">{r.texto}</p>
+      <p class="mt-4 text-sm text-cacao-suave">
+        Importes de {r.importes.map((i) => `${i} €`).join(', ')}. {r.validez}.
+      </p>
+      <WhatsAppButton mensaje="Hola, quiero una tarjeta Regala Càrom de __ €" origen="regala-carom" class="mt-8">
+        Pedir mi tarjeta regalo
+      </WhatsAppButton>
+    </div>
+  </div>
+</section>

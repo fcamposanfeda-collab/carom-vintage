@@ -1,0 +1,50 @@
+---
+import Logo from './Logo.astro';
+import IconWhatsApp from './IconWhatsApp.astro';
+import IconInstagram from './IconInstagram.astro';
+import { site, whatsappLink } from '../data/site';
+
+const anio = new Date().getFullYear();
+---
+<footer class="bg-cacao pb-24 text-crema/85">
+  <div class="contenedor grid gap-10 py-16 md:grid-cols-[1.4fr_1fr_1fr]">
+    <div>
+      <Logo claro />
+      <p class="mt-4 max-w-sm text-sm leading-relaxed">
+        Vestidos vintage para bodas, comuniones, galas e invitadas. Piezas únicas con historia.
+      </p>
+    </div>
+
+    <div class="text-sm">
+      <h2 class="mb-4 font-sans text-xs font-medium tracking-[0.25em] text-crema uppercase">Dónde estamos</h2>
+      <p>{site.zona}</p>
+      <p class="mt-1 font-medium text-crema">{site.envios}</p>
+    </div>
+
+    <div class="text-sm">
+      <h2 class="mb-4 font-sans text-xs font-medium tracking-[0.25em] text-crema uppercase">Escríbenos</h2>
+      <ul class="space-y-3">
+        <li>
+          <a href={whatsappLink()} target="_blank" rel="noopener" class="inline-flex items-center gap-2 hover:text-crema" data-umami-event="whatsapp-click" data-umami-event-origen="footer">
+            <IconWhatsApp class="h-4 w-4" /> WhatsApp {site.telefonoVisible}
+          </a>
+        </li>
+        <li>
+          <a href={site.instagram} target="_blank" rel="noopener" class="inline-flex items-center gap-2 hover:text-crema" data-umami-event="instagram-click" data-umami-event-origen="footer">
+            <IconInstagram class="h-4 w-4" /> Instagram {site.instagramUsuario}
+          </a>
+        </li>
+        <li>
+          <a href={`mailto:${site.email}`} class="hover:text-crema" data-umami-event="email-click">{site.email}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="contenedor flex flex-col gap-2 border-t border-crema/15 pt-6 text-xs text-crema/70 sm:flex-row sm:justify-between">
+    <p>© {anio} {site.nombre}. Todos los derechos reservados.</p>
+    <nav aria-label="Pie de página" class="flex gap-5">
+      <a href="/vestidos" class="hover:text-crema">Vestidos</a>
+      <a href="/black-friday" class="hover:text-crema">Black Friday</a>
+    </nav>
+  </div>
+</footer>

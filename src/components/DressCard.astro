@@ -1,0 +1,80 @@
+---
+import IconWhatsApp from './IconWhatsApp.astro';
+import { whatsappLink, mensajeVestido, nombreCorto } from '../data/site';
+import { blackFriday, enOferta, precioOferta, formatoPrecio, type Vestido } from '../data/blackfriday';
+
+interface Props {
+  vestido: Vestido;
+  origen?: string;
+  headingLevel?: 'h2' | 'h3';
+}
+const { vestido: v, origen = 'catalogo', headingLevel = 'h3' } = Astro.props;
+const oferta = enOferta(v);
+const Titulo = headingLevel;
+---
+<article
+  class="vestido group flex flex-col"
+  data-eventos={v.eventos.join(' ')}
+  data-tallas={v.tallas.join(' ')}
+>
+  <div class="relative overflow-hidden rounded-sm bg-crema-oscuro">
+    <img
+      src={v.imagen}
+      alt={v.alt}
+      width="800"
+      height="1067"
+      loading="lazy"
+      decoding="async"
+      class="aspect-[3/4] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+    />
+    {oferta && (
+      <a
+        href="/black-friday"
+        class="absolute top-3 left-3 rounded-full bg-cacao px-3 py-1 text-xs font-medium tracking-wider text-crema uppercase hover:bg-tierra-texto"
+      >
+        Black Friday −{blackFriday.descuento} %
+      </a>
+    )}
+  </div>
+
+  <div class="flex flex-1 flex-col pt-4">
+    <div class="flex items-baseline justify-between gap-3">
+      <Titulo class="text-2xl">{v.nombre}</Titulo>
+      <p class="shrink-0 text-right">
+        {oferta ? (
+          <>
+            <span class="sr-only">Antes</span>
+            <s class="mr-1.5 text-sm text-cacao-suave">{formatoPrecio(v.precio)}</s>
+            <span class="sr-only">ahora</span>
+            <span class="font-medium text-tierra-texto">{formatoPrecio(precioOferta(v.precio))}</span>
+          </>
+        ) : (
+          <span class="font-medium">{formatoPrecio(v.precio)}</span>
+        )}
+      </p>
+    </div>
+    <p class="mt-1 text-sm text-cacao-suave">Tallas {v.tallas.join(' · ')}</p>
+    <p class="mt-2 text-sm leading-relaxed text-cacao-suave">{v.descripcion}</p>
+
+    <div class="mt-auto flex flex-wrap items-center gap-x-4 gap-y-2 pt-4">
+      <a
+        href={whatsappLink(mensajeVestido(v.nombre))}
+        target="_blank"
+        rel="noopener"
+        class="lo-quiero btn-primario"
+        data-nombre={nombreCorto(v.nombre)}
+        data-umami-event="whatsapp-click"
+        data-umami-event-origen={origen}
+        data-umami-event-vestido={v.nombre}
+        aria-label={`Lo quiero: ${v.nombre}, escribir por WhatsApp`}
+      >
+        <IconWhatsApp class="h-4 w-4" /> Lo quiero
+      </a>
+      {oferta && (
+        <a href="/black-friday" class="text-sm text-tierra-texto underline underline-offset-4 hover:text-cacao">
+          Ver oferta Black Friday
+        </a>
+      )}
+    </div>
+  </div>
+</article>

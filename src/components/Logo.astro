@@ -1,0 +1,16 @@
+---
+// Si existe /public/img/logo.png se muestra; si no, el nombre en la tipografía serif.
+import fs from 'node:fs';
+import path from 'node:path';
+import { site } from '../data/site';
+
+const { claro = false } = Astro.props;
+const hayLogo = fs.existsSync(path.join(process.cwd(), 'public', site.logo));
+---
+{hayLogo ? (
+  <img src={site.logo} alt={site.nombre} class="h-10 w-auto" width="160" height="40" />
+) : (
+  <span class:list={['font-serif text-2xl leading-none font-semibold tracking-wide sm:text-[1.7rem]', claro ? 'text-crema' : 'text-cacao']}>
+    CÀROM <span class="font-medium italic">Studio</span>
+  </span>
+)}

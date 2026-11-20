@@ -1,0 +1,86 @@
+@import '@fontsource/cormorant-garamond/latin-500.css';
+@import '@fontsource/cormorant-garamond/latin-500-italic.css';
+@import '@fontsource/cormorant-garamond/latin-600.css';
+@import '@fontsource-variable/jost/index.css';
+@import 'tailwindcss';
+
+@theme {
+  --color-crema: #f3ede3;
+  --color-crema-claro: #faf6ef;
+  --color-crema-oscuro: #e7ddcd;
+  --color-oliva: #6b6b47;
+  --color-oliva-oscuro: #55553a;
+  --color-tierra: #a0714f;
+  /* Tierra oscurecido para textos pequeños y botones: contraste AA sobre crema */
+  --color-tierra-texto: #8a5e3f;
+  /* Tierra aclarado para usar sobre fondo cacao */
+  --color-tierra-claro: #e3c4a6;
+  --color-cacao: #3b2f27;
+  --color-cacao-suave: #5a4a3f;
+
+  --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Jost Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-crema font-sans text-cacao antialiased;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-serif font-medium text-cacao;
+    line-height: 1.1;
+    text-wrap: balance;
+  }
+  h1,
+  h2,
+  h3,
+  .font-serif {
+    font-variant-numeric: lining-nums;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-tierra-texto);
+    outline-offset: 3px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+    }
+  }
+}
+
+@utility contenedor {
+  @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+}
+@utility eyebrow {
+  @apply text-xs font-medium tracking-[0.25em] text-tierra-texto uppercase;
+}
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium tracking-wide transition-colors duration-200;
+  min-height: 48px;
+}
+@utility btn-primario {
+  @apply btn bg-oliva text-crema-claro hover:bg-oliva-oscuro;
+}
+@utility btn-secundario {
+  @apply btn border border-cacao/40 text-cacao hover:border-cacao hover:bg-cacao hover:text-crema;
+}
+@utility btn-claro {
+  @apply btn bg-crema text-cacao hover:bg-crema-claro;
+}
+@utility btn-linea-clara {
+  @apply btn border border-crema/60 text-crema hover:bg-crema hover:text-cacao;
+}

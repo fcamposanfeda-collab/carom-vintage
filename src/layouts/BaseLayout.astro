@@ -1,0 +1,114 @@
+---
+import '../styles/global.css';
+import fuenteTitulos from '@fontsource/cormorant-garamond/files/cormorant-garamond-latin-500-normal.woff2?url';
+import fuenteTexto from '@fontsource-variable/jost/files/jost-latin-wght-normal.woff2?url';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppFloat from '../components/WhatsAppFloat.astro';
+import { site, whatsappBase, rutaLimpia } from '../data/site';
+
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  ogImageAlt?: string;
+  preloadImage?: string;
+  schemas?: object[];
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  ogImage = site.ogImagePorDefecto,
+  ogImageAlt = 'CÀROM Studio, vestidos vintage para bodas e invitadas',
+  preloadImage,
+  schemas = [],
+  noindex = false,
+} = Astro.props;
+
+// Umami no se carga mientras el ID siga siendo el provisional de ceros
+const umamiActivo = !/^[0-]+$/.test(site.umamiWebsiteId);
+
+const base = Astro.site ?? new URL(site.url);
+const canonical = new URL(rutaLimpia(Astro.url.pathname), base).href;
+const ogImageUrl = new URL(ogImage, base).href;
+
+const tienda = {
+  '@context': 'https://schema.org',
+  '@type': 'ClothingStore',
+  '@id': `${base.origin}/#tienda`,
+  name: site.nombre,
+  description: 'Vestidos vintage para bodas, comuniones, galas e invitadas. Venta de vestidos de evento con envíos a toda España.',
+  url: base.origin,
+  logo: new URL(site.logo, base).href,
+  image: new URL(site.ogImagePorDefecto, base).href,
+  telephone: `+${site.telefono}`,
+  email: site.email,
+  priceRange: '49 € - 149 €',
+  currenciesAccepted: 'EUR',
+  sameAs: [site.instagram],
+  address: { '@type': 'PostalAddress', addressRegion: 'Castilla-La Mancha', addressCountry: 'ES' },
+  areaServed: [
+    { '@type': 'AdministrativeArea', name: 'Castilla-La Mancha' },
+    { '@type': 'AdministrativeArea', name: 'Andalucía' },
+    { '@type': 'Country', name: 'España' },
+  ],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'customer service',
+    url: whatsappBase,
+    availableLanguage: 'es',
+  },
+};
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonical} />}
+    <meta name="theme-color" content="#F3EDE3" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="sitemap" href="/sitemap.xml" />
+    <link rel="preload" href={fuenteTitulos} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={fuenteTexto} as="font" type="font/woff2" crossorigin />
+    {preloadImage && <link rel="preload" as="image" href={preloadImage} type="image/webp" fetchpriority="high" />}
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content={site.nombre} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={ogImageAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(tienda)} />
+    {schemas.map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
+
+    {umamiActivo && <script is:inline defer src="https://cloud.umami.is/script.js" data-website-id={site.umamiWebsiteId}></script>}
+  </head>
+  <body class="flex min-h-screen flex-col">
+    <a href="#contenido" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:rounded-full focus:bg-cacao focus:px-4 focus:py-2 focus:text-crema">
+      Saltar al contenido
+    </a>
+    <Header />
+    <main id="contenido" class="flex-1">
+      <slot />
+    </main>
+    <Footer />
+    <WhatsAppFloat />
+  </body>
+</html>

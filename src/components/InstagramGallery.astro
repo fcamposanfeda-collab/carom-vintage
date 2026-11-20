@@ -1,0 +1,38 @@
+---
+import IconInstagram from './IconInstagram.astro';
+import { site, galeriaInstagram } from '../data/site';
+---
+<section class="pb-20 sm:pb-28" aria-labelledby="instagram">
+  <div class="contenedor">
+    <div class="flex flex-col items-center text-center">
+      <p class="eyebrow">Síguenos</p>
+      <h2 id="instagram" class="mt-3 text-4xl sm:text-5xl">
+        <a href={site.instagram} target="_blank" rel="noopener" class="hover:text-tierra-texto" data-umami-event="instagram-click" data-umami-event-origen="galeria">
+          {site.instagramUsuario}
+        </a>
+      </h2>
+    </div>
+    <ul class="mt-10 grid grid-cols-3 gap-1.5 sm:gap-3 lg:grid-cols-6">
+      {galeriaInstagram.map((foto) => (
+        <li>
+          <a href={site.instagram} target="_blank" rel="noopener" class="group block overflow-hidden rounded-sm" data-umami-event="instagram-click" data-umami-event-origen="galeria">
+            <img
+              src={foto.src}
+              alt={foto.alt}
+              width="600"
+              height="600"
+              loading="lazy"
+              decoding="async"
+              class="aspect-square w-full object-cover transition duration-500 group-hover:scale-105 group-hover:opacity-90"
+            />
+          </a>
+        </li>
+      ))}
+    </ul>
+    <div class="mt-10 text-center">
+      <a href={site.instagram} target="_blank" rel="noopener" class="btn-secundario" data-umami-event="instagram-click" data-umami-event-origen="galeria-boton">
+        <IconInstagram /> Ver más en Instagram
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,18 @@
+---
+import { textos } from '../data/site';
+---
+<section class="bg-crema-claro py-20 sm:py-28" aria-labelledby="como-funciona">
+  <div class="contenedor">
+    <p class="eyebrow text-center">Así de fácil</p>
+    <h2 id="como-funciona" class="mt-3 text-center text-4xl sm:text-5xl">Cómo funciona</h2>
+    <ol class="mt-14 grid gap-12 sm:grid-cols-3 sm:gap-8">
+      {textos.pasos.map((paso, i) => (
+        <li class="text-center">
+          <span class="font-serif text-6xl text-tierra italic" aria-hidden="true">{i + 1}</span>
+          <h3 class="mt-2 text-2xl">{paso.titulo}</h3>
+          <p class="mx-auto mt-3 max-w-xs text-cacao-suave">{paso.texto}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
