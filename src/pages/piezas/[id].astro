@@ -61,7 +61,7 @@ const schemaProducto = {
   schemas={[schemaProducto]}
 >
   <article class="contenedor py-12 sm:py-20">
-    <nav aria-label="Migas de pan" class="etiqueta mb-10 text-tierra">
+    <nav aria-label="Migas de pan" class="etiqueta mb-10 text-oliva/70">
       <a href="/#coleccion" class="transition-colors hover:text-oliva">Selección</a>
       <span aria-hidden="true"> · </span>
       <span aria-current="page">{v.nombre}</span>
@@ -109,7 +109,7 @@ const schemaProducto = {
           </div>
         ) : (
           <div class="flex aspect-[3/4] items-center justify-center bg-lino sm:aspect-[4/5]">
-            <p class="etiqueta text-center text-tierra">Fotos pendientes<br /><span class="mt-2 block normal-case tracking-normal opacity-70">Las añadiremos en cuanto las tengamos</span></p>
+            <p class="etiqueta text-center text-oliva">Fotos pendientes<br /><span class="mt-2 block normal-case tracking-normal opacity-70">Las añadiremos en cuanto las tengamos</span></p>
           </div>
         )}
       </div>
@@ -117,19 +117,19 @@ const schemaProducto = {
       <!-- FICHA -->
       <div class="lg:col-span-5 lg:sticky lg:top-28 lg:self-start">
         <p class="etiqueta text-oliva">Pieza única{bf.activo && ' · The Private Edit'}</p>
-        <h1 class="mt-5 text-5xl sm:text-6xl">{v.nombre}</h1>
+        <h1 class="mt-5 text-5xl text-oliva sm:text-6xl">{v.nombre}</h1>
 
         {!disponible && (
-          <p class="etiqueta mt-6 text-tierra">
+          <p class="etiqueta mt-6 text-oliva/70">
             {v.estado === 'reservado' ? 'Reservado' : 'Ha encontrado dueña'}
           </p>
         )}
 
         {v.precio !== null && (
-          <p class="mt-8 font-serif text-3xl">
+          <p class="mt-8 font-serif text-3xl text-oliva">
             {rebajado ? (
               <>
-                <s class="mr-3 text-xl text-tierra">{formatoPrecio(v.precio)}</s>
+                <s class="mr-3 text-xl text-oliva/60">{formatoPrecio(v.precio)}</s>
                 <span>{formatoPrecio(precioFinal(v.precio))}</span>
               </>
             ) : (
@@ -141,15 +141,15 @@ const schemaProducto = {
         <dl class="mt-10 space-y-5 border-y border-noche/15 py-8">
           <div>
             <dt class="etiqueta text-oliva">Talla</dt>
-            <dd class="mt-2 font-serif text-2xl">{v.talla || 'Pendiente'}</dd>
+            <dd class="mt-2 font-serif text-2xl text-oliva">{v.talla || 'Pendiente'}</dd>
           </div>
           <div>
             <dt class="etiqueta text-oliva">Medidas</dt>
-            <dd class="mt-2 whitespace-pre-line text-tierra">{v.medidas || 'Pendientes de confirmar'}</dd>
+            <dd class="mt-2 whitespace-pre-line text-oliva/80">{v.medidas || 'Pendientes de confirmar'}</dd>
           </div>
         </dl>
 
-        {v.descripcion && <p class="mt-8 text-tierra">{v.descripcion}</p>}
+        {v.descripcion && <p class="mt-8 text-oliva/80">{v.descripcion}</p>}
 
         {disponible ? (
           <a
@@ -167,7 +167,7 @@ const schemaProducto = {
           <a href="/#coleccion" class="btn-oscuro mt-10 inline-flex">Ver otras piezas</a>
         )}
 
-        <p class="mt-6 text-sm text-tierra">
+        <p class="mt-6 text-sm text-oliva/80">
           Escríbenos por Instagram indicando el nombre de la pieza
           {v.talla && <> y la talla {v.talla}</>}.
         </p>

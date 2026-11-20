@@ -31,7 +31,7 @@ const enlacesMovil = [...enlacesIzq, ...enlacesDer];
     </button>
 
     <nav aria-label="Principal" class="etiqueta hidden gap-8 text-xs tracking-[0.18em] md:flex">
-      {enlacesIzq.map((e) => <a href={e.href} class="transition-colors hover:text-noche">{e.texto}</a>)}
+      {enlacesIzq.map((e) => <a href={e.href} class="transition-colors hover:text-oliva/70">{e.texto}</a>)}
     </nav>
 
     <a href="/" aria-label={`${site.nombre}, ir al inicio`} class="justify-self-center">
@@ -40,20 +40,20 @@ const enlacesMovil = [...enlacesIzq, ...enlacesDer];
 
     <div class="etiqueta flex items-center justify-end gap-5 text-xs tracking-[0.18em] sm:gap-7">
       {enlacesDer.map((e) => (
-        <a href={e.href} class="hidden transition-colors hover:text-noche md:inline">{e.texto}</a>
+        <a href={e.href} class="hidden transition-colors hover:text-oliva/70 md:inline">{e.texto}</a>
       ))}
+      <a href="/#faq" class="transition-colors hover:text-oliva/70">FAQ</a>
       <a
         href={contactoLink()}
         target="_blank"
         rel="noopener"
         aria-label={`Escribir un mensaje directo a ${site.instagramUsuario}`}
-        class="flex h-11 w-11 items-center justify-center transition-colors hover:text-noche md:h-auto md:w-auto"
+        class="flex h-11 w-11 items-center justify-center transition-colors hover:text-oliva/70 md:h-auto md:w-auto"
         data-umami-event="instagram-md-click"
         data-umami-event-origen="cabecera"
       >
         <IconInstagram class="h-5 w-5" />
       </a>
-      <a href="/#faq" class="transition-colors hover:text-noche">FAQ</a>
     </div>
   </div>
 

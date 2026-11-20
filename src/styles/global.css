@@ -26,7 +26,7 @@
     -webkit-text-size-adjust: 100%;
   }
   body {
-    @apply bg-white font-sans text-noche antialiased;
+    @apply bg-white font-sans text-oliva antialiased;
     font-size: 1rem;
     font-weight: 300;
     line-height: 1.75;
@@ -75,13 +75,13 @@
   @apply etiqueta inline-flex min-h-13 items-center justify-center border px-9 text-[0.8rem] tracking-[0.24em] transition-colors duration-300;
 }
 @utility btn-linea {
-  @apply btn border-crema text-crema hover:bg-crema hover:text-tinta;
+  @apply btn border-crema text-crema hover:bg-crema hover:text-oliva;
 }
 @utility btn-claro {
-  @apply btn border-crema bg-crema text-tinta hover:bg-transparent hover:text-crema;
+  @apply btn border-crema bg-crema text-oliva hover:bg-transparent hover:text-crema;
 }
 @utility btn-oscuro {
-  @apply btn border-tinta bg-tinta text-crema hover:bg-transparent hover:text-tinta;
+  @apply btn border-oliva bg-oliva text-crema hover:bg-transparent hover:text-oliva;
 }
 
 /* Aparición suave al hacer scroll. Solo se oculta si hay JavaScript. */

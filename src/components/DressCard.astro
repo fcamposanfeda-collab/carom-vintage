@@ -12,7 +12,7 @@ const foto = imagenPrincipal(v);
 const ruta = rutaVestido(v.id);
 const estadoTexto = { disponible: '', reservado: 'Reservado', vendido: 'Vendido' }[v.estado];
 ---
-<article class="reveal flex flex-col gap-3.5 text-noche">
+<article class="reveal flex flex-col gap-3.5 text-oliva">
   <a href={ruta} class="group relative block aspect-[3/4] overflow-hidden bg-lino" aria-label={`Ver ${v.nombre}`}>
     {foto ? (
       <img
@@ -28,54 +28,54 @@ const estadoTexto = { disponible: '', reservado: 'Reservado', vendido: 'Vendido'
         ]}
       />
     ) : (
-      <span class="etiqueta absolute inset-0 flex items-center justify-center px-4 text-center text-tierra">
+      <span class="etiqueta absolute inset-0 flex items-center justify-center px-4 text-center text-oliva">
         Foto pendiente
       </span>
     )}
     {rebajado ? (
-      <p class="absolute top-3.5 left-3.5 bg-tinta px-2.5 py-1.5 text-[0.68rem] tracking-[0.2em] text-crema uppercase">
+      <p class="absolute top-3.5 left-3.5 bg-oliva px-2.5 py-1.5 text-[0.68rem] tracking-[0.2em] text-crema uppercase">
         −{blackFriday.descuento} %
       </p>
     ) : (
-      <p class="absolute top-3.5 left-3.5 bg-tinta px-2.5 py-1.5 text-[0.68rem] tracking-[0.2em] text-crema uppercase">
+      <p class="absolute top-3.5 left-3.5 bg-oliva px-2.5 py-1.5 text-[0.68rem] tracking-[0.2em] text-crema uppercase">
         Pieza única
       </p>
     )}
     {!disponible && (
-      <p class="etiqueta absolute inset-x-0 bottom-6 text-center text-tinta">{estadoTexto}</p>
+      <p class="etiqueta absolute inset-x-0 bottom-6 text-center text-oliva">{estadoTexto}</p>
     )}
   </a>
 
   <div class="flex flex-col gap-1">
-    <p class="text-[0.68rem] tracking-[0.24em] text-tierra uppercase">Pieza única</p>
+    <p class="text-[0.68rem] tracking-[0.24em] text-oliva/70 uppercase">Pieza única</p>
     <div class="flex items-baseline justify-between gap-3">
-      <h3 class="text-[1.35rem] text-noche sm:text-[1.4rem]">
+      <h3 class="text-[1.35rem] text-oliva sm:text-[1.4rem]">
         <a href={ruta} class="transition-opacity hover:opacity-70">{v.nombre}</a>
       </h3>
       {v.precio !== null && (
         <p class="shrink-0 text-sm">
           {rebajado ? (
             <>
-              <s class="text-tierra">{formatoPrecio(v.precio)}</s>
-              <span class="text-tierra"> · </span>
+              <s class="text-oliva/60">{formatoPrecio(v.precio)}</s>
+              <span class="text-oliva/60"> · </span>
               <strong class="font-medium text-oliva">{formatoPrecio(precioFinal(v.precio))}</strong>
             </>
           ) : (
-            <span class:list={[!disponible && 'text-tierra line-through']}>{formatoPrecio(v.precio)}</span>
+            <span class:list={[!disponible && 'text-oliva/60 line-through']}>{formatoPrecio(v.precio)}</span>
           )}
         </p>
       )}
     </div>
     {v.talla ? (
-      <p class="text-sm text-tierra">Talla {v.talla}</p>
+      <p class="text-sm text-oliva/80">Talla {v.talla}</p>
     ) : (
-      <p class="text-sm text-tierra">Talla pendiente</p>
+      <p class="text-sm text-oliva/80">Talla pendiente</p>
     )}
   </div>
 
   <a
     href={ruta}
-    class="etiqueta mt-1 block border border-noche/25 py-3.5 text-center text-noche transition-colors duration-300 hover:bg-noche hover:text-crema"
+    class="etiqueta mt-1 block border border-oliva/30 py-3.5 text-center text-oliva transition-colors duration-300 hover:bg-oliva hover:text-crema"
   >
     Ver pieza
   </a>
