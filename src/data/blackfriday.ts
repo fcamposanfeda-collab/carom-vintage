@@ -39,8 +39,12 @@ export function rutaVestido(id: string) {
   return `/piezas/${id}`;
 }
 
+export function esVideo(ruta: string) {
+  return /\.(mp4|webm|mov)$/i.test(ruta);
+}
+
 export function imagenPrincipal(v: Vestido) {
-  return v.imagenes[0] ?? '';
+  return v.imagenes.find((ruta) => !esVideo(ruta)) ?? '';
 }
 
 export function hayDescuento() {

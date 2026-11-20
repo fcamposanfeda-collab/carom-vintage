@@ -9,6 +9,7 @@ import {
   precioFinal,
   formatoPrecio,
   imagenPrincipal,
+  esVideo,
 } from '../../data/blackfriday';
 
 export function getStaticPaths() {
@@ -31,7 +32,7 @@ const schemaProducto = {
   '@type': 'Product',
   name: v.nombre,
   description: v.descripcion || `${v.nombre}: pieza vintage única de CÀROM Studio.`,
-  image: v.imagenes.map(abs),
+  image: v.imagenes.filter((ruta) => !esVideo(ruta)).map(abs),
   brand: { '@type': 'Brand', name: site.nombre },
   ...(v.talla && { size: v.talla }),
   ...(v.precio !== null && {
@@ -71,22 +72,37 @@ const schemaProducto = {
       <div class="lg:col-span-7">
         {v.imagenes.length > 0 ? (
           <div class="grid gap-4 sm:grid-cols-2">
-            {v.imagenes.map((src, i) => (
-              <img
-                src={src}
-                alt={`${v.alt}${v.imagenes.length > 1 ? `, foto ${i + 1}` : ''}`}
-                width="900"
-                height="1200"
-                loading={i === 0 ? 'eager' : 'lazy'}
-                decoding="async"
-                fetchpriority={i === 0 ? 'high' : undefined}
-                class:list={[
-                  'aspect-[3/4] w-full bg-noche object-cover',
-                  i === 0 && 'sm:col-span-2',
-                  !disponible && 'opacity-50 grayscale',
-                ]}
-              />
-            ))}
+            {v.imagenes.map((src, i) =>
+              esVideo(src) ? (
+                <video
+                  src={src}
+                  controls
+                  playsinline
+                  preload="metadata"
+                  aria-label={`${v.alt}, vídeo`}
+                  class:list={[
+                    'aspect-[3/4] w-full bg-noche object-cover',
+                    i === 0 && 'sm:col-span-2',
+                    !disponible && 'opacity-50 grayscale',
+                  ]}
+                />
+              ) : (
+                <img
+                  src={src}
+                  alt={`${v.alt}${v.imagenes.length > 1 ? `, foto ${i + 1}` : ''}`}
+                  width="900"
+                  height="1200"
+                  loading={i === 0 ? 'eager' : 'lazy'}
+                  decoding="async"
+                  fetchpriority={i === 0 ? 'high' : undefined}
+                  class:list={[
+                    'aspect-[3/4] w-full bg-noche object-cover',
+                    i === 0 && 'sm:col-span-2',
+                    !disponible && 'opacity-50 grayscale',
+                  ]}
+                />
+              )
+            )}
           </div>
         ) : (
           <div class="flex aspect-[3/4] items-center justify-center bg-noche sm:aspect-[4/5]">
