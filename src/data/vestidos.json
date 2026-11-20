@@ -1,7 +1,7 @@
 {
   "_PROVISIONAL": "// PROVISIONAL: catálogo Black Friday. 'precio': null hasta confirmar. 'talla' y 'medidas' vacíos hasta rellenar. 'imagenes': rutas en /public/img (añade varias fotos por pieza). 'estado': disponible | reservado | vendido.",
   "vestidos": [
-    { "id": "esencia-dorada", "nombre": "Conjunto Esencia Dorada", "talla": "", "medidas": "", "precio": null, "estado": "disponible", "descripcion": "", "imagenes": [], "alt": "Conjunto Esencia Dorada, pieza vintage única" },
+    { "id": "esencia-dorada", "nombre": "Dos piezas Esencia Dorada", "talla": "", "medidas": "", "precio": null, "estado": "disponible", "descripcion": "", "imagenes": ["/img/piezas/esencia-dorada/1.webp", "/img/piezas/esencia-dorada/2.webp", "/img/piezas/esencia-dorada/3.webp"], "alt": "Dos piezas Esencia Dorada, pieza vintage única" },
     { "id": "palma", "nombre": "Vestido Palma", "talla": "", "medidas": "", "precio": null, "estado": "disponible", "descripcion": "", "imagenes": ["/img/piezas/palma/1.webp", "/img/piezas/palma/2.webp", "/img/piezas/palma/3.webp", "/img/piezas/palma/4.webp"], "alt": "Vestido Palma, pieza vintage única" },
     { "id": "bencort", "nombre": "Dos piezas Bencort", "talla": "", "medidas": "", "precio": null, "estado": "disponible", "descripcion": "", "imagenes": ["/img/piezas/bencort/1.webp", "/img/piezas/bencort/2.webp", "/img/piezas/bencort/3.webp"], "alt": "Dos piezas Bencort, pieza vintage única" },
     { "id": "casilda", "nombre": "Vestido Casilda", "talla": "", "medidas": "", "precio": null, "estado": "disponible", "descripcion": "", "imagenes": ["/img/piezas/casilda/1.webp", "/img/piezas/casilda/2.webp", "/img/piezas/casilda/3.webp", "/img/piezas/casilda/4.webp"], "alt": "Vestido Casilda, pieza vintage única" },
