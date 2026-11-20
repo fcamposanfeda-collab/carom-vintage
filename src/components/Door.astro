@@ -24,9 +24,9 @@ import { blackFriday as bf } from '../data/blackfriday';
 
   <div class="puerta__contenido">
     <div class="puerta__placa">
-      <p class="etiqueta text-arena">Black Friday · {site.nombre} Vintage</p>
+      <p class="etiqueta">Black Friday · {site.nombre} Vintage</p>
       <h2 id="titulo-puerta" class="font-serif text-[clamp(3rem,7vw,5.5rem)] leading-[0.95] font-light italic">Acceso privado</h2>
-      <p class="font-serif text-[1.3rem] leading-snug text-pergamino">
+      <p class="font-serif text-[1.3rem] leading-snug">
         Solo unos días. Piezas únicas.
       </p>
       <button type="button" class="btn-linea" id="boton-puerta">Accede aquí</button>
@@ -140,7 +140,7 @@ import { blackFriday as bf } from '../data/blackfriday';
     flex-direction: column;
     gap: 4vh;
     padding: 7vh 5vw;
-    background: var(--color-noche);
+    background: var(--color-oliva);
     backface-visibility: hidden;
     transition: transform 2.2s cubic-bezier(0.65, 0, 0.25, 1);
   }
@@ -200,9 +200,18 @@ import { blackFriday as bf } from '../data/blackfriday';
     flex-direction: column;
     align-items: center;
     gap: 22px;
-    border: 1px solid rgba(243, 234, 220, 0.22);
-    background: var(--color-noche);
+    border: 1px solid var(--color-oliva);
+    background: #f3eadc;
+    color: var(--color-oliva);
     padding: 48px 56px;
+  }
+  .puerta__placa .btn-linea {
+    border-color: var(--color-oliva);
+    color: var(--color-oliva);
+  }
+  .puerta__placa .btn-linea:hover {
+    background: var(--color-oliva);
+    color: #f3eadc;
   }
 
   .puerta.is-abierta .puerta__contenido {

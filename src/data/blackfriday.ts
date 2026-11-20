@@ -31,6 +31,29 @@ export type Vestido = {
 
 export const vestidos = data.vestidos as Vestido[];
 
+// PROVISIONAL: IDs de las 15 piezas en Novedades (cámbialos cuando quieras)
+export const novedadesIds = [
+  'esencia-dorada',
+  'palma',
+  'bencort',
+  'casilda',
+  'philippa',
+  'amanda',
+  'aurora',
+  'grace',
+  'croatia',
+  'irati',
+  'corina',
+  'isol',
+  'austria',
+  'celine',
+  'marilia',
+] as const;
+
+export const novedades = novedadesIds
+  .map((id) => vestidos.find((v) => v.id === id))
+  .filter((v): v is Vestido => Boolean(v));
+
 export function getVestido(id: string) {
   return vestidos.find((v) => v.id === id);
 }

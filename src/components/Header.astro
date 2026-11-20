@@ -4,16 +4,20 @@ import IconInstagram from './IconInstagram.astro';
 import { site, contactoLink } from '../data/site';
 import { blackFriday as bf } from '../data/blackfriday';
 
-const enlaces = [
+const enlacesIzq = [
   { href: '/#coleccion', texto: 'Selección de piezas' },
+  { href: '/#novedades', texto: 'Novedades' },
+];
+const enlacesDer = [
   { href: '/#nosotros', texto: 'Nosotros' },
 ];
+const enlacesMovil = [...enlacesIzq, ...enlacesDer];
 ---
 <p class="bg-oliva px-4 py-2.5 text-center text-[0.62rem] tracking-[0.2em] text-crema uppercase sm:text-xs sm:tracking-[0.24em]">
   {bf.activo ? `Acceso privado · ${bf.fechasTexto}` : 'Piezas únicas · Envíos a toda España'}
 </p>
 
-<header class="sticky top-0 z-20 border-b border-crema/15 bg-tinta">
+<header class="sticky top-0 z-20 border-b border-oliva/15 bg-white text-oliva">
   <div class="contenedor grid grid-cols-[44px_1fr_auto] items-center gap-5 py-2 md:grid-cols-[1fr_auto_1fr] md:py-5">
     <button
       id="boton-menu"
@@ -27,31 +31,34 @@ const enlaces = [
     </button>
 
     <nav aria-label="Principal" class="etiqueta hidden gap-8 text-xs tracking-[0.18em] md:flex">
-      {enlaces.map((e) => <a href={e.href} class="transition-colors hover:text-arena">{e.texto}</a>)}
+      {enlacesIzq.map((e) => <a href={e.href} class="transition-colors hover:text-noche">{e.texto}</a>)}
     </nav>
 
     <a href="/" aria-label={`${site.nombre}, ir al inicio`} class="justify-self-center">
-      <Logo class="origin-center scale-[0.78] text-crema md:scale-100" />
+      <Logo class="origin-center scale-[0.78] text-oliva md:scale-100" />
     </a>
 
     <div class="etiqueta flex items-center justify-end gap-5 text-xs tracking-[0.18em] sm:gap-7">
+      {enlacesDer.map((e) => (
+        <a href={e.href} class="hidden transition-colors hover:text-noche md:inline">{e.texto}</a>
+      ))}
       <a
         href={contactoLink()}
         target="_blank"
         rel="noopener"
         aria-label={`Escribir un mensaje directo a ${site.instagramUsuario}`}
-        class="flex h-11 w-11 items-center justify-center transition-colors hover:text-arena md:h-auto md:w-auto"
+        class="flex h-11 w-11 items-center justify-center transition-colors hover:text-noche md:h-auto md:w-auto"
         data-umami-event="instagram-md-click"
         data-umami-event-origen="cabecera"
       >
         <IconInstagram class="h-5 w-5" />
       </a>
-      <a href="/#faq" class="transition-colors hover:text-arena">FAQ</a>
+      <a href="/#faq" class="transition-colors hover:text-noche">FAQ</a>
     </div>
   </div>
 
-  <nav id="menu-movil" aria-label="Menú móvil" class="hidden flex-col border-t border-crema/15 px-6 pt-2 pb-6 md:hidden">
-    {enlaces.map((e) => <a href={e.href} class="etiqueta flex min-h-11 items-center text-sm tracking-[0.2em]">{e.texto}</a>)}
+  <nav id="menu-movil" aria-label="Menú móvil" class="hidden flex-col border-t border-oliva/15 bg-white px-6 pt-2 pb-6 md:hidden">
+    {enlacesMovil.map((e) => <a href={e.href} class="etiqueta flex min-h-11 items-center text-sm tracking-[0.2em]">{e.texto}</a>)}
     <a href="/#faq" class="etiqueta flex min-h-11 items-center text-sm tracking-[0.2em]">FAQ</a>
     <a href={contactoLink()} target="_blank" rel="noopener" class="etiqueta flex min-h-11 items-center text-sm tracking-[0.2em]" data-umami-event="instagram-md-click" data-umami-event-origen="menu-movil">
       Escríbenos

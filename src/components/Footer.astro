@@ -4,23 +4,23 @@ import { site, contactoLink } from '../data/site';
 
 const anio = new Date().getFullYear();
 ---
-<footer class="border-t border-crema/15">
+<footer class="bg-oliva text-crema">
   <div class="contenedor flex flex-col items-center gap-10 py-16 text-center sm:py-20">
-    <p class="etiqueta text-arena">¿Te has enamorado de una pieza?</p>
+    <p class="etiqueta text-crema/70">¿Te has enamorado de una pieza?</p>
     <h2 class="text-5xl sm:text-6xl">Escríbenos</h2>
-    <ul class="etiqueta flex flex-col items-center gap-5 text-arena sm:flex-row sm:gap-10">
+    <ul class="etiqueta flex flex-col items-center gap-5 text-crema/70 sm:flex-row sm:gap-10">
       <li>
-        <a href={contactoLink()} target="_blank" rel="noopener" class="text-crema transition-colors hover:text-arena" data-umami-event="instagram-md-click" data-umami-event-origen="pie">
+        <a href={contactoLink()} target="_blank" rel="noopener" class="text-crema transition-colors hover:text-white" data-umami-event="instagram-md-click" data-umami-event-origen="pie">
           Instagram
         </a>
       </li>
       <li>
-        <a href={`mailto:${site.email}`} class="text-crema transition-colors hover:text-arena" data-umami-event="email-click">
+        <a href={`mailto:${site.email}`} class="text-crema transition-colors hover:text-white" data-umami-event="email-click">
           {site.email}
         </a>
       </li>
     </ul>
     <Logo class="mt-6 text-crema" />
-    <p class="text-[0.7rem] tracking-[0.2em] text-arena uppercase">© {anio} {site.nombre} · Envíos a toda España</p>
+    <p class="text-[0.7rem] tracking-[0.2em] text-crema/70 uppercase">© {anio} {site.nombre} · Envíos a toda España</p>
   </div>
 </footer>

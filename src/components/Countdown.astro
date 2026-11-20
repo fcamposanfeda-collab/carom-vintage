@@ -1,30 +1,28 @@
 ---
 interface Props {
-  inicio: string;
   fin: string;
+  inicio?: string;
 }
-const { inicio, fin } = Astro.props;
+const { fin } = Astro.props;
 const unidades = [
   ['dias', 'Días'],
   ['horas', 'Horas'],
   ['min', 'Min'],
   ['seg', 'Seg'],
 ];
-// PROVISIONAL: textos de la cuenta atrás antes, durante y después del Black Friday
 const textos = {
-  antes: 'La puerta se abre en',
-  durante: 'La puerta se cierra en',
-  despues: 'La puerta se ha cerrado. Hasta el año que viene.',
+  durante: 'El Black Friday termina en',
+  despues: 'El Black Friday ha terminado. Hasta el año que viene.',
 };
 ---
-<section class="cuenta-atras border-b border-crema/15" data-inicio={inicio} data-fin={fin} data-textos={JSON.stringify(textos)}>
+<section class="cuenta-atras border-b border-noche/10 bg-white text-noche" data-fin={fin} data-textos={JSON.stringify(textos)}>
   <div class="contenedor flex flex-wrap items-center justify-between gap-6 py-9">
     <p class="cuenta-atras-texto font-serif text-[1.75rem] italic">{textos.durante}</p>
     <ul class="flex gap-6 sm:gap-10" role="timer" aria-label="Tiempo restante del Black Friday">
       {unidades.map(([clave, texto]) => (
         <li class="flex flex-col items-center gap-1">
           <span class="font-serif text-4xl leading-none font-light lining-nums tabular-nums sm:text-5xl" data-unidad={clave}>--</span>
-          <span class="text-[0.68rem] tracking-[0.24em] text-arena uppercase">{texto}</span>
+          <span class="text-[0.68rem] tracking-[0.24em] text-oliva uppercase">{texto}</span>
         </li>
       ))}
     </ul>
@@ -33,7 +31,6 @@ const textos = {
 
 <script>
   document.querySelectorAll<HTMLElement>('.cuenta-atras').forEach((el) => {
-    const inicio = Date.parse(el.dataset.inicio!);
     const fin = Date.parse(el.dataset.fin!);
     const textos = JSON.parse(el.dataset.textos!);
     const etiqueta = el.querySelector('.cuenta-atras-texto')!;
@@ -43,17 +40,9 @@ const textos = {
     const pad = (n: number) => String(n).padStart(2, '0');
     const tick = () => {
       const ahora = Date.now();
-      let objetivo = fin;
-      let texto = textos.durante;
-      if (ahora < inicio) {
-        objetivo = inicio;
-        texto = textos.antes;
-      } else if (ahora >= fin) {
-        objetivo = ahora;
-        texto = textos.despues;
-      }
-      const s = Math.max(0, Math.floor((objetivo - ahora) / 1000));
-      etiqueta.textContent = texto;
+      const terminado = ahora >= fin;
+      const s = Math.max(0, Math.floor((fin - ahora) / 1000));
+      etiqueta.textContent = terminado ? textos.despues : textos.durante;
       celdas.dias.textContent = pad(Math.floor(s / 86400));
       celdas.horas.textContent = pad(Math.floor((s % 86400) / 3600));
       celdas.min.textContent = pad(Math.floor((s % 3600) / 60));

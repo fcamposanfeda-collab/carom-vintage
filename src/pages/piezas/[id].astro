@@ -61,8 +61,8 @@ const schemaProducto = {
   schemas={[schemaProducto]}
 >
   <article class="contenedor py-12 sm:py-20">
-    <nav aria-label="Migas de pan" class="etiqueta mb-10 text-arena">
-      <a href="/#coleccion" class="transition-colors hover:text-crema">Selección</a>
+    <nav aria-label="Migas de pan" class="etiqueta mb-10 text-tierra">
+      <a href="/#coleccion" class="transition-colors hover:text-oliva">Selección</a>
       <span aria-hidden="true"> · </span>
       <span aria-current="page">{v.nombre}</span>
     </nav>
@@ -76,10 +76,13 @@ const schemaProducto = {
               esVideo(src) ? (
                 <video
                   src={src}
-                  controls
+                  autoplay
+                  muted
+                  loop
                   playsinline
                   preload="metadata"
                   aria-label={`${v.alt}, vídeo`}
+                  data-galeria-video
                   class:list={[
                     'aspect-[3/4] w-full bg-noche object-cover',
                     i === 0 && 'sm:col-span-2',
@@ -105,19 +108,19 @@ const schemaProducto = {
             )}
           </div>
         ) : (
-          <div class="flex aspect-[3/4] items-center justify-center bg-noche sm:aspect-[4/5]">
-            <p class="etiqueta text-center text-arena">Fotos pendientes<br /><span class="mt-2 block normal-case tracking-normal opacity-70">Las añadiremos en cuanto las tengamos</span></p>
+          <div class="flex aspect-[3/4] items-center justify-center bg-lino sm:aspect-[4/5]">
+            <p class="etiqueta text-center text-tierra">Fotos pendientes<br /><span class="mt-2 block normal-case tracking-normal opacity-70">Las añadiremos en cuanto las tengamos</span></p>
           </div>
         )}
       </div>
 
       <!-- FICHA -->
       <div class="lg:col-span-5 lg:sticky lg:top-28 lg:self-start">
-        <p class="etiqueta text-arena">Pieza única{bf.activo && ' · The Private Edit'}</p>
+        <p class="etiqueta text-oliva">Pieza única{bf.activo && ' · The Private Edit'}</p>
         <h1 class="mt-5 text-5xl sm:text-6xl">{v.nombre}</h1>
 
         {!disponible && (
-          <p class="etiqueta mt-6 text-arena">
+          <p class="etiqueta mt-6 text-tierra">
             {v.estado === 'reservado' ? 'Reservado' : 'Ha encontrado dueña'}
           </p>
         )}
@@ -126,7 +129,7 @@ const schemaProducto = {
           <p class="mt-8 font-serif text-3xl">
             {rebajado ? (
               <>
-                <s class="mr-3 text-xl text-arena">{formatoPrecio(v.precio)}</s>
+                <s class="mr-3 text-xl text-tierra">{formatoPrecio(v.precio)}</s>
                 <span>{formatoPrecio(precioFinal(v.precio))}</span>
               </>
             ) : (
@@ -135,25 +138,25 @@ const schemaProducto = {
           </p>
         )}
 
-        <dl class="mt-10 space-y-5 border-y border-crema/15 py-8">
+        <dl class="mt-10 space-y-5 border-y border-noche/15 py-8">
           <div>
-            <dt class="etiqueta text-arena">Talla</dt>
+            <dt class="etiqueta text-oliva">Talla</dt>
             <dd class="mt-2 font-serif text-2xl">{v.talla || 'Pendiente'}</dd>
           </div>
           <div>
-            <dt class="etiqueta text-arena">Medidas</dt>
-            <dd class="mt-2 whitespace-pre-line text-pergamino">{v.medidas || 'Pendientes de confirmar'}</dd>
+            <dt class="etiqueta text-oliva">Medidas</dt>
+            <dd class="mt-2 whitespace-pre-line text-tierra">{v.medidas || 'Pendientes de confirmar'}</dd>
           </div>
         </dl>
 
-        {v.descripcion && <p class="mt-8 text-pergamino">{v.descripcion}</p>}
+        {v.descripcion && <p class="mt-8 text-tierra">{v.descripcion}</p>}
 
         {disponible ? (
           <a
             href={contactoLink()}
             target="_blank"
             rel="noopener"
-            class="btn-linea mt-10 w-full sm:w-auto"
+            class="btn-oscuro mt-10 w-full sm:w-auto"
             data-umami-event="instagram-md-click"
             data-umami-event-origen="ficha"
             data-umami-event-vestido={v.nombre}
@@ -161,14 +164,31 @@ const schemaProducto = {
             Lo quiero
           </a>
         ) : (
-          <a href="/#coleccion" class="btn-linea mt-10 inline-flex">Ver otras piezas</a>
+          <a href="/#coleccion" class="btn-oscuro mt-10 inline-flex">Ver otras piezas</a>
         )}
 
-        <p class="mt-6 text-sm text-arena">
+        <p class="mt-6 text-sm text-tierra">
           Escríbenos por Instagram indicando el nombre de la pieza
           {v.talla && <> y la talla {v.talla}</>}.
         </p>
       </div>
     </div>
   </article>
+
+  <script>
+    const videos = document.querySelectorAll<HTMLVideoElement>('[data-galeria-video]');
+    if (videos.length && 'IntersectionObserver' in window) {
+      const io = new IntersectionObserver(
+        (entradas) => {
+          for (const e of entradas) {
+            const video = e.target as HTMLVideoElement;
+            if (e.isIntersecting) void video.play().catch(() => {});
+            else video.pause();
+          }
+        },
+        { threshold: 0.35 },
+      );
+      videos.forEach((v) => io.observe(v));
+    }
+  </script>
 </BaseLayout>

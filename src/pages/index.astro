@@ -3,12 +3,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import DressCard from '../components/DressCard.astro';
 import Countdown from '../components/Countdown.astro';
 import { site, textos, faq, contactoLink } from '../data/site';
-import { blackFriday as bf, vestidos, precioFinal, imagenPrincipal, rutaVestido } from '../data/blackfriday';
+import { blackFriday as bf, vestidos, novedades, precioFinal, imagenPrincipal, rutaVestido } from '../data/blackfriday';
 
 // PROVISIONAL: fotos de portada, invitadas y nosotros
 const fotoPortada = '/img/fondo-portada-black-friday.webp';
 const fotoInvitadas = '/img/hero-vestido-vintage-invitada-boda.webp';
-const fotoNosotros = '/img/quienes-somos-vestidos-vintage-carom.webp';
+const fotoNosotros = '/img/nosotros-foto.webp';
 
 const base = Astro.site ?? new URL(site.url);
 const abs = (ruta: string) => new URL(ruta, base).href;
@@ -66,20 +66,18 @@ const schemaColeccion = {
   schemas={[schemaColeccion, schemaFaq]}
 >
   <!-- HERO -->
-  <section class="relative min-h-[min(860px,92vh)]" aria-label="Black Friday">
+  <section class="relative bg-tinta text-crema" aria-label="Black Friday">
     <img
       src={fotoPortada}
-      alt=""
-      width="1600"
-      height="2000"
+      alt="Editorial Black Friday CÀROM Studio Vintage"
+      width="965"
+      height="581"
       fetchpriority="high"
       decoding="async"
-      class="absolute inset-0 h-full w-full object-cover object-[50%_40%]"
-      aria-hidden="true"
+      class="block h-auto w-full"
     />
-    <div class="absolute inset-0 bg-tinta/50" aria-hidden="true"></div>
-    <div class="contenedor relative flex min-h-[min(860px,92vh)] flex-col justify-end gap-7 pt-28 pb-12 sm:gap-8 sm:pb-20">
-      <h1 class="reveal font-serif text-[clamp(5rem,13vw,12.25rem)] leading-[0.86] font-light tracking-[-0.02em] italic">
+    <div class="contenedor flex flex-col gap-7 py-12 sm:gap-8 sm:py-16">
+      <h1 class="reveal font-serif text-[clamp(3.5rem,10vw,7.5rem)] leading-[0.9] font-light tracking-[-0.02em] italic">
         Black<br />Friday
       </h1>
       <div class="reveal flex flex-wrap items-end justify-between gap-8">
@@ -96,24 +94,43 @@ const schemaColeccion = {
   {bf.activo && <Countdown inicio={bf.inicio} fin={bf.fin} />}
 
   <!-- MANIFIESTO -->
-  <section class="bg-crema text-noche">
-    <div class="contenedor grid items-end gap-10 py-20 sm:gap-16 sm:py-28 md:grid-cols-2">
-      <h2 class="reveal text-[clamp(2.75rem,6vw,5.25rem)] leading-none">
+  <section class="bg-white text-noche">
+    <div class="contenedor pt-20 pb-10 sm:pt-28 sm:pb-14">
+      <h2 class="reveal max-w-3xl text-[clamp(2.75rem,6vw,5.25rem)] leading-none">
         {textos.manifiesto.titulo[0]}
         <br />
         <span class="italic">{textos.manifiesto.titulo[1]}</span>
       </h2>
-      <div class="reveal flex flex-col gap-5 text-[1.05rem] leading-relaxed text-tierra">
-        <p>{textos.manifiesto.texto}</p>
-        <p class="etiqueta text-oliva">{textos.manifiesto.etiqueta}</p>
+      <p class="etiqueta mt-8 text-oliva">{textos.manifiesto.etiqueta}</p>
+    </div>
+    <img
+      src="/img/manifiesto-editorial.webp"
+      alt="Editorial CÀROM Studio Vintage: piezas únicas en ambiente íntimo"
+      width="965"
+      height="581"
+      loading="lazy"
+      decoding="async"
+      class="reveal block h-auto w-full"
+    />
+  </section>
+
+  <!-- NOVEDADES -->
+  <section id="novedades" class="scroll-mt-8 bg-white pb-16 text-noche sm:pb-24" aria-labelledby="titulo-novedades">
+    <div class="contenedor">
+      <div class="mb-10 flex flex-wrap items-baseline justify-between gap-4 border-t border-noche/15 pt-7">
+        <h2 id="titulo-novedades" class="text-4xl font-normal">{textos.novedades.titulo}</h2>
+        <p class="etiqueta text-oliva">{textos.novedades.etiqueta}</p>
+      </div>
+      <div class="grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 sm:gap-y-12 lg:grid-cols-4 xl:grid-cols-5">
+        {novedades.map((v, i) => <DressCard vestido={v} prioridad={i < 5} />)}
       </div>
     </div>
   </section>
 
   <!-- COLECCIÓN -->
-  <section id="coleccion" class="scroll-mt-8 bg-crema pb-20 text-noche sm:pb-28" aria-labelledby="titulo-coleccion">
+  <section id="coleccion" class="scroll-mt-8 bg-white pb-20 text-noche sm:pb-28" aria-labelledby="titulo-coleccion">
     <div class="contenedor">
-      <div class="mb-10 flex flex-wrap items-baseline justify-between gap-4 border-t border-arena pt-7">
+      <div class="mb-10 flex flex-wrap items-baseline justify-between gap-4 border-t border-noche/15 pt-7">
         <h2 id="titulo-coleccion" class="text-4xl font-normal">{textos.coleccion.titulo}</h2>
         <a href={contactoLink()} target="_blank" rel="noopener" class="etiqueta text-tierra transition-colors hover:text-oliva" data-umami-event="instagram-md-click" data-umami-event-origen="coleccion-cabecera">
           {disponibles} {disponibles === 1 ? 'pieza disponible' : 'piezas disponibles'}
@@ -126,15 +143,15 @@ const schemaColeccion = {
   </section>
 
   <!-- INVITADAS -->
-  <section id="invitadas" class="scroll-mt-8 flex flex-wrap bg-noche">
+  <section id="invitadas" class="scroll-mt-8 flex flex-wrap bg-oliva text-crema">
     <div class="flex flex-[1_1_480px] flex-col justify-center gap-7 px-6 py-20 sm:px-16 sm:py-28">
-      <p class="reveal etiqueta text-arena">{textos.invitadas.eyebrow}</p>
+      <p class="reveal etiqueta text-crema/70">{textos.invitadas.eyebrow}</p>
       <h2 class="reveal text-[clamp(2.5rem,5vw,4.25rem)] leading-[1.05]">
         {textos.invitadas.titulo[0]}
         <br />
         <span class="italic">{textos.invitadas.titulo[1]}</span>
       </h2>
-      <p class="reveal max-w-md text-[1.05rem] leading-relaxed text-pergamino">{textos.invitadas.texto}</p>
+      <p class="reveal max-w-md text-[1.05rem] leading-relaxed text-crema/85">{textos.invitadas.texto}</p>
       <a href="#coleccion" class="reveal btn-claro self-start">Ver la selección</a>
     </div>
     <div class="relative min-h-[420px] flex-[1_1_480px] sm:min-h-[640px]">
@@ -151,30 +168,30 @@ const schemaColeccion = {
   </section>
 
   <!-- NOSOTROS -->
-  <section id="nosotros" class="scroll-mt-8 border-t border-crema/15 py-20 sm:py-28" aria-labelledby="titulo-nosotros">
+  <section id="nosotros" class="scroll-mt-8 bg-oliva py-20 text-crema sm:py-28" aria-labelledby="titulo-nosotros">
     <div class="contenedor grid items-center gap-12 md:grid-cols-12 md:gap-8">
       <img
         src={fotoNosotros}
         alt="Vestidos vintage colgados en el estudio de CÀROM Studio"
-        width="800"
-        height="1000"
+        width="952"
+        height="1500"
         loading="lazy"
         decoding="async"
         class="reveal aspect-[4/5] w-full object-cover md:col-span-5"
       />
       <div class="md:col-span-6 md:col-start-7">
-        <p class="reveal etiqueta text-arena">CÀROM Studio</p>
+        <p class="reveal etiqueta text-crema/70">CÀROM Studio</p>
         <h2 id="titulo-nosotros" class="reveal mt-6 text-6xl sm:text-7xl">{textos.nosotros.titulo}</h2>
-        <p class="reveal mt-8 font-serif text-3xl leading-snug text-arena italic sm:text-4xl">{textos.nosotros.entradilla}</p>
+        <p class="reveal mt-8 font-serif text-3xl leading-snug text-crema/80 italic sm:text-4xl">{textos.nosotros.entradilla}</p>
         {textos.nosotros.parrafos.map((p) => (
-          <p class="reveal mt-6 max-w-lg text-pergamino">{p}</p>
+          <p class="reveal mt-6 max-w-lg text-crema/85">{p}</p>
         ))}
       </div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section id="faq" class="scroll-mt-8 border-t border-crema/15 bg-crema py-20 text-noche sm:py-28" aria-labelledby="titulo-faq">
+  <section id="faq" class="scroll-mt-8 border-t border-noche/10 bg-white py-20 text-noche sm:py-28" aria-labelledby="titulo-faq">
     <div class="contenedor max-w-3xl">
       <p class="reveal etiqueta text-oliva">Preguntas frecuentes</p>
       <h2 id="titulo-faq" class="reveal mt-5 text-5xl sm:text-6xl">FAQ</h2>

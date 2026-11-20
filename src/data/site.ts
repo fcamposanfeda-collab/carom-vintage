@@ -55,6 +55,12 @@ export const textos = {
   },
 
   // PROVISIONAL
+  novedades: {
+    titulo: 'Novedades',
+    etiqueta: 'Acaban de llegar · 15 piezas',
+  },
+
+  // PROVISIONAL
   coleccion: {
     titulo: 'La selección de la noche',
   },
