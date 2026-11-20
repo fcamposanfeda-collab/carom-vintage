@@ -15,7 +15,7 @@ const imagenes = [
     base: 'public/img/hero-vestido-vintage-invitada-boda.webp',
     salida: `${OUT}og-carom-studio-vestidos-vintage.jpg`,
     antetitulo: 'BLACK FRIDAY · DEL 20 AL 30 DE NOVIEMBRE',
-    titulo: 'CÀROM Studio',
+    titulo: 'Càrom Studio',
     destacado: '',
     subtitulo: 'Una talla. Una pieza. Una sola vez.',
     pie: 'Vestidos vintage de pieza única',

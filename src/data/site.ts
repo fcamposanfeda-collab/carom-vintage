@@ -10,10 +10,10 @@ export const site = {
   url: 'https://caromstudio.es',
 
   // PROVISIONAL: perfil de Instagram
-  instagram: 'https://instagram.com/carom.studio',
-  instagramUsuario: '@carom.studio',
+  instagram: 'https://www.instagram.com/carom_vintage/',
+  instagramUsuario: '@carom_vintage',
   // PROVISIONAL: enlace directo a mensaje privado (MD) de Instagram
-  instagramMD: 'https://ig.me/m/carom.studio',
+  instagramMD: 'https://ig.me/m/carom_vintage',
   // PROVISIONAL: email de contacto
   email: 'hola@caromstudio.es',
 
@@ -70,9 +70,9 @@ export const textos = {
   // PROVISIONAL
   invitadas: {
     eyebrow: 'Para invitadas',
-    titulo: ['Vestirse para una noche', 'a la luz de las velas'],
+    titulo: ['Vestirse para una noche', 'muy especial'],
     texto:
-      'Sedas, terciopelos y lentejuelas que brillan mejor con poca luz. Una edición pensada para las celebraciones de invierno.',
+      'Sedas, terciopelos y lentejuelas que brillan mejor cuando lo llevas tú. Una edición pensada para los eventos más importantes.',
   },
 
   // PROVISIONAL
@@ -80,9 +80,18 @@ export const textos = {
     titulo: 'Nosotros',
     entradilla: 'Creemos que un vestido especial no debería repetirse en cada boda.',
     parrafos: [
-      'CÀROM Studio nace de la búsqueda paciente de piezas con historia. Recorremos talleres, armarios y mercados para encontrar vestidos que merecen una segunda vida, y los cuidamos a mano hasta que vuelven a estar perfectos.',
+      'C Studio nace de la búsqueda paciente de piezas con historia. Recorremos talleres, armarios y mercados para encontrar vestidos que merecen una segunda vida, y los cuidamos a mano hasta que vuelven a estar perfectos.',
       'Por eso de cada vestido solo hay uno, en una única talla. No hay reposiciones ni colecciones en serie: hay piezas que se eligen una vez y se recuerdan siempre.',
     ],
+  },
+
+  // PROVISIONAL
+  tarjetaRegalo: {
+    etiqueta: 'Regalo con historia',
+    titulo: 'Tarjeta regalo',
+    texto:
+      'Para quien aún no ha encontrado su pieza. Una tarjeta regalo de CÀROM Studio Vintage, lista para elegir el vestido único que marcará su ocasión.',
+    cta: 'Consultar tarjeta regalo',
   },
 };
 

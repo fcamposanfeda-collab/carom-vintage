@@ -68,7 +68,7 @@ const schemaColeccion = {
   <section class="relative bg-oliva text-crema" aria-label="Black Friday">
     <img
       src={fotoPortada}
-      alt="Editorial Black Friday CÀROM Studio Vintage"
+      alt="Editorial Black Friday Càrom Studio Vintage"
       width="965"
       height="581"
       fetchpriority="high"
@@ -94,7 +94,7 @@ const schemaColeccion = {
           loop
           playsinline
           preload="auto"
-          aria-label="Editorial CÀROM Studio Vintage"
+          aria-label="Editorial Cárom Studio Vintage"
         />
         <div class="pointer-events-none absolute inset-0 z-10 flex items-center overflow-hidden" aria-hidden="true">
           <svg class="editorial-marquee" viewBox="0 0 2200 220" preserveAspectRatio="xMidYMid slice" fill="currentColor">
@@ -170,7 +170,6 @@ const schemaColeccion = {
   <section id="invitadas" class="scroll-mt-8 bg-oliva text-crema">
     <div class="contenedor grid items-center gap-10 py-20 md:grid-cols-2 md:gap-16 sm:py-28">
       <div class="reveal flex flex-col gap-7">
-        <p class="etiqueta text-crema/70">{textos.invitadas.eyebrow}</p>
         <h2 class="max-w-xl text-[clamp(2.5rem,5vw,4.25rem)] leading-[1.05]">
           {textos.invitadas.titulo[0]}
           <br />
@@ -179,8 +178,47 @@ const schemaColeccion = {
         <p class="max-w-md text-[1.05rem] leading-relaxed text-crema/85">{textos.invitadas.texto}</p>
       </div>
       <div class="reveal flex items-center justify-center">
-        <a href="#coleccion" class="btn-claro">Ver la selección</a>
+        <a
+          href={contactoLink()}
+          target="_blank"
+          rel="noopener"
+          class="btn-claro"
+          data-umami-event="instagram-md-click"
+          data-umami-event-origen="invitadas"
+        >
+          Consultar vestido
+        </a>
       </div>
+    </div>
+  </section>
+
+  <!-- TARJETA REGALO -->
+  <section id="tarjeta-regalo" class="scroll-mt-8 border-t border-noche/10 bg-white py-20 text-oliva sm:py-28" aria-labelledby="titulo-tarjeta-regalo">
+    <div class="contenedor grid items-center gap-12 md:grid-cols-2 md:gap-16">
+      <div class="reveal">
+        <p class="etiqueta text-oliva/70">{textos.tarjetaRegalo.etiqueta}</p>
+        <h2 id="titulo-tarjeta-regalo" class="mt-5 text-5xl sm:text-6xl">{textos.tarjetaRegalo.titulo}</h2>
+        <p class="mt-8 max-w-md text-[1.05rem] leading-relaxed text-oliva/80">{textos.tarjetaRegalo.texto}</p>
+        <a
+          href={contactoLink()}
+          target="_blank"
+          rel="noopener"
+          class="btn-oscuro mt-10 inline-flex"
+          data-umami-event="instagram-md-click"
+          data-umami-event-origen="tarjeta-regalo"
+        >
+          {textos.tarjetaRegalo.cta}
+        </a>
+      </div>
+      <img
+        src="/img/tarjeta-regalo.webp"
+        alt="Tarjeta regalo Càrom Studio Vintage"
+        width="1024"
+        height="1024"
+        loading="lazy"
+        decoding="async"
+        class="reveal mx-auto w-full max-w-md object-contain md:max-w-none"
+      />
     </div>
   </section>
 
@@ -189,7 +227,7 @@ const schemaColeccion = {
     <div class="contenedor grid items-center gap-12 md:grid-cols-12 md:gap-8">
       <img
         src={fotoNosotros}
-        alt="Vestidos vintage colgados en el estudio de CÀROM Studio"
+        alt="Vestidos vintage colgados en el estudio de Cárom Studio Vintage"
         width="952"
         height="1500"
         loading="lazy"
