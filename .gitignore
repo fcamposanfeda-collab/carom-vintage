@@ -35,3 +35,7 @@ public/img/image*.jpg
 public/img/*.jpeg
 public/img/video-croatia-*.mp4
 public/img/vestido*.jpeg
+public/img/*.mov
+public/img/editorial_v4*.mov
+
+.vercel

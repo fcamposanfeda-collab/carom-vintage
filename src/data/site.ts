@@ -51,13 +51,15 @@ export const textos = {
     titulo: ['Cada vestido,', 'una sola vez.'],
     texto:
       'No hay tallas repetidas ni segundas unidades. Por eso este Black Friday no va de prisa, va de encontrar la pieza: la que llevarás a la boda de diciembre, a la cena de Nochevieja o a esa celebración que aún no tiene fecha.',
-    etiqueta: 'Seleccionadas a mano · Restauradas en taller',
+    etiqueta: 'Seleccionadas y restauradas a mano',
   },
 
   // PROVISIONAL
   novedades: {
     titulo: 'Novedades',
     etiqueta: 'Acaban de llegar · 15 piezas',
+    texto:
+      'Descubre antes que nadie nuestras próximas piezas, con descuentos exclusivos de Black Friday reservados únicamente para este acceso privado.',
   },
 
   // PROVISIONAL

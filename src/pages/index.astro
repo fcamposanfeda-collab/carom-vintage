@@ -66,7 +66,7 @@ const schemaColeccion = {
   schemas={[schemaColeccion, schemaFaq]}
 >
   <!-- HERO -->
-  <section class="relative bg-tinta text-crema" aria-label="Black Friday">
+  <section class="relative bg-oliva text-crema" aria-label="Black Friday">
     <img
       src={fotoPortada}
       alt="Editorial Black Friday CÀROM Studio Vintage"
@@ -76,51 +76,76 @@ const schemaColeccion = {
       decoding="async"
       class="block h-auto w-full"
     />
-    <div class="contenedor flex flex-col gap-7 py-12 sm:gap-8 sm:py-16">
-      <h1 class="reveal font-serif text-[clamp(3.5rem,10vw,7.5rem)] leading-[0.9] font-light tracking-[-0.02em] italic">
-        Black<br />Friday
-      </h1>
-      <div class="reveal flex flex-wrap items-end justify-between gap-8">
-        <div class="max-w-lg">
-          <p class="etiqueta text-pergamino">{textos.portada.etiqueta}</p>
-          <p class="mt-4 font-serif text-[1.45rem] leading-snug sm:text-[1.75rem]">{textos.portada.claim}</p>
-          <p class="mt-3 text-[0.95rem] leading-relaxed text-pergamino sm:text-base">{textos.portada.texto}</p>
-        </div>
-        <a href="#coleccion" class="btn-linea w-full sm:w-auto">Descubrir la selección</a>
+
+    {bf.activo && <Countdown inicio={bf.inicio} fin={bf.fin} />}
+
+    <div class="bg-white">
+      <div class="contenedor py-8 sm:py-10">
+        <p class="reveal etiqueta text-oliva">{textos.manifiesto.etiqueta}</p>
       </div>
     </div>
-  </section>
 
-  {bf.activo && <Countdown inicio={bf.inicio} fin={bf.fin} />}
-
-  <!-- MANIFIESTO -->
-  <section class="bg-white text-noche">
-    <div class="contenedor pt-20 pb-10 sm:pt-28 sm:pb-14">
-      <h2 class="reveal max-w-3xl text-[clamp(2.75rem,6vw,5.25rem)] leading-none">
-        {textos.manifiesto.titulo[0]}
-        <br />
-        <span class="italic">{textos.manifiesto.titulo[1]}</span>
-      </h2>
-      <p class="etiqueta mt-8 text-oliva">{textos.manifiesto.etiqueta}</p>
+    <div class="contenedor flex flex-col gap-7 py-12 sm:gap-8 sm:py-16">
+      <div class="reveal relative aspect-[965/581] w-full overflow-hidden bg-noche">
+        <video
+          class="absolute inset-0 h-full w-full object-cover"
+          src="/img/editorial-portada.mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          aria-label="Editorial CÀROM Studio Vintage"
+        />
+        <div class="pointer-events-none absolute inset-0 z-10 flex items-center overflow-hidden" aria-hidden="true">
+          <svg class="editorial-marquee" viewBox="0 0 2200 220" preserveAspectRatio="xMidYMid slice" fill="currentColor">
+            <defs>
+              <path
+                id="editorial-onda"
+                d="M-550,46.34 L-550,46.34 S-183.15,196.34 0,196.34 S366.85,46.34 550,46.34 S916.85,196.34 1100,196.34 S1466.85,46.34 1650,46.34 S2016.85,196.34 2200,196.34 S2566.85,46.34 2750,46.34"
+                fill="none"
+              />
+            </defs>
+            <text class="editorial-marquee__texto">
+              <textPath href="#editorial-onda" startOffset="0">
+                Welcome to the exceptional · Welcome to the exceptional · Welcome to the exceptional · Welcome to the exceptional · Welcome to the exceptional · Welcome to the exceptional ·
+                <animate attributeName="startOffset" from="0%" to="-50%" dur="32s" repeatCount="indefinite" />
+              </textPath>
+            </text>
+          </svg>
+        </div>
+        <p class="sr-only">Welcome to the exceptional</p>
+      </div>
+      <div class="reveal flex flex-wrap items-end justify-between gap-8">
+        <div class="max-w-lg">
+          <p class="etiqueta text-crema/70">{textos.portada.etiqueta}</p>
+          <h1 class="mt-4 font-serif text-[1.45rem] leading-snug font-light sm:text-[1.75rem]">{textos.portada.claim}</h1>
+          <p class="mt-3 text-[0.95rem] leading-relaxed text-crema/85 sm:text-base">{textos.portada.texto}</p>
+        </div>
+        <a
+          href={contactoLink()}
+          target="_blank"
+          rel="noopener"
+          class="btn-claro w-full sm:w-auto"
+          data-umami-event="instagram-md-click"
+          data-umami-event-origen="portada"
+        >
+          Contáctanos
+        </a>
+      </div>
     </div>
-    <img
-      src="/img/manifiesto-editorial.webp"
-      alt="Editorial CÀROM Studio Vintage: piezas únicas en ambiente íntimo"
-      width="965"
-      height="581"
-      loading="lazy"
-      decoding="async"
-      class="reveal block h-auto w-full"
-    />
   </section>
 
   <!-- NOVEDADES -->
   <section id="novedades" class="scroll-mt-8 bg-white pb-16 text-noche sm:pb-24" aria-labelledby="titulo-novedades">
     <div class="contenedor">
-      <div class="mb-10 flex flex-wrap items-baseline justify-between gap-4 border-t border-noche/15 pt-7">
+      <div class="mb-6 flex flex-wrap items-baseline justify-between gap-4 border-t border-noche/15 pt-7">
         <h2 id="titulo-novedades" class="text-4xl font-normal">{textos.novedades.titulo}</h2>
         <p class="etiqueta text-oliva">{textos.novedades.etiqueta}</p>
       </div>
+      <p class="mb-10 max-w-2xl text-[1.05rem] leading-relaxed text-tierra">
+        {textos.novedades.texto}
+      </p>
       <div class="grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 sm:gap-y-12 lg:grid-cols-4 xl:grid-cols-5">
         {novedades.map((v, i) => <DressCard vestido={v} prioridad={i < 5} />)}
       </div>
@@ -214,3 +239,36 @@ const schemaColeccion = {
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .editorial-marquee {
+    display: block;
+    width: 160%;
+    max-width: none;
+    height: auto;
+    margin-left: -20%;
+    color: #fff;
+    overflow: visible;
+  }
+  .editorial-marquee__texto {
+    fill: #fff;
+    font-family: var(--font-serif);
+    font-size: 4.5rem;
+    font-weight: 300;
+    font-style: italic;
+  }
+  @media (min-width: 768px) {
+    .editorial-marquee {
+      width: 140%;
+      margin-left: -12%;
+    }
+    .editorial-marquee__texto {
+      font-size: 5.25rem;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .editorial-marquee__texto animate {
+      display: none;
+    }
+  }
+</style>
