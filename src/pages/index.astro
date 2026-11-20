@@ -2,16 +2,17 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import DressCard from '../components/DressCard.astro';
 import Countdown from '../components/Countdown.astro';
-import { site, textos } from '../data/site';
+import { site, textos, whatsappLink } from '../data/site';
 import { blackFriday as bf, vestidos, precioFinal } from '../data/blackfriday';
 
-// PROVISIONAL: fotos de la portada y de «Nosotros»
-const fotoPortada = '/img/hero-vestido-vintage-invitada-boda.webp';
-const fotoPortadaSecundaria = '/img/vestido-vintage-invitada-black-friday.webp';
+// PROVISIONAL: fotos de portada, invitadas y nosotros
+const fotoPortada = '/img/vestido-vintage-invitada-black-friday.webp';
+const fotoInvitadas = '/img/hero-vestido-vintage-invitada-boda.webp';
 const fotoNosotros = '/img/quienes-somos-vestidos-vintage-carom.webp';
 
 const base = Astro.site ?? new URL(site.url);
 const abs = (ruta: string) => new URL(ruta, base).href;
+const disponibles = vestidos.filter((v) => v.estado === 'disponible').length;
 
 const disponibilidad = {
   disponible: 'https://schema.org/InStock',
@@ -44,95 +45,104 @@ const schemaColeccion = {
     },
   })),
 };
-
-const desfile = [...textos.desfile, ...textos.desfile];
 ---
 <BaseLayout
   title={bf.activo ? `Black Friday · Vestidos vintage de pieza única | ${site.nombre}` : `Vestidos vintage de pieza única | ${site.nombre}`}
-  description={`${textos.portada.texto}${bf.activo ? ` Black Friday: −${bf.descuento} % ${bf.fechasTexto.toLowerCase()}.` : ''}`}
+  description={`Black Friday a la luz de las velas: vestidos vintage de invitada, piezas únicas de los años 20 a los 90. −${bf.descuento} % ${bf.fechasTexto.toLowerCase()}.`}
   preloadImage={fotoPortada}
   schemas={[schemaColeccion]}
 >
-  <!-- PORTADA -->
-  <section class="contenedor pt-16 pb-24 sm:pt-24 sm:pb-36">
-    <div class="aparece text-center">
-      {bf.activo && (
-        <p class="etiqueta text-oro-texto">Black Friday · {bf.fechasTexto} · −{bf.descuento} %</p>
-      )}
-      <h1 class="mt-7 text-[3.2rem] sm:text-7xl lg:text-[6.5rem]">
-        {textos.portada.titulo.map((linea, i) => (
-          <span class:list={['block', i === 1 && 'italic']}>{linea}</span>
-        ))}
+  <!-- HERO -->
+  <section class="relative min-h-[min(860px,92vh)]" aria-label="Black Friday">
+    <img
+      src={fotoPortada}
+      alt=""
+      width="1600"
+      height="2000"
+      fetchpriority="high"
+      decoding="async"
+      class="absolute inset-0 h-full w-full object-cover object-[50%_40%]"
+      aria-hidden="true"
+    />
+    <div class="absolute inset-0 bg-tinta/50" aria-hidden="true"></div>
+    <div class="contenedor relative flex min-h-[min(860px,92vh)] flex-col justify-end gap-7 pt-28 pb-12 sm:gap-8 sm:pb-20">
+      <p class="reveal etiqueta text-pergamino">
+        {textos.portada.eyebrow}
+        {bf.activo && <> · {bf.fechasTexto}</>}
+      </p>
+      <h1 class="reveal font-serif text-[clamp(5rem,13vw,12.25rem)] leading-[0.86] font-light tracking-[-0.02em] italic">
+        Black<br />Friday
       </h1>
-    </div>
-
-    <div class="mt-16 grid grid-cols-12 gap-x-4 sm:mt-24 sm:gap-x-8">
-      <div class="col-span-5 flex translate-y-12 flex-col justify-end sm:col-span-4 sm:col-start-2 sm:translate-y-28">
-        <p class="mb-8 hidden max-w-xs text-tierra sm:block">{textos.portada.texto}</p>
-        <img
-          src={fotoPortadaSecundaria}
-          alt="Vestido vintage largo rojo de la colección CÀROM"
-          width="960"
-          height="1200"
-          decoding="async"
-          class="aparece aspect-[3/4] w-full object-cover [animation-delay:300ms]"
-        />
-      </div>
-      <div class="col-span-7 sm:col-span-6">
-        <img
-          src={fotoPortada}
-          alt="Invitada con vestido vintage de tul con flores bordadas"
-          width="960"
-          height="1200"
-          fetchpriority="high"
-          decoding="async"
-          class="aparece aspect-[4/5] w-full object-cover object-[50%_25%] [animation-delay:150ms]"
-        />
+      <div class="reveal flex flex-wrap items-end justify-between gap-8">
+        <p class="max-w-md font-serif text-[1.3rem] leading-snug sm:text-[1.6rem]">
+          {textos.portada.lead}
+          {bf.activo && <> −{bf.descuento} %.</>}
+        </p>
+        <a href="#coleccion" class="btn-linea w-full sm:w-auto">Descubrir la selección</a>
       </div>
     </div>
-    <p class="mt-10 text-center text-tierra sm:hidden">{textos.portada.texto}</p>
-
-    <p class="mt-24 text-center sm:mt-40">
-      <a href="#coleccion" class="enlace">Ver la colección</a>
-    </p>
   </section>
 
-  <!-- TEXTO EN MOVIMIENTO -->
-  <div class="overflow-hidden bg-oliva py-7 text-crema" aria-hidden="true">
-    <div class="desfile flex w-max">
-      {desfile.map((frase) => (
-        <span class="flex items-center font-serif text-3xl whitespace-nowrap italic sm:text-4xl">
-          <span class="px-10">{frase}</span>
-          <span class="text-base text-arena not-italic">✦</span>
-        </span>
-      ))}
+  {bf.activo && <Countdown inicio={bf.inicio} fin={bf.fin} />}
+
+  <!-- MANIFIESTO -->
+  <section class="bg-crema text-noche">
+    <div class="contenedor grid items-end gap-10 py-20 sm:gap-16 sm:py-28 md:grid-cols-2">
+      <h2 class="reveal text-[clamp(2.75rem,6vw,5.25rem)] leading-none">
+        {textos.manifiesto.titulo[0]}
+        <br />
+        <span class="italic">{textos.manifiesto.titulo[1]}</span>
+      </h2>
+      <div class="reveal flex flex-col gap-5 text-[1.05rem] leading-relaxed text-tierra">
+        <p>{textos.manifiesto.texto}</p>
+        <p class="etiqueta text-oliva">{textos.manifiesto.etiqueta}</p>
+      </div>
     </div>
-  </div>
+  </section>
 
   <!-- COLECCIÓN -->
-  <section id="coleccion" class="scroll-mt-8 py-24 sm:py-36" aria-labelledby="titulo-coleccion">
+  <section id="coleccion" class="scroll-mt-8 bg-crema pb-20 text-noche sm:pb-28" aria-labelledby="titulo-coleccion">
     <div class="contenedor">
-      <div class="flex flex-col items-center text-center">
-        {bf.activo && <p class="etiqueta text-oro-texto">Black Friday · −{bf.descuento} %</p>}
-        <h2 id="titulo-coleccion" class="mt-6 text-6xl sm:text-8xl">{textos.coleccion.titulo}</h2>
-        <p class="mt-6 max-w-md font-serif text-2xl italic text-tierra">{textos.coleccion.texto}</p>
-        {bf.activo && (
-          <div class="mt-14">
-            <p class="etiqueta mb-5 text-tierra">Termina en</p>
-            <Countdown fin={bf.fin} />
-          </div>
-        )}
+      <div class="mb-10 flex flex-wrap items-baseline justify-between gap-4 border-t border-arena pt-7">
+        <h2 id="titulo-coleccion" class="text-4xl font-normal">{textos.coleccion.titulo}</h2>
+        <a href={whatsappLink('Hola, me interesa la selección de Black Friday')} target="_blank" rel="noopener" class="etiqueta text-tierra transition-colors hover:text-oliva" data-umami-event="whatsapp-click" data-umami-event-origen="coleccion-cabecera">
+          {disponibles} {disponibles === 1 ? 'pieza disponible' : 'piezas disponibles'}
+        </a>
       </div>
+      <div class="grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 sm:gap-y-12 lg:grid-cols-4">
+        {vestidos.map((v, i) => <DressCard vestido={v} prioridad={i < 4} />)}
+      </div>
+    </div>
+  </section>
 
-      <div class="mx-auto mt-16 grid max-w-5xl grid-cols-2 gap-x-4 gap-y-14 sm:mt-24 sm:gap-x-10 sm:gap-y-20">
-        {vestidos.map((v, i) => <DressCard vestido={v} prioridad={i < 2} />)}
-      </div>
+  <!-- INVITADAS -->
+  <section id="invitadas" class="scroll-mt-8 flex flex-wrap bg-noche">
+    <div class="flex flex-[1_1_480px] flex-col justify-center gap-7 px-6 py-20 sm:px-16 sm:py-28">
+      <p class="reveal etiqueta text-arena">{textos.invitadas.eyebrow}</p>
+      <h2 class="reveal text-[clamp(2.5rem,5vw,4.25rem)] leading-[1.05]">
+        {textos.invitadas.titulo[0]}
+        <br />
+        <span class="italic">{textos.invitadas.titulo[1]}</span>
+      </h2>
+      <p class="reveal max-w-md text-[1.05rem] leading-relaxed text-pergamino">{textos.invitadas.texto}</p>
+      <a href="#coleccion" class="reveal btn-claro self-start">Ver la selección</a>
+    </div>
+    <div class="relative min-h-[420px] flex-[1_1_480px] sm:min-h-[640px]">
+      <img
+        src={fotoInvitadas}
+        alt="Invitada con vestido vintage a la luz cálida"
+        width="1200"
+        height="1500"
+        loading="lazy"
+        decoding="async"
+        class="absolute inset-0 h-full w-full object-cover object-[70%_80%]"
+      />
     </div>
   </section>
 
   <!-- NOSOTROS -->
-  <section id="nosotros" class="scroll-mt-8 bg-noche py-24 text-crema sm:py-36" aria-labelledby="titulo-nosotros">
-    <div class="contenedor grid items-center gap-14 md:grid-cols-12 md:gap-8">
+  <section id="nosotros" class="scroll-mt-8 border-t border-crema/15 py-20 sm:py-28" aria-labelledby="titulo-nosotros">
+    <div class="contenedor grid items-center gap-12 md:grid-cols-12 md:gap-8">
       <img
         src={fotoNosotros}
         alt="Vestidos vintage colgados en el estudio de CÀROM Studio"
@@ -140,14 +150,14 @@ const desfile = [...textos.desfile, ...textos.desfile];
         height="1000"
         loading="lazy"
         decoding="async"
-        class="aspect-[4/5] w-full object-cover md:col-span-5"
+        class="reveal aspect-[4/5] w-full object-cover md:col-span-5"
       />
       <div class="md:col-span-6 md:col-start-7">
-        <p class="etiqueta text-arena">CÀROM Studio</p>
-        <h2 id="titulo-nosotros" class="mt-6 text-6xl sm:text-8xl">{textos.nosotros.titulo}</h2>
-        <p class="mt-10 font-serif text-3xl leading-snug text-oro italic sm:text-4xl">{textos.nosotros.entradilla}</p>
+        <p class="reveal etiqueta text-arena">CÀROM Studio</p>
+        <h2 id="titulo-nosotros" class="reveal mt-6 text-6xl sm:text-7xl">{textos.nosotros.titulo}</h2>
+        <p class="reveal mt-8 font-serif text-3xl leading-snug text-arena italic sm:text-4xl">{textos.nosotros.entradilla}</p>
         {textos.nosotros.parrafos.map((p) => (
-          <p class="mt-6 max-w-lg opacity-85">{p}</p>
+          <p class="reveal mt-6 max-w-lg text-pergamino">{p}</p>
         ))}
       </div>
     </div>

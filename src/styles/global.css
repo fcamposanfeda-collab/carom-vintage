@@ -6,17 +6,15 @@
 @import 'tailwindcss';
 
 @theme {
-  /* Paleta corporativa de CÀROM Studio */
-  --color-crema: #f2ede4;
-  --color-lino: #e7e0d3;
-  --color-arena: #cfc5b3;
-  --color-oro: #a88a54;
-  /* Oro oscurecido para textos pequeños: contraste AA sobre crema */
-  --color-oro-texto: #7a5f33;
-  --color-tierra: #6e5a43;
-  --color-oliva: #656148;
-  --color-noche: #35342a;
-  --color-tinta: #24221d;
+  /* Estilo «a la luz de las velas» + acento oliva de la marca */
+  --color-tinta: #17120e;
+  --color-noche: #231b15;
+  --color-crema: #f3eadc;
+  --color-pergamino: #e8dcc8;
+  --color-arena: #cbb89e;
+  --color-tierra: #6b5a48;
+  --color-oliva: #5e6234;
+  --color-lino: #e2d3bd;
 
   --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   --font-sans: 'Jost Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -28,7 +26,7 @@
     -webkit-text-size-adjust: 100%;
   }
   body {
-    @apply bg-crema font-sans text-tinta antialiased;
+    @apply bg-tinta font-sans text-crema antialiased;
     font-size: 1rem;
     font-weight: 300;
     line-height: 1.75;
@@ -68,30 +66,39 @@
 }
 
 @utility contenedor {
-  @apply mx-auto w-full max-w-7xl px-6 sm:px-10;
+  @apply mx-auto w-full max-w-[1280px] px-6 sm:px-8;
 }
 @utility etiqueta {
-  @apply text-[0.7rem] font-normal tracking-[0.32em] uppercase;
+  @apply text-[0.7rem] font-normal tracking-[0.28em] uppercase;
 }
-@utility enlace {
-  @apply etiqueta inline-flex items-center gap-3 border-b border-current pb-1 transition-opacity duration-300 hover:opacity-60;
+@utility btn {
+  @apply etiqueta inline-flex min-h-13 items-center justify-center border px-9 text-[0.8rem] tracking-[0.24em] transition-colors duration-300;
+}
+@utility btn-linea {
+  @apply btn border-crema text-crema hover:bg-crema hover:text-tinta;
+}
+@utility btn-claro {
+  @apply btn border-crema bg-crema text-tinta hover:bg-transparent hover:text-crema;
+}
+@utility btn-oscuro {
+  @apply btn border-tinta bg-tinta text-crema hover:bg-transparent hover:text-tinta;
 }
 
-@keyframes desfile {
-  to {
-    transform: translateX(-50%);
+/* Aparición suave al hacer scroll. Solo se oculta si hay JavaScript. */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 1.2s ease,
+    transform 1.2s ease;
+}
+.js .reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal {
+    opacity: 1;
+    transform: none;
   }
-}
-@utility desfile {
-  animation: desfile 40s linear infinite;
-}
-
-@keyframes aparecer {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-}
-@utility aparece {
-  animation: aparecer 1.2s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }

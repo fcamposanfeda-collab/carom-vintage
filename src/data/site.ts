@@ -45,16 +45,29 @@ export function mensajeVestido(nombre: string, talla: string) {
 export const textos = {
   // PROVISIONAL
   portada: {
-    // Cada frase va en su propia línea
-    titulo: ['Una talla.', 'Una pieza.', 'Una sola vez.'],
+    eyebrow: 'Edición nocturna',
+    lead: 'Vestidos que ya vivieron una fiesta, listos para la tuya. Piezas únicas de los años 20 a los 90.',
+  },
+
+  // PROVISIONAL
+  manifiesto: {
+    titulo: ['Cada vestido,', 'una sola vez.'],
     texto:
-      'Vestidos vintage elegidos uno a uno. De cada modelo existe una única unidad: cuando encuentra a su dueña, no vuelve.',
+      'No hay tallas repetidas ni segundas unidades. Por eso este Black Friday no va de prisa, va de encontrar la pieza: la que llevarás a la boda de diciembre, a la cena de Nochevieja o a esa celebración que aún no tiene fecha.',
+    etiqueta: 'Seleccionadas a mano · Restauradas en taller',
   },
 
   // PROVISIONAL
   coleccion: {
-    titulo: 'Piezas únicas',
-    texto: 'Una talla, una oportunidad.',
+    titulo: 'La selección de la noche',
+  },
+
+  // PROVISIONAL
+  invitadas: {
+    eyebrow: 'Para invitadas',
+    titulo: ['Vestirse para una noche', 'a la luz de las velas'],
+    texto:
+      'Sedas, terciopelos y lentejuelas que brillan mejor con poca luz. Una edición pensada para las celebraciones de invierno.',
   },
 
   // PROVISIONAL
@@ -66,7 +79,4 @@ export const textos = {
       'Por eso de cada vestido solo hay uno, en una única talla. No hay reposiciones ni colecciones en serie: hay piezas que se eligen una vez y se recuerdan siempre.',
     ],
   },
-
-  // PROVISIONAL: frases del texto en movimiento
-  desfile: ['Pieza única', 'Una sola talla', 'Elegido a mano', 'Con historia'],
 };

@@ -1,44 +1,65 @@
 ---
 interface Props {
+  inicio: string;
   fin: string;
-  class?: string;
 }
-const { fin, class: className = '' } = Astro.props;
+const { inicio, fin } = Astro.props;
 const unidades = [
-  ['dias', 'días'],
-  ['horas', 'horas'],
-  ['min', 'min'],
-  ['seg', 'seg'],
+  ['dias', 'Días'],
+  ['horas', 'Horas'],
+  ['min', 'Min'],
+  ['seg', 'Seg'],
 ];
+// PROVISIONAL: textos de la cuenta atrás antes, durante y después del Black Friday
+const textos = {
+  antes: 'Las velas se encienden en',
+  durante: 'Las velas se apagan en',
+  despues: 'Gracias por venir',
+};
 ---
-<div class:list={['cuenta-atras', className]} data-fin={fin} role="timer" aria-label="Tiempo restante del Black Friday">
-  <ul class="flex gap-6 sm:gap-9">
-    {unidades.map(([clave, texto]) => (
-      <li class="flex flex-col items-center">
-        <span class="font-serif text-4xl leading-none lining-nums tabular-nums sm:text-5xl" data-unidad={clave}>--</span>
-        <span class="etiqueta mt-2 opacity-70">{texto}</span>
-      </li>
-    ))}
-  </ul>
-</div>
+<section class="cuenta-atras border-b border-crema/15" data-inicio={inicio} data-fin={fin} data-textos={JSON.stringify(textos)}>
+  <div class="contenedor flex flex-wrap items-center justify-between gap-6 py-9">
+    <p class="cuenta-atras-texto font-serif text-[1.75rem] italic">{textos.durante}</p>
+    <ul class="flex gap-6 sm:gap-10" role="timer" aria-label="Tiempo restante del Black Friday">
+      {unidades.map(([clave, texto]) => (
+        <li class="flex flex-col items-center gap-1">
+          <span class="font-serif text-4xl leading-none font-light lining-nums tabular-nums sm:text-5xl" data-unidad={clave}>--</span>
+          <span class="text-[0.68rem] tracking-[0.24em] text-arena uppercase">{texto}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
 
 <script>
   document.querySelectorAll<HTMLElement>('.cuenta-atras').forEach((el) => {
-    const fin = new Date(el.dataset.fin!).getTime();
+    const inicio = Date.parse(el.dataset.inicio!);
+    const fin = Date.parse(el.dataset.fin!);
+    const textos = JSON.parse(el.dataset.textos!);
+    const etiqueta = el.querySelector('.cuenta-atras-texto')!;
     const celdas = Object.fromEntries(
       [...el.querySelectorAll<HTMLElement>('[data-unidad]')].map((c) => [c.dataset.unidad, c]),
     );
     const pad = (n: number) => String(n).padStart(2, '0');
     const tick = () => {
-      const resto = Math.max(0, fin - Date.now());
-      const s = Math.floor(resto / 1000);
+      const ahora = Date.now();
+      let objetivo = fin;
+      let texto = textos.durante;
+      if (ahora < inicio) {
+        objetivo = inicio;
+        texto = textos.antes;
+      } else if (ahora >= fin) {
+        objetivo = ahora;
+        texto = textos.despues;
+      }
+      const s = Math.max(0, Math.floor((objetivo - ahora) / 1000));
+      etiqueta.textContent = texto;
       celdas.dias.textContent = pad(Math.floor(s / 86400));
       celdas.horas.textContent = pad(Math.floor((s % 86400) / 3600));
       celdas.min.textContent = pad(Math.floor((s % 3600) / 60));
       celdas.seg.textContent = pad(s % 60);
-      if (resto === 0) clearInterval(timer);
     };
-    const timer = setInterval(tick, 1000);
+    setInterval(tick, 1000);
     tick();
   });
 </script>

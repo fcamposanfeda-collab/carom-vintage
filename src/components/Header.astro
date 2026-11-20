@@ -2,48 +2,81 @@
 import Logo from './Logo.astro';
 import IconInstagram from './IconInstagram.astro';
 import { site, whatsappLink } from '../data/site';
----
-<header class="contenedor flex flex-col items-center gap-6 pt-8 pb-4 sm:grid sm:grid-cols-[1fr_auto_1fr] sm:gap-0 sm:pt-9">
-  <a href="/" aria-label={`${site.nombre}, ir al inicio`} class="sm:col-start-2 sm:row-start-1">
-    <Logo />
-  </a>
+import { blackFriday as bf } from '../data/blackfriday';
 
-  <nav aria-label="Principal" class="etiqueta flex gap-8 sm:col-start-1 sm:row-start-1">
-    <a href="/#coleccion" class="transition-opacity hover:opacity-60">Colección</a>
-    <a href="/#nosotros" class="transition-opacity hover:opacity-60">Nosotros</a>
-    <a
-      href={whatsappLink()}
-      target="_blank"
-      rel="noopener"
-      class="transition-opacity hover:opacity-60 sm:hidden"
-      data-umami-event="whatsapp-click"
-      data-umami-event-origen="cabecera"
+const enlaces = [
+  { href: '/#coleccion', texto: 'Colección' },
+  { href: '/#invitadas', texto: 'Invitadas' },
+  { href: '/#nosotros', texto: 'Nosotros' },
+];
+---
+<p class="bg-oliva px-4 py-2.5 text-center text-[0.62rem] tracking-[0.2em] text-crema uppercase sm:text-xs sm:tracking-[0.24em]">
+  {bf.activo ? `Black Friday · ${bf.fechasTexto} · −${bf.descuento} % en toda la selección` : 'Piezas únicas · Envíos a toda España'}
+</p>
+
+<header class="sticky top-0 z-20 border-b border-crema/15 bg-tinta">
+  <div class="contenedor grid grid-cols-[44px_1fr_44px] items-center gap-5 py-2 md:grid-cols-[1fr_auto_1fr] md:py-5">
+    <button
+      id="boton-menu"
+      type="button"
+      class="flex h-11 w-11 items-center justify-center md:hidden"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+      aria-controls="menu-movil"
     >
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M3 8h18M3 16h18" /></svg>
+    </button>
+
+    <nav aria-label="Principal" class="etiqueta hidden gap-8 text-xs tracking-[0.18em] md:flex">
+      {enlaces.map((e) => <a href={e.href} class="transition-colors hover:text-arena">{e.texto}</a>)}
+    </nav>
+
+    <a href="/" aria-label={`${site.nombre}, ir al inicio`} class="justify-self-center">
+      <Logo class="origin-center scale-[0.78] text-crema md:scale-100" />
+    </a>
+
+    <div class="etiqueta flex items-center justify-end gap-7 text-xs tracking-[0.18em]">
+      <a
+        href={whatsappLink()}
+        target="_blank"
+        rel="noopener"
+        class="hidden transition-colors hover:text-arena md:inline"
+        data-umami-event="whatsapp-click"
+        data-umami-event-origen="cabecera"
+      >
+        Contacto
+      </a>
+      <a
+        href={site.instagram}
+        target="_blank"
+        rel="noopener"
+        aria-label={`Instagram ${site.instagramUsuario}`}
+        class="flex h-11 w-11 items-center justify-center transition-colors hover:text-arena md:h-auto md:w-auto"
+        data-umami-event="instagram-click"
+        data-umami-event-origen="cabecera"
+      >
+        <IconInstagram class="h-5 w-5" />
+      </a>
+    </div>
+  </div>
+
+  <nav id="menu-movil" aria-label="Menú móvil" class="hidden flex-col border-t border-crema/15 px-6 pt-2 pb-6 md:hidden">
+    {enlaces.map((e) => <a href={e.href} class="etiqueta flex min-h-11 items-center text-sm tracking-[0.2em]">{e.texto}</a>)}
+    <a href={whatsappLink()} target="_blank" rel="noopener" class="etiqueta flex min-h-11 items-center text-sm tracking-[0.2em]" data-umami-event="whatsapp-click" data-umami-event-origen="menu-movil">
       Contacto
     </a>
   </nav>
-
-  <div class="etiqueta hidden items-center justify-end gap-8 sm:col-start-3 sm:row-start-1 sm:flex">
-    <a
-      href={whatsappLink()}
-      target="_blank"
-      rel="noopener"
-      class="transition-opacity hover:opacity-60"
-      data-umami-event="whatsapp-click"
-      data-umami-event-origen="cabecera"
-    >
-      Contacto
-    </a>
-    <a
-      href={site.instagram}
-      target="_blank"
-      rel="noopener"
-      aria-label={`Instagram ${site.instagramUsuario}`}
-      class="transition-opacity hover:opacity-60"
-      data-umami-event="instagram-click"
-      data-umami-event-origen="cabecera"
-    >
-      <IconInstagram class="h-5 w-5" />
-    </a>
-  </div>
 </header>
+
+<script>
+  const boton = document.getElementById('boton-menu')!;
+  const menu = document.getElementById('menu-movil')!;
+  const abrir = (abierto: boolean) => {
+    menu.classList.toggle('hidden', !abierto);
+    menu.classList.toggle('flex', abierto);
+    boton.setAttribute('aria-expanded', String(abierto));
+    boton.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
+  };
+  boton.addEventListener('click', () => abrir(menu.classList.contains('hidden')));
+  menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => abrir(false)));
+</script>

@@ -5,9 +5,9 @@ import sharp from 'sharp';
 import fs from 'node:fs/promises';
 
 const OUT = 'public/img/';
-const crema = '#F2EDE4';
-const noche = '#35342A';
-const oro = '#A88A54';
+const crema = '#F3EADC';
+const noche = '#17120E';
+const oro = '#CBB89E';
 
 // PROVISIONAL: textos de la imagen para compartir
 const imagenes = [

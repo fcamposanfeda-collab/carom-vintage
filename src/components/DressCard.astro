@@ -11,8 +11,8 @@ const disponible = v.estado === 'disponible';
 const rebajado = blackFriday.activo && disponible;
 const estadoTexto = { disponible: '', reservado: 'Reservado', vendido: 'Vendido' }[v.estado];
 ---
-<article class="flex flex-col">
-  <div class="relative overflow-hidden bg-lino">
+<article class="reveal flex flex-col gap-3.5 text-noche">
+  <div class="relative aspect-[3/4] overflow-hidden bg-lino">
     <img
       src={v.imagen}
       alt={v.alt}
@@ -21,37 +21,38 @@ const estadoTexto = { disponible: '', reservado: 'Reservado', vendido: 'Vendido'
       loading={prioridad ? 'eager' : 'lazy'}
       decoding="async"
       class:list={[
-        'aspect-[3/4] w-full object-cover transition duration-[1.6s] ease-out hover:scale-[1.03]',
+        'h-full w-full object-cover transition duration-[1.2s] ease-out hover:scale-[1.04]',
         !disponible && 'opacity-50 grayscale',
       ]}
     />
-    {rebajado && (
-      <p class="absolute top-3 left-3 bg-noche px-2 py-1 text-[0.65rem] font-normal tracking-wider text-crema sm:top-4 sm:left-4">
+    {rebajado ? (
+      <p class="absolute top-3.5 left-3.5 bg-tinta px-2.5 py-1.5 text-[0.68rem] tracking-[0.2em] text-crema uppercase">
         −{blackFriday.descuento} %
+      </p>
+    ) : (
+      <p class="absolute top-3.5 left-3.5 bg-tinta px-2.5 py-1.5 text-[0.68rem] tracking-[0.2em] text-crema uppercase">
+        Pieza única
       </p>
     )}
   </div>
 
-  <div class="mt-4 flex flex-1 flex-col justify-between gap-2 sm:flex-row sm:items-end sm:gap-3">
-    <div class="min-w-0">
-      <p class="text-[0.55rem] tracking-[0.2em] text-tierra uppercase sm:text-[0.65rem] sm:tracking-[0.25em]">
-        Pieza única · {v.decada}
+  <div class="flex flex-col gap-1">
+    <p class="text-[0.68rem] tracking-[0.24em] text-tierra uppercase">Pieza única · {v.decada}</p>
+    <div class="flex items-baseline justify-between gap-3">
+      <h3 class="text-[1.35rem] text-noche sm:text-[1.4rem]">{v.nombre}</h3>
+      <p class="shrink-0 text-sm">
+        {rebajado ? (
+          <>
+            <s class="text-tierra">{formatoPrecio(v.precio)}</s>
+            <span class="text-tierra"> · </span>
+            <strong class="font-medium text-oliva">{formatoPrecio(precioFinal(v.precio))}</strong>
+          </>
+        ) : (
+          <span class:list={[!disponible && 'text-tierra line-through']}>{formatoPrecio(v.precio)}</span>
+        )}
       </p>
-      <h3 class="mt-1.5 text-[1.4rem] sm:text-3xl">{v.nombre}</h3>
-      <p class="mt-0.5 text-xs text-tierra sm:text-sm">Talla {v.talla}</p>
     </div>
-    <p class="flex shrink-0 items-baseline gap-2 font-serif leading-tight sm:block sm:text-right">
-      {rebajado ? (
-        <>
-          <span class="sr-only">Antes</span>
-          <s class="block text-sm text-tierra">{formatoPrecio(v.precio)}</s>
-          <span class="sr-only">ahora</span>
-          <span class="text-xl sm:text-2xl">{formatoPrecio(precioFinal(v.precio))}</span>
-        </>
-      ) : (
-        <span class:list={['text-xl sm:text-2xl', !disponible && 'text-tierra line-through']}>{formatoPrecio(v.precio)}</span>
-      )}
-    </p>
+    <p class="text-sm text-tierra">Talla {v.talla}</p>
   </div>
 
   {disponible ? (
@@ -59,7 +60,7 @@ const estadoTexto = { disponible: '', reservado: 'Reservado', vendido: 'Vendido'
       href={whatsappLink(mensajeVestido(v.nombre, v.talla))}
       target="_blank"
       rel="noopener"
-      class="etiqueta mt-4 block bg-tinta py-3.5 text-center text-crema max-sm:tracking-[0.2em] transition-colors duration-300 hover:bg-oliva"
+      class="etiqueta mt-1 block bg-tinta py-3.5 text-center text-crema transition-colors duration-300 hover:bg-oliva"
       data-umami-event="whatsapp-click"
       data-umami-event-origen="coleccion"
       data-umami-event-vestido={v.nombre}
@@ -68,6 +69,6 @@ const estadoTexto = { disponible: '', reservado: 'Reservado', vendido: 'Vendido'
       Lo quiero
     </a>
   ) : (
-    <p class="etiqueta mt-4 border border-tinta/20 py-3.5 text-center text-tierra max-sm:tracking-[0.2em]">{estadoTexto}</p>
+    <p class="etiqueta mt-1 border border-noche/20 py-3.5 text-center text-tierra">{estadoTexto}</p>
   )}
 </article>
