@@ -80,7 +80,7 @@ export const textos = {
     titulo: 'Nosotros',
     entradilla: 'Creemos que un vestido especial no debería repetirse en cada boda.',
     parrafos: [
-      'C Studio nace de la búsqueda paciente de piezas con historia. Recorremos talleres, armarios y mercados para encontrar vestidos que merecen una segunda vida, y los cuidamos a mano hasta que vuelven a estar perfectos.',
+      'Càrom Studio Vintage nace de la búsqueda paciente de piezas con historia. Recorremos talleres, armarios y mercados para encontrar vestidos que merecen una segunda vida, y los cuidamos a mano hasta que vuelven a estar perfectos.',
       'Por eso de cada vestido solo hay uno, en una única talla. No hay reposiciones ni colecciones en serie: hay piezas que se eligen una vez y se recuerdan siempre.',
     ],
   },
@@ -90,7 +90,7 @@ export const textos = {
     etiqueta: 'Regalo con historia',
     titulo: 'Tarjeta regalo',
     texto:
-      'Para quien aún no ha encontrado su pieza. Una tarjeta regalo de CÀROM Studio Vintage, lista para elegir el vestido único que marcará su ocasión.',
+      'Para quien aún no ha encontrado su pieza. Una tarjeta regalo de Càrom Studio Vintage, lista para elegir el vestido único que marcará su ocasión.',
     cta: 'Consultar tarjeta regalo',
   },
 };
