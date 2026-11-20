@@ -6,7 +6,7 @@
     { "id": "bencort", "nombre": "Dos piezas Bencort", "talla": "", "medidas": "", "precio": null, "estado": "disponible", "descripcion": "", "imagenes": [], "alt": "Dos piezas Bencort, pieza vintage única" },
     { "id": "casilda", "nombre": "Vestido Casilda", "talla": "", "medidas": "", "precio": null, "estado": "disponible", "descripcion": "", "imagenes": [], "alt": "Vestido Casilda, pieza vintage única" },
     { "id": "philippa", "nombre": "Vestido Philippa", "talla": "", "medidas": "", "precio": null, "estado": "disponible", "descripcion": "", "imagenes": [], "alt": "Vestido Philippa, pieza vintage única" },
-    { "id": "amanda", "nombre": "Dos piezas Amanda", "talla": "", "medidas": "", "precio": null, "estado": "disponible", "descripcion": "", "imagenes": [], "alt": "Dos piezas Amanda, pieza vintage única" },
+    { "id": "amanda", "nombre": "Dos piezas Amanda", "talla": "", "medidas": "", "precio": null, "estado": "disponible", "descripcion": "", "imagenes": ["/img/piezas/amanda/1.webp", "/img/piezas/amanda/2.webp", "/img/piezas/amanda/3.webp"], "alt": "Dos piezas Amanda, pieza vintage única" },
     { "id": "aurora", "nombre": "Vestido Aurora", "talla": "", "medidas": "", "precio": null, "estado": "disponible", "descripcion": "", "imagenes": [], "alt": "Vestido Aurora, pieza vintage única" },
     { "id": "grace", "nombre": "Vestido Grace", "talla": "", "medidas": "", "precio": null, "estado": "disponible", "descripcion": "", "imagenes": [], "alt": "Vestido Grace, pieza vintage única" },
     { "id": "parma", "nombre": "Vestido Parma", "talla": "", "medidas": "", "precio": null, "estado": "disponible", "descripcion": "", "imagenes": [], "alt": "Vestido Parma, pieza vintage única" },
