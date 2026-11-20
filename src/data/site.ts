@@ -45,7 +45,6 @@ export function mensajeVestido(nombre: string, talla: string) {
 export const textos = {
   // PROVISIONAL
   portada: {
-    eyebrow: 'Edición nocturna',
     lead: 'Vestidos que ya vivieron una fiesta, listos para la tuya. Piezas únicas de los años 20 a los 90.',
   },
 
