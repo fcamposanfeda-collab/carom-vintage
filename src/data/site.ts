@@ -40,7 +40,10 @@ export function contactoLink() {
 export const textos = {
   // PROVISIONAL
   portada: {
-    lead: 'Vestidos que ya vivieron una fiesta, listos para la tuya. Piezas únicas de los años 20 a los 90.',
+    etiqueta: 'The Private Edit — Black Friday',
+    claim: 'Una vez al año. Piezas que solo existen una vez.',
+    texto:
+      'Vestidos vintage únicos, de los años 20 al 2000. Una selección extraordinaria para ocasiones que merecen algo irrepetible.',
   },
 
   // PROVISIONAL
