@@ -24,17 +24,12 @@ import { blackFriday as bf } from '../data/blackfriday';
 
   <div class="puerta__contenido">
     <div class="puerta__placa">
-      <svg class="text-arena" width="28" height="44" viewBox="0 0 28 44" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
-        <circle cx="14" cy="12" r="9"></circle>
-        <path d="M9.5 19 6 42h16l-3.5-23"></path>
-      </svg>
       <p class="etiqueta text-arena">Black Friday · {site.nombre}</p>
       <h2 id="titulo-puerta" class="font-serif text-[clamp(3rem,7vw,5.5rem)] leading-[0.95] font-light italic">Acceso privado</h2>
       <p class="font-serif text-[1.3rem] leading-snug text-pergamino">
-        Solo unos días. Los únicos descuentos del año.
-        {bf.activo && <> −{bf.descuento} %.</>}
+        Únicos descuentos del año
       </p>
-      <button type="button" class="btn-linea" id="boton-puerta">Abrir la puerta</button>
+      <button type="button" class="btn-linea" id="boton-puerta">Accede aquí</button>
     </div>
   </div>
 </div>
