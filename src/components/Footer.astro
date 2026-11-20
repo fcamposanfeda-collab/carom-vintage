@@ -1,6 +1,6 @@
 ---
 import Logo from './Logo.astro';
-import { site, whatsappLink } from '../data/site';
+import { site, contactoLink } from '../data/site';
 
 const anio = new Date().getFullYear();
 ---
@@ -10,12 +10,7 @@ const anio = new Date().getFullYear();
     <h2 class="text-5xl sm:text-6xl">Escríbenos</h2>
     <ul class="etiqueta flex flex-col items-center gap-5 text-arena sm:flex-row sm:gap-10">
       <li>
-        <a href={whatsappLink()} target="_blank" rel="noopener" class="text-crema transition-colors hover:text-arena" data-umami-event="whatsapp-click" data-umami-event-origen="pie">
-          WhatsApp
-        </a>
-      </li>
-      <li>
-        <a href={site.instagram} target="_blank" rel="noopener" class="text-crema transition-colors hover:text-arena" data-umami-event="instagram-click" data-umami-event-origen="pie">
+        <a href={contactoLink()} target="_blank" rel="noopener" class="text-crema transition-colors hover:text-arena" data-umami-event="instagram-md-click" data-umami-event-origen="pie">
           Instagram
         </a>
       </li>

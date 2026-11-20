@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import DressCard from '../components/DressCard.astro';
 import Countdown from '../components/Countdown.astro';
-import { site, textos, whatsappLink } from '../data/site';
+import { site, textos, contactoLink } from '../data/site';
 import { blackFriday as bf, vestidos, precioFinal } from '../data/blackfriday';
 
 // PROVISIONAL: fotos de portada, invitadas y nosotros
@@ -101,7 +101,7 @@ const schemaColeccion = {
     <div class="contenedor">
       <div class="mb-10 flex flex-wrap items-baseline justify-between gap-4 border-t border-arena pt-7">
         <h2 id="titulo-coleccion" class="text-4xl font-normal">{textos.coleccion.titulo}</h2>
-        <a href={whatsappLink('Hola, me interesa la selección de Black Friday')} target="_blank" rel="noopener" class="etiqueta text-tierra transition-colors hover:text-oliva" data-umami-event="whatsapp-click" data-umami-event-origen="coleccion-cabecera">
+        <a href={contactoLink()} target="_blank" rel="noopener" class="etiqueta text-tierra transition-colors hover:text-oliva" data-umami-event="instagram-md-click" data-umami-event-origen="coleccion-cabecera">
           {disponibles} {disponibles === 1 ? 'pieza disponible' : 'piezas disponibles'}
         </a>
       </div>

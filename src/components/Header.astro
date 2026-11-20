@@ -1,7 +1,7 @@
 ---
 import Logo from './Logo.astro';
 import IconInstagram from './IconInstagram.astro';
-import { site, whatsappLink } from '../data/site';
+import { site, contactoLink } from '../data/site';
 import { blackFriday as bf } from '../data/blackfriday';
 
 const enlaces = [
@@ -37,22 +37,12 @@ const enlaces = [
 
     <div class="etiqueta flex items-center justify-end gap-7 text-xs tracking-[0.18em]">
       <a
-        href={whatsappLink()}
+        href={contactoLink()}
         target="_blank"
         rel="noopener"
-        class="hidden transition-colors hover:text-arena md:inline"
-        data-umami-event="whatsapp-click"
-        data-umami-event-origen="cabecera"
-      >
-        Contacto
-      </a>
-      <a
-        href={site.instagram}
-        target="_blank"
-        rel="noopener"
-        aria-label={`Instagram ${site.instagramUsuario}`}
+        aria-label={`Escribir un mensaje directo a ${site.instagramUsuario}`}
         class="flex h-11 w-11 items-center justify-center transition-colors hover:text-arena md:h-auto md:w-auto"
-        data-umami-event="instagram-click"
+        data-umami-event="instagram-md-click"
         data-umami-event-origen="cabecera"
       >
         <IconInstagram class="h-5 w-5" />
@@ -62,8 +52,8 @@ const enlaces = [
 
   <nav id="menu-movil" aria-label="Menú móvil" class="hidden flex-col border-t border-crema/15 px-6 pt-2 pb-6 md:hidden">
     {enlaces.map((e) => <a href={e.href} class="etiqueta flex min-h-11 items-center text-sm tracking-[0.2em]">{e.texto}</a>)}
-    <a href={whatsappLink()} target="_blank" rel="noopener" class="etiqueta flex min-h-11 items-center text-sm tracking-[0.2em]" data-umami-event="whatsapp-click" data-umami-event-origen="menu-movil">
-      Contacto
+    <a href={contactoLink()} target="_blank" rel="noopener" class="etiqueta flex min-h-11 items-center text-sm tracking-[0.2em]" data-umami-event="instagram-md-click" data-umami-event-origen="menu-movil">
+      Escríbenos
     </a>
   </nav>
 </header>

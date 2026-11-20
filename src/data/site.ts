@@ -9,11 +9,11 @@ export const site = {
   // PROVISIONAL: dominio definitivo (cámbialo también en astro.config.mjs → site)
   url: 'https://caromstudio.es',
 
-  // PROVISIONAL: teléfono de WhatsApp en formato internacional sin "+" ni espacios
-  telefono: '34600000000',
   // PROVISIONAL: perfil de Instagram
   instagram: 'https://instagram.com/carom.studio',
   instagramUsuario: '@carom.studio',
+  // PROVISIONAL: enlace directo a mensaje privado (MD) de Instagram
+  instagramMD: 'https://ig.me/m/carom.studio',
   // PROVISIONAL: email de contacto
   email: 'hola@caromstudio.es',
 
@@ -28,14 +28,9 @@ export function rutaLimpia(pathname: string) {
   return pathname.replace(/(\/index)?\.html$/, '').replace(/\/$/, '') || '/';
 }
 
-export const whatsappBase = `https://wa.me/${site.telefono}`;
-
-export function whatsappLink(mensaje?: string) {
-  return mensaje ? `${whatsappBase}?text=${encodeURIComponent(mensaje)}` : whatsappBase;
-}
-
-export function mensajeVestido(nombre: string, talla: string) {
-  return `Hola, me encanta el vestido ${nombre} (talla ${talla}). ¿Sigue disponible?`;
+/** Abre el chat de Instagram (los MD no admiten texto precargado como WhatsApp). */
+export function contactoLink() {
+  return site.instagramMD;
 }
 
 // ─────────────────────────────────────────────────────────────

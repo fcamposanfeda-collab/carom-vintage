@@ -1,5 +1,5 @@
 ---
-import { whatsappLink, mensajeVestido } from '../data/site';
+import { contactoLink } from '../data/site';
 import { blackFriday, precioFinal, formatoPrecio, type Vestido } from '../data/blackfriday';
 
 interface Props {
@@ -57,14 +57,14 @@ const estadoTexto = { disponible: '', reservado: 'Reservado', vendido: 'Vendido'
 
   {disponible ? (
     <a
-      href={whatsappLink(mensajeVestido(v.nombre, v.talla))}
+      href={contactoLink()}
       target="_blank"
       rel="noopener"
       class="etiqueta mt-1 block bg-tinta py-3.5 text-center text-crema transition-colors duration-300 hover:bg-oliva"
-      data-umami-event="whatsapp-click"
+      data-umami-event="instagram-md-click"
       data-umami-event-origen="coleccion"
       data-umami-event-vestido={v.nombre}
-      aria-label={`Lo quiero: vestido ${v.nombre}, talla ${v.talla}, escribir por WhatsApp`}
+      aria-label={`Lo quiero: vestido ${v.nombre}, talla ${v.talla}, escribir por Instagram`}
     >
       Lo quiero
     </a>
