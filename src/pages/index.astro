@@ -7,7 +7,6 @@ import { blackFriday as bf, vestidos, novedades, precioFinal, imagenPrincipal, r
 
 // PROVISIONAL: fotos de portada, invitadas y nosotros
 const fotoPortada = '/img/fondo-portada-black-friday.webp';
-const fotoInvitadas = '/img/hero-vestido-vintage-invitada-boda.webp';
 const fotoNosotros = '/img/nosotros-foto.webp';
 
 const base = Astro.site ?? new URL(site.url);
@@ -168,27 +167,20 @@ const schemaColeccion = {
   </section>
 
   <!-- INVITADAS -->
-  <section id="invitadas" class="scroll-mt-8 flex flex-wrap bg-oliva text-crema">
-    <div class="flex flex-[1_1_480px] flex-col justify-center gap-7 px-6 py-20 sm:px-16 sm:py-28">
-      <p class="reveal etiqueta text-crema/70">{textos.invitadas.eyebrow}</p>
-      <h2 class="reveal text-[clamp(2.5rem,5vw,4.25rem)] leading-[1.05]">
-        {textos.invitadas.titulo[0]}
-        <br />
-        <span class="italic">{textos.invitadas.titulo[1]}</span>
-      </h2>
-      <p class="reveal max-w-md text-[1.05rem] leading-relaxed text-crema/85">{textos.invitadas.texto}</p>
-      <a href="#coleccion" class="reveal btn-claro self-start">Ver la selección</a>
-    </div>
-    <div class="relative min-h-[420px] flex-[1_1_480px] sm:min-h-[640px]">
-      <img
-        src={fotoInvitadas}
-        alt="Invitada con vestido vintage a la luz cálida"
-        width="1200"
-        height="1500"
-        loading="lazy"
-        decoding="async"
-        class="absolute inset-0 h-full w-full object-cover object-[70%_80%]"
-      />
+  <section id="invitadas" class="scroll-mt-8 bg-oliva text-crema">
+    <div class="contenedor grid items-center gap-10 py-20 md:grid-cols-2 md:gap-16 sm:py-28">
+      <div class="reveal flex flex-col gap-7">
+        <p class="etiqueta text-crema/70">{textos.invitadas.eyebrow}</p>
+        <h2 class="max-w-xl text-[clamp(2.5rem,5vw,4.25rem)] leading-[1.05]">
+          {textos.invitadas.titulo[0]}
+          <br />
+          <span class="italic">{textos.invitadas.titulo[1]}</span>
+        </h2>
+        <p class="max-w-md text-[1.05rem] leading-relaxed text-crema/85">{textos.invitadas.texto}</p>
+      </div>
+      <div class="reveal flex items-center justify-center">
+        <a href="#coleccion" class="btn-claro">Ver la selección</a>
+      </div>
     </div>
   </section>
 
