@@ -12,7 +12,7 @@
     { "id": "parma", "nombre": "Vestido Parma", "talla": "", "medidas": "", "precio": null, "estado": "disponible", "descripcion": "", "imagenes": [], "alt": "Vestido Parma, pieza vintage única" },
     { "id": "croatia", "nombre": "Vestido Croatia", "talla": "", "medidas": "", "precio": null, "estado": "disponible", "descripcion": "", "imagenes": [], "alt": "Vestido Croatia, pieza vintage única" },
     { "id": "irati", "nombre": "Vestido Irati", "talla": "", "medidas": "", "precio": null, "estado": "disponible", "descripcion": "", "imagenes": [], "alt": "Vestido Irati, pieza vintage única" },
-    { "id": "corina", "nombre": "Tres piezas Corina", "talla": "", "medidas": "", "precio": null, "estado": "disponible", "descripcion": "", "imagenes": [], "alt": "Tres piezas Corina, pieza vintage única" },
+    { "id": "corina", "nombre": "Tres piezas Corina", "talla": "", "medidas": "", "precio": null, "estado": "disponible", "descripcion": "", "imagenes": ["/img/piezas/corina/1.webp", "/img/piezas/corina/2.webp", "/img/piezas/corina/3.webp", "/img/piezas/corina/4.webp"], "alt": "Tres piezas Corina, pieza vintage única" },
     { "id": "la-noak", "nombre": "Vestido La Noak", "talla": "", "medidas": "", "precio": null, "estado": "disponible", "descripcion": "", "imagenes": [], "alt": "Vestido La Noak, pieza vintage única" },
     { "id": "isol", "nombre": "Vestido Isol", "talla": "", "medidas": "", "precio": null, "estado": "disponible", "descripcion": "", "imagenes": [], "alt": "Vestido Isol, pieza vintage única" },
     { "id": "austria", "nombre": "Dos piezas Austria", "talla": "", "medidas": "", "precio": null, "estado": "disponible", "descripcion": "", "imagenes": [], "alt": "Dos piezas Austria, pieza vintage única" },
