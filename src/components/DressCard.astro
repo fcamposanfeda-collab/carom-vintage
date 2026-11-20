@@ -27,26 +27,26 @@ const estadoTexto = { disponible: '', reservado: 'Reservado', vendido: 'Ha encon
       ]}
     />
     {!disponible && (
-      <p class="etiqueta absolute bottom-6 left-1/2 -translate-x-1/2 bg-marfil/90 px-5 py-2 whitespace-nowrap text-tinta">{estadoTexto}</p>
+      <p class="etiqueta absolute bottom-6 left-1/2 -translate-x-1/2 bg-crema/90 px-5 py-2 whitespace-nowrap text-tinta">{estadoTexto}</p>
     )}
   </div>
 
   <div class="mt-5 flex items-start justify-between gap-6">
     <div>
-      <p class="etiqueta text-tinta-suave">Nº {String(numero).padStart(2, '0')}</p>
+      <p class="etiqueta text-tierra">Nº {String(numero).padStart(2, '0')}</p>
       <h3 class="mt-2 text-[2.1rem] sm:text-[2.4rem]">{v.nombre}</h3>
-      <p class="mt-1 text-sm text-tinta-suave">{v.descripcion}</p>
+      <p class="mt-1 text-sm text-tierra">{v.descripcion}</p>
     </div>
     <p class="shrink-0 pt-1 text-right font-serif text-xl leading-tight">
       {rebajado ? (
         <>
           <span class="sr-only">Antes</span>
-          <s class="block text-base text-tinta-suave">{formatoPrecio(v.precio)}</s>
+          <s class="block text-base text-tierra">{formatoPrecio(v.precio)}</s>
           <span class="sr-only">ahora</span>
-          <span class="text-vino">{formatoPrecio(precioFinal(v.precio))}</span>
+          <span class="text-oro-texto">{formatoPrecio(precioFinal(v.precio))}</span>
         </>
       ) : (
-        <span class:list={[!disponible && 'text-tinta-suave line-through']}>{formatoPrecio(v.precio)}</span>
+        <span class:list={[!disponible && 'text-tierra line-through']}>{formatoPrecio(v.precio)}</span>
       )}
     </p>
   </div>

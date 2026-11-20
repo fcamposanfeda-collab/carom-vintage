@@ -57,7 +57,7 @@ const desfile = [...textos.desfile, ...textos.desfile];
   <section class="contenedor pt-16 pb-24 sm:pt-24 sm:pb-36">
     <div class="aparece text-center">
       {bf.activo && (
-        <p class="etiqueta text-vino">Black Friday · {bf.fechasTexto} · −{bf.descuento} %</p>
+        <p class="etiqueta text-oro-texto">Black Friday · {bf.fechasTexto} · −{bf.descuento} %</p>
       )}
       <h1 class="mt-7 text-[3.2rem] sm:text-7xl lg:text-[6.5rem]">
         {textos.portada.titulo.map((linea, i) => (
@@ -68,7 +68,7 @@ const desfile = [...textos.desfile, ...textos.desfile];
 
     <div class="mt-16 grid grid-cols-12 gap-x-4 sm:mt-24 sm:gap-x-8">
       <div class="col-span-5 flex translate-y-12 flex-col justify-end sm:col-span-4 sm:col-start-2 sm:translate-y-28">
-        <p class="mb-8 hidden max-w-xs text-tinta-suave sm:block">{textos.portada.texto}</p>
+        <p class="mb-8 hidden max-w-xs text-tierra sm:block">{textos.portada.texto}</p>
         <img
           src={fotoPortadaSecundaria}
           alt="Vestido vintage largo rojo de la colección CÀROM"
@@ -90,7 +90,7 @@ const desfile = [...textos.desfile, ...textos.desfile];
         />
       </div>
     </div>
-    <p class="mt-10 text-center text-tinta-suave sm:hidden">{textos.portada.texto}</p>
+    <p class="mt-10 text-center text-tierra sm:hidden">{textos.portada.texto}</p>
 
     <p class="mt-24 text-center sm:mt-40">
       <a href="#coleccion" class="enlace">Ver la colección</a>
@@ -98,12 +98,12 @@ const desfile = [...textos.desfile, ...textos.desfile];
   </section>
 
   <!-- TEXTO EN MOVIMIENTO -->
-  <div class="overflow-hidden bg-vino py-7 text-rosa-palido" aria-hidden="true">
+  <div class="overflow-hidden bg-oliva py-7 text-crema" aria-hidden="true">
     <div class="desfile flex w-max">
       {desfile.map((frase) => (
         <span class="flex items-center font-serif text-3xl whitespace-nowrap italic sm:text-4xl">
           <span class="px-10">{frase}</span>
-          <span class="text-base not-italic opacity-60">✦</span>
+          <span class="text-base text-arena not-italic">✦</span>
         </span>
       ))}
     </div>
@@ -113,12 +113,12 @@ const desfile = [...textos.desfile, ...textos.desfile];
   <section id="coleccion" class="scroll-mt-8 py-24 sm:py-36" aria-labelledby="titulo-coleccion">
     <div class="contenedor">
       <div class="flex flex-col items-center text-center">
-        {bf.activo && <p class="etiqueta text-vino">Black Friday · −{bf.descuento} %</p>}
+        {bf.activo && <p class="etiqueta text-oro-texto">Black Friday · −{bf.descuento} %</p>}
         <h2 id="titulo-coleccion" class="mt-6 text-6xl sm:text-8xl">{textos.coleccion.titulo}</h2>
-        <p class="mt-6 max-w-md font-serif text-2xl italic text-tinta-suave">{textos.coleccion.texto}</p>
+        <p class="mt-6 max-w-md font-serif text-2xl italic text-tierra">{textos.coleccion.texto}</p>
         {bf.activo && (
           <div class="mt-14">
-            <p class="etiqueta mb-5 text-tinta-suave">Termina en</p>
+            <p class="etiqueta mb-5 text-tierra">Termina en</p>
             <Countdown fin={bf.fin} />
           </div>
         )}
@@ -137,7 +137,7 @@ const desfile = [...textos.desfile, ...textos.desfile];
   </section>
 
   <!-- NOSOTROS -->
-  <section id="nosotros" class="scroll-mt-8 bg-vino py-24 text-rosa-palido sm:py-36" aria-labelledby="titulo-nosotros">
+  <section id="nosotros" class="scroll-mt-8 bg-noche py-24 text-crema sm:py-36" aria-labelledby="titulo-nosotros">
     <div class="contenedor grid items-center gap-14 md:grid-cols-12 md:gap-8">
       <img
         src={fotoNosotros}
@@ -149,9 +149,9 @@ const desfile = [...textos.desfile, ...textos.desfile];
         class="aspect-[4/5] w-full object-cover md:col-span-5"
       />
       <div class="md:col-span-6 md:col-start-7">
-        <p class="etiqueta opacity-70">CÀROM Studio</p>
+        <p class="etiqueta text-arena">CÀROM Studio</p>
         <h2 id="titulo-nosotros" class="mt-6 text-6xl sm:text-8xl">{textos.nosotros.titulo}</h2>
-        <p class="mt-10 font-serif text-3xl leading-snug italic sm:text-4xl">{textos.nosotros.entradilla}</p>
+        <p class="mt-10 font-serif text-3xl leading-snug text-oro italic sm:text-4xl">{textos.nosotros.entradilla}</p>
         {textos.nosotros.parrafos.map((p) => (
           <p class="mt-6 max-w-lg opacity-85">{p}</p>
         ))}

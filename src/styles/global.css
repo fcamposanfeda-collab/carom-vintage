@@ -6,14 +6,17 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-marfil: #fbf9f6;
-  --color-lino: #f1ece4;
-  --color-tinta: #1c1714;
-  --color-tinta-suave: #5f554e;
-  --color-vino: #6b0f1a;
-  --color-vino-oscuro: #4e0a13;
-  /* Texto sobre fondo vino */
-  --color-rosa-palido: #f3e3df;
+  /* Paleta corporativa de CÀROM Studio */
+  --color-crema: #f2ede4;
+  --color-lino: #e7e0d3;
+  --color-arena: #cfc5b3;
+  --color-oro: #a88a54;
+  /* Oro oscurecido para textos pequeños: contraste AA sobre crema */
+  --color-oro-texto: #7a5f33;
+  --color-tierra: #6e5a43;
+  --color-oliva: #656148;
+  --color-noche: #35342a;
+  --color-tinta: #24221d;
 
   --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   --font-sans: 'Jost Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -25,7 +28,7 @@
     -webkit-text-size-adjust: 100%;
   }
   body {
-    @apply bg-marfil font-sans text-tinta antialiased;
+    @apply bg-crema font-sans text-tinta antialiased;
     font-size: 1rem;
     font-weight: 300;
     line-height: 1.75;
@@ -44,7 +47,7 @@
     font-variant-numeric: lining-nums;
   }
   ::selection {
-    @apply bg-vino text-rosa-palido;
+    @apply bg-oliva text-crema;
   }
   :focus-visible {
     outline: 1px solid currentColor;
