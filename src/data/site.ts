@@ -77,3 +77,37 @@ export const textos = {
     ],
   },
 };
+
+// PROVISIONAL: preguntas frecuentes (edítalas cuando el chico confirme textos)
+export const faq = [
+  {
+    pregunta: '¿Qué es The Private Edit?',
+    respuesta:
+      'Es nuestro acceso privado de Black Friday: una selección de vestidos vintage de pieza única, abierta solo unos días al año.',
+  },
+  {
+    pregunta: '¿Cada vestido es realmente único?',
+    respuesta:
+      'Sí. De cada modelo solo hay una unidad y una sola talla. Cuando alguien lo reserva, desaparece de la selección.',
+  },
+  {
+    pregunta: '¿Cómo reservo un vestido?',
+    respuesta:
+      'Pulsa «Lo quiero» en la pieza que te guste y escríbenos por mensaje directo en Instagram. Te confirmamos disponibilidad y te guiamos con el resto.',
+  },
+  {
+    pregunta: '¿Hacéis envíos?',
+    respuesta:
+      'Sí, enviamos a toda España. Te confirmamos plazos y condiciones por Instagram cuando reserves tu pieza.',
+  },
+  {
+    pregunta: '¿Puedo probarme el vestido?',
+    respuesta:
+      'Depende de la zona y de la pieza. Escríbenos por Instagram y te contamos las opciones para tu caso.',
+  },
+  {
+    pregunta: '¿Qué tallas tenéis?',
+    respuesta:
+      'Cada vestido tiene su propia talla, indicada en la ficha. Si dudas, mándanos un MD y te ayudamos con medidas.',
+  },
+];

@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import DressCard from '../components/DressCard.astro';
 import Countdown from '../components/Countdown.astro';
-import { site, textos, contactoLink } from '../data/site';
+import { site, textos, faq, contactoLink } from '../data/site';
 import { blackFriday as bf, vestidos, precioFinal } from '../data/blackfriday';
 
 // PROVISIONAL: fotos de portada, invitadas y nosotros
@@ -18,6 +18,16 @@ const disponibilidad = {
   disponible: 'https://schema.org/InStock',
   reservado: 'https://schema.org/LimitedAvailability',
   vendido: 'https://schema.org/SoldOut',
+};
+
+const schemaFaq = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((f) => ({
+    '@type': 'Question',
+    name: f.pregunta,
+    acceptedAnswer: { '@type': 'Answer', text: f.respuesta },
+  })),
 };
 
 const schemaColeccion = {
@@ -50,7 +60,7 @@ const schemaColeccion = {
   title={bf.activo ? `Black Friday · Vestidos vintage de pieza única | ${site.nombre}` : `Vestidos vintage de pieza única | ${site.nombre}`}
   description={`${textos.portada.claim} ${textos.portada.texto} Acceso privado ${bf.fechasTexto.toLowerCase()}.`}
   preloadImage={fotoPortada}
-  schemas={[schemaColeccion]}
+  schemas={[schemaColeccion, schemaFaq]}
 >
   <!-- HERO -->
   <section class="relative min-h-[min(860px,92vh)]" aria-label="Black Friday">
@@ -157,6 +167,30 @@ const schemaColeccion = {
           <p class="reveal mt-6 max-w-lg text-pergamino">{p}</p>
         ))}
       </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="scroll-mt-8 border-t border-crema/15 bg-crema py-20 text-noche sm:py-28" aria-labelledby="titulo-faq">
+    <div class="contenedor max-w-3xl">
+      <p class="reveal etiqueta text-oliva">Preguntas frecuentes</p>
+      <h2 id="titulo-faq" class="reveal mt-5 text-5xl sm:text-6xl">FAQ</h2>
+      <div class="mt-12 divide-y divide-noche/15 border-y border-noche/15">
+        {faq.map((f, i) => (
+          <details class="reveal group py-6" open={i === 0}>
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-serif text-2xl [&::-webkit-details-marker]:hidden">
+              <h3 class="text-2xl font-light">{f.pregunta}</h3>
+              <span class="text-3xl text-oliva transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+            </summary>
+            <p class="mt-4 text-tierra">{f.respuesta}</p>
+          </details>
+        ))}
+      </div>
+      <p class="reveal mt-10 text-center">
+        <a href={contactoLink()} target="_blank" rel="noopener" class="etiqueta text-oliva transition-colors hover:text-noche" data-umami-event="instagram-md-click" data-umami-event-origen="faq">
+          ¿Otra duda? Escríbenos por Instagram
+        </a>
+      </p>
     </div>
   </section>
 </BaseLayout>
