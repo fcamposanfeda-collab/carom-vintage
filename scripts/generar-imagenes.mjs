@@ -16,7 +16,7 @@ const imagenes = [
     salida: `${OUT}og-carom-studio-vestidos-vintage.jpg`,
     antetitulo: 'BLACK FRIDAY · DEL 20 AL 30 DE NOVIEMBRE',
     titulo: 'CÀROM Studio',
-    destacado: '−20 %',
+    destacado: '',
     subtitulo: 'Una talla. Una pieza. Una sola vez.',
     pie: 'Vestidos vintage de pieza única',
   },

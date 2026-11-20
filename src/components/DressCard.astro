@@ -1,6 +1,6 @@
 ---
 import { contactoLink } from '../data/site';
-import { blackFriday, precioFinal, formatoPrecio, type Vestido } from '../data/blackfriday';
+import { blackFriday, hayDescuento, precioFinal, formatoPrecio, type Vestido } from '../data/blackfriday';
 
 interface Props {
   vestido: Vestido;
@@ -8,7 +8,7 @@ interface Props {
 }
 const { vestido: v, prioridad = false } = Astro.props;
 const disponible = v.estado === 'disponible';
-const rebajado = blackFriday.activo && disponible;
+const rebajado = hayDescuento() && disponible;
 const estadoTexto = { disponible: '', reservado: 'Reservado', vendido: 'Vendido' }[v.estado];
 ---
 <article class="reveal flex flex-col gap-3.5 text-noche">

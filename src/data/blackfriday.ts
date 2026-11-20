@@ -4,10 +4,10 @@
 import data from './vestidos.json';
 
 export const blackFriday = {
-  // PROVISIONAL: pon false cuando acabe la promo (quita los precios tachados y los textos de Black Friday)
+  // PROVISIONAL: pon false cuando acabe la promo
   activo: true,
-  // PROVISIONAL: descuento en %, igual para todas las piezas
-  descuento: 20,
+  // PROVISIONAL: descuento en %. null = aún no hay % (solo se muestra el precio normal)
+  descuento: null as number | null,
   // PROVISIONAL: fechas de inicio y fin (hora peninsular)
   inicio: '2026-11-23T00:00:00+01:00',
   fin: '2026-11-30T23:59:59+01:00',
@@ -20,8 +20,12 @@ export type Vestido = Omit<(typeof data.vestidos)[number], 'estado'> & { estado:
 
 export const vestidos = data.vestidos as Vestido[];
 
+export function hayDescuento() {
+  return blackFriday.activo && typeof blackFriday.descuento === 'number' && blackFriday.descuento > 0;
+}
+
 export function precioFinal(precio: number) {
-  return blackFriday.activo ? Math.round(precio * (100 - blackFriday.descuento)) / 100 : precio;
+  return hayDescuento() ? Math.round(precio * (100 - blackFriday.descuento!)) / 100 : precio;
 }
 
 export function formatoPrecio(precio: number) {

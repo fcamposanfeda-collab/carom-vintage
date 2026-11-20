@@ -48,7 +48,7 @@ const schemaColeccion = {
 ---
 <BaseLayout
   title={bf.activo ? `Black Friday · Vestidos vintage de pieza única | ${site.nombre}` : `Vestidos vintage de pieza única | ${site.nombre}`}
-  description={`Black Friday a la luz de las velas: vestidos vintage de invitada, piezas únicas de los años 20 a los 90. −${bf.descuento} % ${bf.fechasTexto.toLowerCase()}.`}
+  description={`Black Friday a la luz de las velas: vestidos vintage de invitada, piezas únicas de los años 20 a los 90. Acceso privado ${bf.fechasTexto.toLowerCase()}.`}
   preloadImage={fotoPortada}
   schemas={[schemaColeccion]}
 >
@@ -70,10 +70,7 @@ const schemaColeccion = {
         Black<br />Friday
       </h1>
       <div class="reveal flex flex-wrap items-end justify-between gap-8">
-        <p class="max-w-md font-serif text-[1.3rem] leading-snug sm:text-[1.6rem]">
-          {textos.portada.lead}
-          {bf.activo && <> −{bf.descuento} %.</>}
-        </p>
+        <p class="max-w-md font-serif text-[1.3rem] leading-snug sm:text-[1.6rem]">{textos.portada.lead}</p>
         <a href="#coleccion" class="btn-linea w-full sm:w-auto">Descubrir la selección</a>
       </div>
     </div>
