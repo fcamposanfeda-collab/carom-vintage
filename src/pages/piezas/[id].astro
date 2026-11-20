@@ -1,0 +1,158 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site, contactoLink } from '../../data/site';
+import {
+  blackFriday as bf,
+  getVestido,
+  vestidos,
+  hayDescuento,
+  precioFinal,
+  formatoPrecio,
+  imagenPrincipal,
+} from '../../data/blackfriday';
+
+export function getStaticPaths() {
+  return vestidos.map((v) => ({ params: { id: v.id } }));
+}
+
+const { id } = Astro.params;
+const v = getVestido(id!);
+if (!v) return Astro.redirect('/#coleccion');
+
+const disponible = v.estado === 'disponible';
+const rebajado = hayDescuento() && disponible && v.precio !== null;
+const fotoPrincipal = imagenPrincipal(v);
+const base = Astro.site ?? new URL(site.url);
+const url = new URL(`/piezas/${v.id}`, base).href;
+const abs = (ruta: string) => new URL(ruta, base).href;
+
+const schemaProducto = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: v.nombre,
+  description: v.descripcion || `${v.nombre}: pieza vintage única de CÀROM Studio.`,
+  image: v.imagenes.map(abs),
+  brand: { '@type': 'Brand', name: site.nombre },
+  ...(v.talla && { size: v.talla }),
+  ...(v.precio !== null && {
+    offers: {
+      '@type': 'Offer',
+      price: precioFinal(v.precio).toFixed(2),
+      priceCurrency: 'EUR',
+      availability:
+        v.estado === 'disponible'
+          ? 'https://schema.org/InStock'
+          : v.estado === 'reservado'
+            ? 'https://schema.org/LimitedAvailability'
+            : 'https://schema.org/SoldOut',
+      url,
+      itemCondition: 'https://schema.org/UsedCondition',
+    },
+  }),
+};
+---
+<BaseLayout
+  title={`${v.nombre} | ${site.nombre}`}
+  description={v.descripcion || `${v.nombre}: pieza vintage única. Talla y medidas en la ficha. Escríbenos por Instagram.`}
+  ogImage={fotoPrincipal || site.ogImagePorDefecto}
+  ogImageAlt={v.alt}
+  preloadImage={fotoPrincipal || undefined}
+  schemas={[schemaProducto]}
+>
+  <article class="contenedor py-12 sm:py-20">
+    <nav aria-label="Migas de pan" class="etiqueta mb-10 text-arena">
+      <a href="/#coleccion" class="transition-colors hover:text-crema">Selección</a>
+      <span aria-hidden="true"> · </span>
+      <span aria-current="page">{v.nombre}</span>
+    </nav>
+
+    <div class="grid gap-12 lg:grid-cols-12 lg:gap-16">
+      <!-- GALERÍA -->
+      <div class="lg:col-span-7">
+        {v.imagenes.length > 0 ? (
+          <div class="grid gap-4 sm:grid-cols-2">
+            {v.imagenes.map((src, i) => (
+              <img
+                src={src}
+                alt={`${v.alt}${v.imagenes.length > 1 ? `, foto ${i + 1}` : ''}`}
+                width="900"
+                height="1200"
+                loading={i === 0 ? 'eager' : 'lazy'}
+                decoding="async"
+                fetchpriority={i === 0 ? 'high' : undefined}
+                class:list={[
+                  'aspect-[3/4] w-full bg-noche object-cover',
+                  i === 0 && 'sm:col-span-2',
+                  !disponible && 'opacity-50 grayscale',
+                ]}
+              />
+            ))}
+          </div>
+        ) : (
+          <div class="flex aspect-[3/4] items-center justify-center bg-noche sm:aspect-[4/5]">
+            <p class="etiqueta text-center text-arena">Fotos pendientes<br /><span class="mt-2 block normal-case tracking-normal opacity-70">Las añadiremos en cuanto las tengamos</span></p>
+          </div>
+        )}
+      </div>
+
+      <!-- FICHA -->
+      <div class="lg:col-span-5 lg:sticky lg:top-28 lg:self-start">
+        <p class="etiqueta text-arena">Pieza única{bf.activo && ' · The Private Edit'}</p>
+        <h1 class="mt-5 text-5xl sm:text-6xl">{v.nombre}</h1>
+
+        {!disponible && (
+          <p class="etiqueta mt-6 text-arena">
+            {v.estado === 'reservado' ? 'Reservado' : 'Ha encontrado dueña'}
+          </p>
+        )}
+
+        {v.precio !== null && (
+          <p class="mt-8 font-serif text-3xl">
+            {rebajado ? (
+              <>
+                <s class="mr-3 text-xl text-arena">{formatoPrecio(v.precio)}</s>
+                <span>{formatoPrecio(precioFinal(v.precio))}</span>
+              </>
+            ) : (
+              formatoPrecio(v.precio)
+            )}
+          </p>
+        )}
+
+        <dl class="mt-10 space-y-5 border-y border-crema/15 py-8">
+          <div>
+            <dt class="etiqueta text-arena">Talla</dt>
+            <dd class="mt-2 font-serif text-2xl">{v.talla || 'Pendiente'}</dd>
+          </div>
+          <div>
+            <dt class="etiqueta text-arena">Medidas</dt>
+            <dd class="mt-2 whitespace-pre-line text-pergamino">{v.medidas || 'Pendientes de confirmar'}</dd>
+          </div>
+        </dl>
+
+        {v.descripcion && <p class="mt-8 text-pergamino">{v.descripcion}</p>}
+
+        {disponible ? (
+          <a
+            href={contactoLink()}
+            target="_blank"
+            rel="noopener"
+            class="btn-linea mt-10 w-full sm:w-auto"
+            data-umami-event="instagram-md-click"
+            data-umami-event-origen="ficha"
+            data-umami-event-vestido={v.nombre}
+          >
+            Lo quiero
+          </a>
+        ) : (
+          <a href="/#coleccion" class="btn-linea mt-10 inline-flex">Ver otras piezas</a>
+        )}
+
+        <p class="mt-6 text-sm text-arena">
+          Escríbenos por Instagram indicando el nombre de la pieza
+          {v.talla && <> y la talla {v.talla}</>}.
+        </p>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

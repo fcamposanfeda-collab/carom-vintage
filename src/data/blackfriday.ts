@@ -6,7 +6,7 @@ import data from './vestidos.json';
 export const blackFriday = {
   // PROVISIONAL: pon false cuando acabe la promo
   activo: true,
-  // PROVISIONAL: descuento en %. null = aún no hay % (solo se muestra el precio normal)
+  // PROVISIONAL: descuento en %. null = aún no hay % (solo se muestra el precio si existe)
   descuento: null as number | null,
   // PROVISIONAL: fechas de inicio y fin (hora peninsular)
   inicio: '2026-11-23T00:00:00+01:00',
@@ -16,9 +16,32 @@ export const blackFriday = {
 };
 
 export type Estado = 'disponible' | 'reservado' | 'vendido';
-export type Vestido = Omit<(typeof data.vestidos)[number], 'estado'> & { estado: Estado };
+
+export type Vestido = {
+  id: string;
+  nombre: string;
+  talla: string;
+  medidas: string;
+  precio: number | null;
+  estado: Estado;
+  descripcion: string;
+  imagenes: string[];
+  alt: string;
+};
 
 export const vestidos = data.vestidos as Vestido[];
+
+export function getVestido(id: string) {
+  return vestidos.find((v) => v.id === id);
+}
+
+export function rutaVestido(id: string) {
+  return `/piezas/${id}`;
+}
+
+export function imagenPrincipal(v: Vestido) {
+  return v.imagenes[0] ?? '';
+}
 
 export function hayDescuento() {
   return blackFriday.activo && typeof blackFriday.descuento === 'number' && blackFriday.descuento > 0;

@@ -1,10 +1,17 @@
 import type { APIRoute } from 'astro';
-
-// lastmod se actualiza solo con cada publicación (fecha del build)
-const paginas = [{ ruta: '/', prioridad: '1.0', frecuencia: 'daily' }];
+import { vestidos, rutaVestido } from '../data/blackfriday';
 
 export const GET: APIRoute = ({ site }) => {
   const lastmod = new Date().toISOString();
+  const paginas = [
+    { ruta: '/', prioridad: '1.0', frecuencia: 'daily' },
+    ...vestidos.map((v) => ({
+      ruta: rutaVestido(v.id),
+      prioridad: '0.8',
+      frecuencia: 'weekly',
+    })),
+  ];
+
   const urls = paginas
     .map(
       (p) => `  <url>

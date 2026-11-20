@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import DressCard from '../components/DressCard.astro';
 import Countdown from '../components/Countdown.astro';
 import { site, textos, faq, contactoLink } from '../data/site';
-import { blackFriday as bf, vestidos, precioFinal } from '../data/blackfriday';
+import { blackFriday as bf, vestidos, precioFinal, imagenPrincipal, rutaVestido } from '../data/blackfriday';
 
 // PROVISIONAL: fotos de portada, invitadas y nosotros
 const fotoPortada = '/img/fondo-portada-black-friday.webp';
@@ -39,19 +39,22 @@ const schemaColeccion = {
     position: i + 1,
     item: {
       '@type': 'Product',
-      name: `Vestido ${v.nombre}`,
-      description: v.descripcion,
-      image: abs(v.imagen),
-      size: v.talla,
+      name: v.nombre,
+      description: v.descripcion || `${v.nombre}: pieza vintage única.`,
+      url: abs(rutaVestido(v.id)),
+      ...(imagenPrincipal(v) && { image: abs(imagenPrincipal(v)) }),
+      ...(v.talla && { size: v.talla }),
       brand: { '@type': 'Brand', name: site.nombre },
-      offers: {
-        '@type': 'Offer',
-        price: precioFinal(v.precio).toFixed(2),
-        priceCurrency: 'EUR',
-        availability: disponibilidad[v.estado],
-        itemCondition: 'https://schema.org/UsedCondition',
-        ...(bf.activo && { priceValidUntil: bf.fin.slice(0, 10) }),
-      },
+      ...(v.precio !== null && {
+        offers: {
+          '@type': 'Offer',
+          price: precioFinal(v.precio).toFixed(2),
+          priceCurrency: 'EUR',
+          availability: disponibilidad[v.estado],
+          itemCondition: 'https://schema.org/UsedCondition',
+          ...(bf.activo && { priceValidUntil: bf.fin.slice(0, 10) }),
+        },
+      }),
     },
   })),
 };
