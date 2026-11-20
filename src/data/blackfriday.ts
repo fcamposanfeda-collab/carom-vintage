@@ -9,10 +9,10 @@ export const blackFriday = {
   // PROVISIONAL: descuento en %, igual para todas las piezas
   descuento: 20,
   // PROVISIONAL: fechas de inicio y fin (hora peninsular)
-  inicio: '2026-11-20T00:00:00+01:00',
+  inicio: '2026-11-23T00:00:00+01:00',
   fin: '2026-11-30T23:59:59+01:00',
   // PROVISIONAL: fechas tal y como se leen en los textos
-  fechasTexto: 'Del 20 al 30 de noviembre',
+  fechasTexto: 'Del 23 al 30 de noviembre',
 };
 
 export type Estado = 'disponible' | 'reservado' | 'vendido';
