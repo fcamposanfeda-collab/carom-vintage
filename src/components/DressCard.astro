@@ -4,68 +4,70 @@ import { blackFriday, precioFinal, formatoPrecio, type Vestido } from '../data/b
 
 interface Props {
   vestido: Vestido;
-  numero: number;
-  class?: string;
+  prioridad?: boolean;
 }
-const { vestido: v, numero, class: className = '' } = Astro.props;
+const { vestido: v, prioridad = false } = Astro.props;
 const disponible = v.estado === 'disponible';
 const rebajado = blackFriday.activo && disponible;
-const estadoTexto = { disponible: '', reservado: 'Reservado', vendido: 'Ha encontrado dueña' }[v.estado];
+const estadoTexto = { disponible: '', reservado: 'Reservado', vendido: 'Vendido' }[v.estado];
 ---
-<article class:list={['group', className]}>
+<article class="flex flex-col">
   <div class="relative overflow-hidden bg-lino">
     <img
       src={v.imagen}
       alt={v.alt}
       width="800"
       height="1067"
-      loading={numero <= 2 ? 'eager' : 'lazy'}
+      loading={prioridad ? 'eager' : 'lazy'}
       decoding="async"
       class:list={[
-        'aspect-[3/4] w-full object-cover transition duration-[1.6s] ease-out group-hover:scale-[1.04]',
-        !disponible && 'opacity-45 grayscale',
+        'aspect-[3/4] w-full object-cover transition duration-[1.6s] ease-out hover:scale-[1.03]',
+        !disponible && 'opacity-50 grayscale',
       ]}
     />
-    {!disponible && (
-      <p class="etiqueta absolute bottom-6 left-1/2 -translate-x-1/2 bg-crema/90 px-5 py-2 whitespace-nowrap text-tinta">{estadoTexto}</p>
+    {rebajado && (
+      <p class="absolute top-3 left-3 bg-noche px-2 py-1 text-[0.65rem] font-normal tracking-wider text-crema sm:top-4 sm:left-4">
+        −{blackFriday.descuento} %
+      </p>
     )}
   </div>
 
-  <div class="mt-5 flex items-start justify-between gap-6">
-    <div>
-      <p class="etiqueta text-tierra">Nº {String(numero).padStart(2, '0')}</p>
-      <h3 class="mt-2 text-[2.1rem] sm:text-[2.4rem]">{v.nombre}</h3>
-      <p class="mt-1 text-sm text-tierra">{v.descripcion}</p>
+  <div class="mt-4 flex flex-1 flex-col justify-between gap-2 sm:flex-row sm:items-end sm:gap-3">
+    <div class="min-w-0">
+      <p class="text-[0.55rem] tracking-[0.2em] text-tierra uppercase sm:text-[0.65rem] sm:tracking-[0.25em]">
+        Pieza única · {v.decada}
+      </p>
+      <h3 class="mt-1.5 text-[1.4rem] sm:text-3xl">{v.nombre}</h3>
+      <p class="mt-0.5 text-xs text-tierra sm:text-sm">Talla {v.talla}</p>
     </div>
-    <p class="shrink-0 pt-1 text-right font-serif text-xl leading-tight">
+    <p class="flex shrink-0 items-baseline gap-2 font-serif leading-tight sm:block sm:text-right">
       {rebajado ? (
         <>
           <span class="sr-only">Antes</span>
-          <s class="block text-base text-tierra">{formatoPrecio(v.precio)}</s>
+          <s class="block text-sm text-tierra">{formatoPrecio(v.precio)}</s>
           <span class="sr-only">ahora</span>
-          <span class="text-oro-texto">{formatoPrecio(precioFinal(v.precio))}</span>
+          <span class="text-xl sm:text-2xl">{formatoPrecio(precioFinal(v.precio))}</span>
         </>
       ) : (
-        <span class:list={[!disponible && 'text-tierra line-through']}>{formatoPrecio(v.precio)}</span>
+        <span class:list={['text-xl sm:text-2xl', !disponible && 'text-tierra line-through']}>{formatoPrecio(v.precio)}</span>
       )}
     </p>
   </div>
 
-  <div class="mt-5 flex items-center justify-between border-t border-tinta/15 pt-4">
-    <p class="etiqueta">Talla {v.talla} · Pieza única</p>
-    {disponible && (
-      <a
-        href={whatsappLink(mensajeVestido(v.nombre, v.talla))}
-        target="_blank"
-        rel="noopener"
-        class="enlace"
-        data-umami-event="whatsapp-click"
-        data-umami-event-origen="coleccion"
-        data-umami-event-vestido={v.nombre}
-        aria-label={`Reservar el vestido ${v.nombre}, talla ${v.talla}, por WhatsApp`}
-      >
-        Reservar
-      </a>
-    )}
-  </div>
+  {disponible ? (
+    <a
+      href={whatsappLink(mensajeVestido(v.nombre, v.talla))}
+      target="_blank"
+      rel="noopener"
+      class="etiqueta mt-4 block bg-tinta py-3.5 text-center text-crema max-sm:tracking-[0.2em] transition-colors duration-300 hover:bg-oliva"
+      data-umami-event="whatsapp-click"
+      data-umami-event-origen="coleccion"
+      data-umami-event-vestido={v.nombre}
+      aria-label={`Lo quiero: vestido ${v.nombre}, talla ${v.talla}, escribir por WhatsApp`}
+    >
+      Lo quiero
+    </a>
+  ) : (
+    <p class="etiqueta mt-4 border border-tinta/20 py-3.5 text-center text-tierra max-sm:tracking-[0.2em]">{estadoTexto}</p>
+  )}
 </article>

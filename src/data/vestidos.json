@@ -1,9 +1,10 @@
 {
-  "_PROVISIONAL": "// PROVISIONAL: TODO este archivo es de ejemplo. Cada vestido es una pieza única con UNA sola talla. 'estado': disponible | reservado | vendido. 'imagen' apunta a /public/img (sustituye el archivo manteniendo el nombre o cambia la ruta). El orden de la lista es el orden en la web.",
+  "_PROVISIONAL": "// PROVISIONAL: TODO este archivo es de ejemplo. Cada vestido es una pieza única con UNA sola talla. 'decada' se muestra junto a «Pieza única». 'estado': disponible | reservado | vendido. 'imagen' apunta a /public/img (sustituye el archivo manteniendo el nombre o cambia la ruta). El orden de la lista es el orden en la web.",
   "vestidos": [
     {
       "id": "alhambra",
       "nombre": "Alhambra",
+      "decada": "Años 60",
       "precio": 139,
       "talla": "38",
       "estado": "disponible",
@@ -14,6 +15,7 @@
     {
       "id": "triana",
       "nombre": "Triana",
+      "decada": "Años 80",
       "precio": 69,
       "talla": "36",
       "estado": "disponible",
@@ -24,6 +26,7 @@
     {
       "id": "azahar",
       "nombre": "Azahar",
+      "decada": "Años 70",
       "precio": 149,
       "talla": "38",
       "estado": "disponible",
@@ -34,6 +37,7 @@
     {
       "id": "toledo",
       "nombre": "Toledo",
+      "decada": "Años 90",
       "precio": 89,
       "talla": "40",
       "estado": "reservado",
@@ -44,6 +48,7 @@
     {
       "id": "donana",
       "nombre": "Doñana",
+      "decada": "Años 70",
       "precio": 99,
       "talla": "38",
       "estado": "disponible",
@@ -54,6 +59,7 @@
     {
       "id": "giralda",
       "nombre": "Giralda",
+      "decada": "Años 50",
       "precio": 79,
       "talla": "40",
       "estado": "disponible",
@@ -64,6 +70,7 @@
     {
       "id": "cuenca",
       "nombre": "Cuenca",
+      "decada": "Años 60",
       "precio": 119,
       "talla": "36",
       "estado": "disponible",
@@ -74,6 +81,7 @@
     {
       "id": "sierra-morena",
       "nombre": "Sierra Morena",
+      "decada": "Años 90",
       "precio": 109,
       "talla": "38",
       "estado": "vendido",
@@ -84,6 +92,7 @@
     {
       "id": "albaicin",
       "nombre": "Albaicín",
+      "decada": "Años 70",
       "precio": 59,
       "talla": "42",
       "estado": "disponible",
@@ -94,6 +103,7 @@
     {
       "id": "guadalquivir",
       "nombre": "Guadalquivir",
+      "decada": "Años 70",
       "precio": 75,
       "talla": "38",
       "estado": "disponible",
@@ -104,6 +114,7 @@
     {
       "id": "almagro",
       "nombre": "Almagro",
+      "decada": "Años 80",
       "precio": 65,
       "talla": "40",
       "estado": "disponible",
@@ -114,6 +125,7 @@
     {
       "id": "consuegra",
       "nombre": "Consuegra",
+      "decada": "Años 80",
       "precio": 49,
       "talla": "36",
       "estado": "disponible",

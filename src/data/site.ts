@@ -53,8 +53,8 @@ export const textos = {
 
   // PROVISIONAL
   coleccion: {
-    titulo: 'La colección',
-    texto: 'Cada vestido es irrepetible. Si es tu talla, es tuyo.',
+    titulo: 'Piezas únicas',
+    texto: 'Una talla, una oportunidad.',
   },
 
   // PROVISIONAL

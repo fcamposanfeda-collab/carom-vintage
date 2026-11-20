@@ -124,14 +124,8 @@ const desfile = [...textos.desfile, ...textos.desfile];
         )}
       </div>
 
-      <div class="mt-20 grid gap-x-8 gap-y-20 pb-28 sm:mt-28 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-12">
-        {vestidos.map((v, i) => (
-          <DressCard
-            vestido={v}
-            numero={i + 1}
-            class:list={[i % 2 === 1 && 'md:max-lg:translate-y-24', i % 3 === 1 && 'lg:translate-y-28']}
-          />
-        ))}
+      <div class="mx-auto mt-16 grid max-w-5xl grid-cols-2 gap-x-4 gap-y-14 sm:mt-24 sm:gap-x-10 sm:gap-y-20">
+        {vestidos.map((v, i) => <DressCard vestido={v} prioridad={i < 2} />)}
       </div>
     </div>
   </section>
