@@ -22,3 +22,8 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# fotos originales en la raíz (se publican optimizadas en public/img/piezas/)
+/image*.jpeg
+/image*.jpg
+/image*.png

@@ -20,7 +20,7 @@
     { "id": "marilia", "nombre": "Vestido Marilia", "talla": "", "medidas": "", "precio": null, "estado": "disponible", "descripcion": "", "imagenes": [], "alt": "Vestido Marilia, pieza vintage única" },
     { "id": "magie", "nombre": "Dos piezas Magié", "talla": "", "medidas": "", "precio": null, "estado": "disponible", "descripcion": "", "imagenes": [], "alt": "Dos piezas Magié, pieza vintage única" },
     { "id": "fina", "nombre": "Vestido Fina", "talla": "", "medidas": "", "precio": null, "estado": "disponible", "descripcion": "", "imagenes": [], "alt": "Vestido Fina, pieza vintage única" },
-    { "id": "cami", "nombre": "Tres piezas Cami", "talla": "", "medidas": "", "precio": null, "estado": "disponible", "descripcion": "", "imagenes": [], "alt": "Tres piezas Cami, pieza vintage única" },
+    { "id": "cami", "nombre": "Vestido Cami", "talla": "", "medidas": "", "precio": null, "estado": "disponible", "descripcion": "", "imagenes": ["/img/piezas/cami/1.webp", "/img/piezas/cami/2.webp", "/img/piezas/cami/3.webp", "/img/piezas/cami/4.webp"], "alt": "Vestido Cami, pieza vintage única en naranja con bordado floral" },
     { "id": "lois", "nombre": "Vestido Lois", "talla": "", "medidas": "", "precio": null, "estado": "disponible", "descripcion": "", "imagenes": [], "alt": "Vestido Lois, pieza vintage única" },
     { "id": "leticia", "nombre": "Vestido Leticia", "talla": "", "medidas": "", "precio": null, "estado": "disponible", "descripcion": "", "imagenes": [], "alt": "Vestido Leticia, pieza vintage única" },
     { "id": "manon", "nombre": "Vestido Mañon", "talla": "", "medidas": "", "precio": null, "estado": "disponible", "descripcion": "", "imagenes": [], "alt": "Vestido Mañon, pieza vintage única" },
