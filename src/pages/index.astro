@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import DressCard from '../components/DressCard.astro';
 import Countdown from '../components/Countdown.astro';
 import { site, textos, faq, contactoLink } from '../data/site';
-import { blackFriday as bf, vestidos, novedades, novedadesIds, imagenPrincipal, rutaVestido } from '../data/blackfriday';
+import { blackFriday as bf, vestidos, novedades, novedadesIds, jackets, jacketsIds, imagenPrincipal, rutaVestido } from '../data/blackfriday';
 
 // PROVISIONAL: fotos de portada, invitadas y nosotros
 const fotoPortada = '/img/fondo-portada-black-friday.webp';
@@ -12,8 +12,9 @@ const fotoNosotros = '/img/nosotros-foto.webp';
 const base = Astro.site ?? new URL(site.url);
 const abs = (ruta: string) => new URL(ruta, base).href;
 const idsNovedades = new Set<string>(novedadesIds);
-const seleccion = vestidos.filter((v) => !idsNovedades.has(v.id));
-const disponibles = vestidos.filter((v) => v.estado === 'disponible').length;
+const idsJackets = new Set<string>(jacketsIds);
+const seleccion = vestidos.filter((v) => !idsNovedades.has(v.id) && !idsJackets.has(v.id));
+const disponibles = seleccion.filter((v) => v.estado === 'disponible').length;
 
 const disponibilidad = {
   disponible: 'https://schema.org/InStock',
@@ -154,7 +155,7 @@ const schemaColeccion = {
   </section>
 
   <!-- COLECCIÓN -->
-  <section id="coleccion" class="scroll-mt-8 bg-white pb-20 text-oliva sm:pb-28" aria-labelledby="titulo-coleccion">
+  <section id="coleccion" class="scroll-mt-8 bg-white pb-16 text-oliva sm:pb-24" aria-labelledby="titulo-coleccion">
     <div class="contenedor">
       <div class="mb-10 flex flex-wrap items-baseline justify-between gap-4 border-t border-noche/15 pt-7">
         <h2 id="titulo-coleccion" class="text-4xl font-normal">{textos.coleccion.titulo}</h2>
@@ -165,6 +166,26 @@ const schemaColeccion = {
       <div class="grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 sm:gap-y-12 lg:grid-cols-4">
         {seleccion.map((v, i) => <DressCard vestido={v} prioridad={i < 4} />)}
       </div>
+    </div>
+  </section>
+
+  <!-- THE JACKET EDITION -->
+  <section id="jackets" class="scroll-mt-8 bg-white pb-20 text-oliva sm:pb-28" aria-labelledby="titulo-jackets">
+    <div class="contenedor">
+      <div class="mb-6 flex flex-wrap items-baseline justify-between gap-4 border-t border-noche/15 pt-7">
+        <h2 id="titulo-jackets" class="text-4xl font-normal">{textos.jackets.titulo}</h2>
+        <p class="etiqueta text-oliva">{textos.jackets.etiqueta}</p>
+      </div>
+      <p class="mb-10 max-w-2xl text-[1.05rem] leading-relaxed text-oliva/80">
+        {textos.jackets.texto}
+      </p>
+      {jackets.length > 0 ? (
+        <div class="grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 sm:gap-y-12 lg:grid-cols-4">
+          {jackets.map((v, i) => <DressCard vestido={v} prioridad={i < 2} />)}
+        </div>
+      ) : (
+        <p class="etiqueta text-oliva/70">Próximamente</p>
+      )}
     </div>
   </section>
 

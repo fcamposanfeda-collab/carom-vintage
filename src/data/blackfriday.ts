@@ -48,6 +48,13 @@ export const novedades = novedadesIds
   .map((id) => vestidos.find((v) => v.id === id))
   .filter((v): v is Vestido => Boolean(v));
 
+// The Jacket Edition — añade aquí los IDs de las chaquetas
+export const jacketsIds = [] as const;
+
+export const jackets = jacketsIds
+  .map((id) => vestidos.find((v) => v.id === id))
+  .filter((v): v is Vestido => Boolean(v));
+
 export function getVestido(id: string) {
   return vestidos.find((v) => v.id === id);
 }

@@ -64,7 +64,15 @@ export const textos = {
 
   // PROVISIONAL
   coleccion: {
-    titulo: 'La selección de la noche',
+    titulo: 'Selección de piezas',
+  },
+
+  // PROVISIONAL
+  jackets: {
+    titulo: 'The Jacket Edition',
+    etiqueta: 'Chaquetas de pieza única',
+    texto:
+      'Una edición aparte: chaquetas vintage con carácter, listas para cerrar un look o llevarse solas.',
   },
 
   // PROVISIONAL
