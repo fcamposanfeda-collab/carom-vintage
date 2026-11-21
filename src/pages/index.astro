@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import DressCard from '../components/DressCard.astro';
 import Countdown from '../components/Countdown.astro';
 import { site, textos, faq, contactoLink } from '../data/site';
-import { blackFriday as bf, vestidos, novedades, imagenPrincipal, rutaVestido } from '../data/blackfriday';
+import { blackFriday as bf, vestidos, novedades, novedadesIds, imagenPrincipal, rutaVestido } from '../data/blackfriday';
 
 // PROVISIONAL: fotos de portada, invitadas y nosotros
 const fotoPortada = '/img/fondo-portada-black-friday.webp';
@@ -11,6 +11,8 @@ const fotoNosotros = '/img/nosotros-foto.webp';
 
 const base = Astro.site ?? new URL(site.url);
 const abs = (ruta: string) => new URL(ruta, base).href;
+const idsNovedades = new Set<string>(novedadesIds);
+const seleccion = vestidos.filter((v) => !idsNovedades.has(v.id));
 const disponibles = vestidos.filter((v) => v.estado === 'disponible').length;
 
 const disponibilidad = {
@@ -161,7 +163,7 @@ const schemaColeccion = {
         </a>
       </div>
       <div class="grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 sm:gap-y-12 lg:grid-cols-4">
-        {vestidos.map((v, i) => <DressCard vestido={v} prioridad={i < 4} />)}
+        {seleccion.map((v, i) => <DressCard vestido={v} prioridad={i < 4} />)}
       </div>
     </div>
   </section>
