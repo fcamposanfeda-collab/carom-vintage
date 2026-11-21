@@ -353,7 +353,9 @@
       "descuento": 25,
       "estado": "disponible",
       "descripcion": "",
-      "imagenes": [],
+      "imagenes": [
+        "/img/piezas/la-noak/1.webp"
+      ],
       "alt": "Vestido La Noak, pieza vintage única"
     },
     {
@@ -402,8 +404,7 @@
         "/img/piezas/celine/1.webp",
         "/img/piezas/celine/2.webp",
         "/img/piezas/celine/3.webp",
-        "/img/piezas/celine/4.webp",
-        "/img/piezas/celine/5.webp"
+        "/img/piezas/celine/4.webp"
       ],
       "alt": "Vestido Celine, pieza vintage única"
     },
