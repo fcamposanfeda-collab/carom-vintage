@@ -1,5 +1,5 @@
 ---
-import { blackFriday, hayDescuento, precioFinal, formatoPrecio, rutaVestido, imagenPrincipal, type Vestido } from '../data/blackfriday';
+import { formatoPrecio, rutaVestido, imagenPrincipal, type Vestido } from '../data/blackfriday';
 
 interface Props {
   vestido: Vestido;
@@ -7,7 +7,6 @@ interface Props {
 }
 const { vestido: v, prioridad = false } = Astro.props;
 const disponible = v.estado === 'disponible';
-const rebajado = hayDescuento() && disponible && v.precio !== null;
 const foto = imagenPrincipal(v);
 const ruta = rutaVestido(v.id);
 const estadoTexto = { disponible: '', reservado: 'Reservado', vendido: 'Vendido' }[v.estado];
@@ -32,15 +31,9 @@ const estadoTexto = { disponible: '', reservado: 'Reservado', vendido: 'Vendido'
         Foto pendiente
       </span>
     )}
-    {rebajado ? (
-      <p class="absolute top-3.5 left-3.5 bg-oliva px-2.5 py-1.5 text-[0.68rem] tracking-[0.2em] text-crema uppercase">
-        −{blackFriday.descuento} %
-      </p>
-    ) : (
-      <p class="absolute top-3.5 left-3.5 bg-oliva px-2.5 py-1.5 text-[0.68rem] tracking-[0.2em] text-crema uppercase">
-        Pieza única
-      </p>
-    )}
+    <p class="absolute top-3.5 left-3.5 bg-oliva px-2.5 py-1.5 text-[0.68rem] tracking-[0.2em] text-crema uppercase">
+      Pieza única
+    </p>
     {!disponible && (
       <p class="etiqueta absolute inset-x-0 bottom-6 text-center text-oliva">{estadoTexto}</p>
     )}
@@ -53,16 +46,8 @@ const estadoTexto = { disponible: '', reservado: 'Reservado', vendido: 'Vendido'
         <a href={ruta} class="transition-opacity hover:opacity-70">{v.nombre}</a>
       </h3>
       {v.precio !== null && (
-        <p class="shrink-0 text-sm">
-          {rebajado ? (
-            <>
-              <s class="text-oliva/60">{formatoPrecio(v.precio)}</s>
-              <span class="text-oliva/60"> · </span>
-              <strong class="font-medium text-oliva">{formatoPrecio(precioFinal(v.precio))}</strong>
-            </>
-          ) : (
-            <span class:list={[!disponible && 'text-oliva/60 line-through']}>{formatoPrecio(v.precio)}</span>
-          )}
+        <p class:list={['shrink-0 text-sm', !disponible && 'text-oliva/60 line-through']}>
+          {formatoPrecio(v.precio)}
         </p>
       )}
     </div>

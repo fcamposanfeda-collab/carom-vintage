@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import DressCard from '../components/DressCard.astro';
 import Countdown from '../components/Countdown.astro';
 import { site, textos, faq, contactoLink } from '../data/site';
-import { blackFriday as bf, vestidos, novedades, precioFinal, imagenPrincipal, rutaVestido } from '../data/blackfriday';
+import { blackFriday as bf, vestidos, novedades, imagenPrincipal, rutaVestido } from '../data/blackfriday';
 
 // PROVISIONAL: fotos de portada, invitadas y nosotros
 const fotoPortada = '/img/fondo-portada-black-friday.webp';
@@ -47,7 +47,7 @@ const schemaColeccion = {
       ...(v.precio !== null && {
         offers: {
           '@type': 'Offer',
-          price: precioFinal(v.precio).toFixed(2),
+          price: v.precio.toFixed(2),
           priceCurrency: 'EUR',
           availability: disponibilidad[v.estado],
           itemCondition: 'https://schema.org/UsedCondition',

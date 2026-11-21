@@ -5,8 +5,7 @@ import {
   blackFriday as bf,
   getVestido,
   vestidos,
-  hayDescuento,
-  precioFinal,
+  descuentoDe,
   formatoPrecio,
   imagenPrincipal,
   esVideo,
@@ -21,7 +20,7 @@ const v = getVestido(id!);
 if (!v) return Astro.redirect('/#coleccion');
 
 const disponible = v.estado === 'disponible';
-const rebajado = hayDescuento() && disponible && v.precio !== null;
+const descuento = descuentoDe(v);
 const fotoPrincipal = imagenPrincipal(v);
 const base = Astro.site ?? new URL(site.url);
 const url = new URL(`/piezas/${v.id}`, base).href;
@@ -38,7 +37,7 @@ const schemaProducto = {
   ...(v.precio !== null && {
     offers: {
       '@type': 'Offer',
-      price: precioFinal(v.precio).toFixed(2),
+      price: v.precio.toFixed(2),
       priceCurrency: 'EUR',
       availability:
         v.estado === 'disponible'
@@ -125,17 +124,17 @@ const schemaProducto = {
           </p>
         )}
 
-        {v.precio !== null && (
-          <p class="mt-8 font-serif text-3xl text-oliva">
-            {rebajado ? (
-              <>
-                <s class="mr-3 text-xl text-oliva/60">{formatoPrecio(v.precio)}</s>
-                <span>{formatoPrecio(precioFinal(v.precio))}</span>
-              </>
-            ) : (
-              formatoPrecio(v.precio)
+        {(v.precio !== null || descuento !== null) && (
+          <div class="mt-8 flex flex-wrap items-baseline gap-x-4 gap-y-2">
+            {descuento !== null && (
+              <p class="bg-oliva px-2.5 py-1.5 text-[0.68rem] tracking-[0.2em] text-crema uppercase">
+                −{descuento} %
+              </p>
             )}
-          </p>
+            {v.precio !== null && (
+              <p class="font-serif text-3xl text-oliva">{formatoPrecio(v.precio)}</p>
+            )}
+          </div>
         )}
 
         <dl class="mt-10 space-y-5 border-y border-noche/15 py-8">

@@ -6,8 +6,6 @@ import data from './vestidos.json';
 export const blackFriday = {
   // PROVISIONAL: pon false cuando acabe la promo
   activo: true,
-  // PROVISIONAL: descuento en %. null = aún no hay % (solo se muestra el precio si existe)
-  descuento: null as number | null,
   // PROVISIONAL: fechas de inicio y fin (hora peninsular)
   inicio: '2026-11-23T00:00:00+01:00',
   fin: '2026-11-30T23:59:59+01:00',
@@ -22,7 +20,10 @@ export type Vestido = {
   nombre: string;
   talla: string;
   medidas: string;
+  /** Precio final (el “Ahora” del PDF). */
   precio: number | null;
+  /** Descuento Black Friday de esta pieza, en %. */
+  descuento: number | null;
   estado: Estado;
   descripcion: string;
   imagenes: string[];
@@ -70,12 +71,13 @@ export function imagenPrincipal(v: Vestido) {
   return v.imagenes.find((ruta) => !esVideo(ruta)) ?? '';
 }
 
-export function hayDescuento() {
-  return blackFriday.activo && typeof blackFriday.descuento === 'number' && blackFriday.descuento > 0;
+export function descuentoDe(v: Vestido): number | null {
+  if (!blackFriday.activo) return null;
+  return typeof v.descuento === 'number' && v.descuento > 0 ? v.descuento : null;
 }
 
-export function precioFinal(precio: number) {
-  return hayDescuento() ? Math.round(precio * (100 - blackFriday.descuento!)) / 100 : precio;
+export function hayDescuento(v: Vestido) {
+  return descuentoDe(v) !== null;
 }
 
 export function formatoPrecio(precio: number) {
