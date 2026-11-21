@@ -4,14 +4,17 @@ import { formatoPrecio, rutaVestido, imagenPrincipal, type Vestido } from '../da
 interface Props {
   vestido: Vestido;
   prioridad?: boolean;
+  /** claro = fondo blanco; oscuro = fondo oliva */
+  tono?: 'claro' | 'oscuro';
 }
-const { vestido: v, prioridad = false } = Astro.props;
+const { vestido: v, prioridad = false, tono = 'claro' } = Astro.props;
 const disponible = v.estado === 'disponible';
 const foto = imagenPrincipal(v);
 const ruta = rutaVestido(v.id);
 const estadoTexto = { disponible: '', reservado: 'Reservado', vendido: 'Vendido' }[v.estado];
+const oscuro = tono === 'oscuro';
 ---
-<article class="reveal flex flex-col gap-3.5 text-oliva">
+<article class:list={['reveal flex flex-col gap-3.5', oscuro ? 'text-crema' : 'text-oliva']}>
   <a href={ruta} class="group relative block aspect-[3/4] overflow-hidden bg-lino" aria-label={`Ver ${v.nombre}`}>
     {foto ? (
       <img
@@ -27,40 +30,64 @@ const estadoTexto = { disponible: '', reservado: 'Reservado', vendido: 'Vendido'
         ]}
       />
     ) : (
-      <span class="etiqueta absolute inset-0 flex items-center justify-center px-4 text-center text-oliva">
+      <span
+        class:list={[
+          'etiqueta absolute inset-0 flex items-center justify-center px-4 text-center',
+          oscuro ? 'text-oliva' : 'text-oliva',
+        ]}
+      >
         Foto pendiente
       </span>
     )}
-    <p class="absolute top-3.5 left-3.5 bg-oliva px-2.5 py-1.5 text-[0.68rem] tracking-[0.2em] text-crema uppercase">
+    <p
+      class:list={[
+        'absolute top-3.5 left-3.5 px-2.5 py-1.5 text-[0.68rem] tracking-[0.2em] uppercase',
+        oscuro ? 'bg-crema text-oliva' : 'bg-oliva text-crema',
+      ]}
+    >
       Pieza única
     </p>
     {!disponible && (
-      <p class="etiqueta absolute inset-x-0 bottom-6 text-center text-oliva">{estadoTexto}</p>
+      <p class:list={['etiqueta absolute inset-x-0 bottom-6 text-center', oscuro ? 'text-crema' : 'text-oliva']}>
+        {estadoTexto}
+      </p>
     )}
   </a>
 
   <div class="flex flex-col gap-1">
-    <p class="text-[0.68rem] tracking-[0.24em] text-oliva/70 uppercase">Pieza única</p>
+    <p class:list={['text-[0.68rem] tracking-[0.24em] uppercase', oscuro ? 'text-crema/70' : 'text-oliva/70']}>
+      Pieza única
+    </p>
     <div class="flex items-baseline justify-between gap-3">
-      <h3 class="text-[1.35rem] text-oliva sm:text-[1.4rem]">
+      <h3 class:list={['text-[1.35rem] sm:text-[1.4rem]', oscuro ? 'text-crema' : 'text-oliva']}>
         <a href={ruta} class="transition-opacity hover:opacity-70">{v.nombre}</a>
       </h3>
       {v.precio !== null && (
-        <p class:list={['shrink-0 text-sm', !disponible && 'text-oliva/60 line-through']}>
+        <p
+          class:list={[
+            'shrink-0 text-sm',
+            !disponible && (oscuro ? 'text-crema/60 line-through' : 'text-oliva/60 line-through'),
+          ]}
+        >
           {formatoPrecio(v.precio)}
         </p>
       )}
     </div>
     {v.talla ? (
-      <p class="text-sm text-oliva/80">Talla {v.talla}</p>
+      <p class:list={['text-sm', oscuro ? 'text-crema/80' : 'text-oliva/80']}>Talla {v.talla}</p>
     ) : (
-      <p class="text-sm text-oliva/80">Talla pendiente</p>
+      <p class:list={['text-sm', oscuro ? 'text-crema/80' : 'text-oliva/80']}>Talla pendiente</p>
     )}
   </div>
 
   <a
     href={ruta}
-    class="etiqueta mt-1 block border border-oliva/30 py-3.5 text-center text-oliva transition-colors duration-300 hover:bg-oliva hover:text-crema"
+    class:list={[
+      'etiqueta mt-1 block border py-3.5 text-center transition-colors duration-300',
+      oscuro
+        ? 'border-crema/35 text-crema hover:bg-crema hover:text-oliva'
+        : 'border-oliva/30 text-oliva hover:bg-oliva hover:text-crema',
+    ]}
   >
     Ver pieza
   </a>

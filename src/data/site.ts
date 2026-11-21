@@ -78,9 +78,9 @@ export const textos = {
   // PROVISIONAL
   nosotros: {
     titulo: 'Nosotros',
-    entradilla: 'Creemos que un vestido especial no debería repetirse en cada boda.',
+    entradilla: 'Creemos que un vestido especial no debería repetirse en cada evento.',
     parrafos: [
-      'Càrom Studio Vintage nace de la búsqueda paciente de piezas con historia. Recorremos talleres, armarios y mercados para encontrar vestidos que merecen una segunda vida, y los cuidamos a mano hasta que vuelven a estar perfectos.',
+      'Càrom nace de la búsqueda paciente de piezas con historia. Recorremos talleres, armarios y mercados para encontrar vestidos que merecen una segunda vida, y los cuidamos a mano hasta que vuelven a estar perfectos.',
       'Por eso de cada vestido solo hay uno, en una única talla. No hay reposiciones ni colecciones en serie: hay piezas que se eligen una vez y se recuerdan siempre.',
     ],
   },
