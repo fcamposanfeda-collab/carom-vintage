@@ -179,7 +179,7 @@ const schemaColeccion = {
         {textos.jackets.texto}
       </p>
       {jackets.length > 0 ? (
-        <div class="grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 sm:gap-y-12 lg:grid-cols-4">
+        <div class="grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 sm:gap-y-12">
           {jackets.map((v, i) => <DressCard vestido={v} prioridad={i < 2} />)}
         </div>
       ) : (
