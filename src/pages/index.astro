@@ -5,7 +5,7 @@ import Countdown from '../components/Countdown.astro';
 import { site, textos, faq, contactoLink } from '../data/site';
 import { blackFriday as bf, vestidos, novedades, novedadesIds, jackets, jacketsIds, imagenPrincipal, rutaVestido } from '../data/blackfriday';
 
-// PROVISIONAL: fotos de portada, invitadas y nosotros
+// PROVISIONAL: fotos de portada y nosotros
 const fotoPortada = '/img/fondo-portada-black-friday.webp';
 const fotoNosotros = '/img/nosotros-foto.webp';
 
@@ -174,7 +174,6 @@ const schemaColeccion = {
     <div class="contenedor">
       <div class="mb-6 flex flex-wrap items-baseline justify-between gap-4 border-t border-noche/15 pt-7">
         <h2 id="titulo-jackets" class="text-4xl font-normal">{textos.jackets.titulo}</h2>
-        <p class="etiqueta text-oliva">{textos.jackets.etiqueta}</p>
       </div>
       <p class="mb-10 max-w-2xl text-[1.05rem] leading-relaxed text-oliva/80">
         {textos.jackets.texto}
@@ -189,39 +188,15 @@ const schemaColeccion = {
     </div>
   </section>
 
-  <!-- INVITADAS -->
-  <section id="invitadas" class="scroll-mt-8 bg-oliva text-crema">
-    <div class="contenedor grid items-center gap-10 py-20 md:grid-cols-2 md:gap-16 sm:py-28">
-      <div class="reveal flex flex-col gap-7">
-        <h2 class="max-w-xl text-[clamp(2.5rem,5vw,4.25rem)] leading-[1.05]">
-          {textos.invitadas.titulo[0]}
-          <br />
-          <span class="italic">{textos.invitadas.titulo[1]}</span>
-        </h2>
-        <p class="max-w-md text-[1.05rem] leading-relaxed text-crema/85">{textos.invitadas.texto}</p>
-      </div>
-      <div class="reveal flex items-center justify-center">
-        <a
-          href={contactoLink()}
-          target="_blank"
-          rel="noopener"
-          class="btn-claro"
-          data-umami-event="instagram-md-click"
-          data-umami-event-origen="invitadas"
-        >
-          Consultar vestido
-        </a>
-      </div>
-    </div>
-  </section>
-
   <!-- TARJETA REGALO -->
   <section id="tarjeta-regalo" class="scroll-mt-8 border-t border-noche/10 bg-white py-20 text-oliva sm:py-28" aria-labelledby="titulo-tarjeta-regalo">
     <div class="contenedor grid items-center gap-12 md:grid-cols-2 md:gap-16">
       <div class="reveal">
         <p class="etiqueta text-oliva/70">{textos.tarjetaRegalo.etiqueta}</p>
         <h2 id="titulo-tarjeta-regalo" class="mt-5 text-5xl sm:text-6xl">{textos.tarjetaRegalo.titulo}</h2>
-        <p class="mt-8 max-w-md text-[1.05rem] leading-relaxed text-oliva/80">{textos.tarjetaRegalo.texto}</p>
+        <div class="mt-8 max-w-md space-y-4 text-[1.05rem] leading-relaxed text-oliva/80">
+          {textos.tarjetaRegalo.parrafos.map((p) => <p>{p}</p>)}
+        </div>
         <a
           href={contactoLink()}
           target="_blank"
@@ -242,6 +217,31 @@ const schemaColeccion = {
         decoding="async"
         class="reveal mx-auto w-full max-w-md object-contain md:max-w-none"
       />
+    </div>
+
+    <div class="contenedor mt-16 grid gap-12 border-t border-noche/10 pt-14 md:mt-20 md:grid-cols-2 md:gap-16 md:pt-16">
+      <div class="reveal">
+        <h3 class="font-serif text-3xl font-light sm:text-4xl">{textos.tarjetaRegalo.comoFunciona.titulo}</h3>
+        <ol class="mt-8 space-y-5 text-[1.05rem] leading-relaxed text-oliva/80">
+          {textos.tarjetaRegalo.comoFunciona.pasos.map((paso, i) => (
+            <li class="flex gap-4">
+              <span class="etiqueta shrink-0 pt-1 text-oliva">{i + 1}.</span>
+              <span>{paso}</span>
+            </li>
+          ))}
+        </ol>
+      </div>
+      <div class="reveal">
+        <h3 class="font-serif text-3xl font-light sm:text-4xl">{textos.tarjetaRegalo.queIncluye.titulo}</h3>
+        <ul class="mt-8 space-y-5 text-[1.05rem] leading-relaxed text-oliva/80">
+          {textos.tarjetaRegalo.queIncluye.items.map((item) => (
+            <li class="flex gap-4">
+              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-oliva/50" aria-hidden="true" />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -280,7 +280,7 @@ const schemaColeccion = {
               <h3 class="text-2xl font-light">{f.pregunta}</h3>
               <span class="text-3xl text-oliva transition-transform group-open:rotate-45" aria-hidden="true">+</span>
             </summary>
-            <p class="mt-4 text-oliva/80">{f.respuesta}</p>
+            <p class="mt-4 whitespace-pre-line text-oliva/80">{f.respuesta}</p>
           </details>
         ))}
       </div>

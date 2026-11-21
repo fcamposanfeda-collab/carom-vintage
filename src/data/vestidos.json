@@ -764,6 +764,96 @@
         "/img/piezas/eclat/5.webp"
       ],
       "alt": "Vestido Éclat, pieza vintage única"
+    },
+    {
+      "id": "drop-01",
+      "nombre": "Drop 0.1",
+      "talla": "",
+      "medidas": "Pecho: hasta 100 cm\nSisa: 21 cm\nLargo: 60 cm",
+      "precio": 63,
+      "descuento": 10,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/drop-01/1.webp",
+        "/img/piezas/drop-01/2.webp"
+      ],
+      "alt": "Drop 0.1, chaqueta vintage de pieza única"
+    },
+    {
+      "id": "drop-02",
+      "nombre": "Drop 0.2",
+      "talla": "",
+      "medidas": "Pecho: hasta 104 cm\nSisa: 24 cm\nLargo: 54 cm",
+      "precio": 76.5,
+      "descuento": 10,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/drop-02/1.webp",
+        "/img/piezas/drop-02/2.webp"
+      ],
+      "alt": "Drop 0.2, chaqueta vintage de pieza única"
+    },
+    {
+      "id": "drop-03",
+      "nombre": "Drop 0.3",
+      "talla": "",
+      "medidas": "Pecho: hasta 90 cm\nSisa: 20 cm\nLargo: 55 cm",
+      "precio": 90,
+      "descuento": 10,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/drop-03/1.webp",
+        "/img/piezas/drop-03/2.webp"
+      ],
+      "alt": "Drop 0.3, chaqueta vintage de pieza única"
+    },
+    {
+      "id": "drop-04",
+      "nombre": "Drop 0.4",
+      "talla": "",
+      "medidas": "Pecho: hasta 88 cm\nSisa: 20 cm\nLargo: 52 cm",
+      "precio": 54,
+      "descuento": 10,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/drop-04/1.webp",
+        "/img/piezas/drop-04/2.webp"
+      ],
+      "alt": "Drop 0.4, chaqueta vintage de pieza única"
+    },
+    {
+      "id": "drop-05",
+      "nombre": "Drop 0.5",
+      "talla": "",
+      "medidas": "Pecho: hasta 96 cm\nSisa: 25 cm\nLargo: 59 cm",
+      "precio": 67.5,
+      "descuento": 10,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/drop-05/1.webp",
+        "/img/piezas/drop-05/2.webp"
+      ],
+      "alt": "Drop 0.5, chaqueta vintage de pieza única"
+    },
+    {
+      "id": "drop-06",
+      "nombre": "Drop 0.6",
+      "talla": "",
+      "medidas": "Abierta completamente, no tiene botones\nPecho: 96 cm\nSisa: 23 cm\nLargo: 60 cm",
+      "precio": 76.5,
+      "descuento": 10,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/drop-06/1.webp",
+        "/img/piezas/drop-06/2.webp"
+      ],
+      "alt": "Drop 0.6, chaqueta vintage de pieza única"
     }
   ]
 }

@@ -14,7 +14,7 @@ const enlaces = [
 ];
 ---
 <p class="bg-oliva px-4 py-2.5 text-center text-[0.62rem] tracking-[0.2em] text-crema uppercase sm:text-xs sm:tracking-[0.24em]">
-  {bf.activo ? `Acceso privado · ${bf.fechasTexto}` : 'Piezas únicas · Envíos a toda España'}
+  {bf.activo ? bf.fechasTexto : 'Piezas únicas · Envíos a toda España'}
 </p>
 
 <header class="sticky top-0 z-20 border-b border-oliva/15 bg-white text-oliva">
@@ -22,7 +22,7 @@ const enlaces = [
     <button
       id="boton-menu"
       type="button"
-      class="flex h-11 w-11 items-center justify-center"
+      class="flex h-11 w-11 cursor-pointer items-center justify-center"
       aria-label="Abrir menú"
       aria-expanded="false"
       aria-controls="menu-principal"

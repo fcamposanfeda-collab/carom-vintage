@@ -7,10 +7,10 @@ export const blackFriday = {
   // PROVISIONAL: pon false cuando acabe la promo
   activo: true,
   // PROVISIONAL: fechas de inicio y fin (hora peninsular)
-  inicio: '2026-11-23T00:00:00+01:00',
-  fin: '2026-11-30T23:59:59+01:00',
+  inicio: '2026-11-22T00:00:00+01:00',
+  fin: '2026-11-29T23:59:59+01:00',
   // PROVISIONAL: fechas tal y como se leen en los textos
-  fechasTexto: 'Del 23 al 30 de noviembre',
+  fechasTexto: 'Del 22 al 29 de noviembre',
 };
 
 export type Estado = 'disponible' | 'reservado' | 'vendido';
@@ -48,8 +48,15 @@ export const novedades = novedadesIds
   .map((id) => vestidos.find((v) => v.id === id))
   .filter((v): v is Vestido => Boolean(v));
 
-// The Jacket Edition — añade aquí los IDs de las chaquetas
-export const jacketsIds = [] as const;
+// The Jacket Edit
+export const jacketsIds = [
+  'drop-01',
+  'drop-02',
+  'drop-03',
+  'drop-04',
+  'drop-05',
+  'drop-06',
+] as const;
 
 export const jackets = jacketsIds
   .map((id) => vestidos.find((v) => v.id === id))

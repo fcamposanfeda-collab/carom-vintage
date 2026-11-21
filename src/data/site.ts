@@ -57,7 +57,7 @@ export const textos = {
   // PROVISIONAL
   novedades: {
     titulo: 'Novedades',
-    etiqueta: 'Acaban de llegar · 8 piezas',
+    etiqueta: 'Acaban de llegar',
     texto:
       'Descubre antes que nadie nuestras próximas piezas, con descuentos exclusivos de Black Friday reservados únicamente para este acceso privado.',
   },
@@ -69,18 +69,10 @@ export const textos = {
 
   // PROVISIONAL
   jackets: {
-    titulo: 'The Jacket Edition',
-    etiqueta: 'Chaquetas de pieza única',
+    titulo: 'The Jacket Edit',
+    etiqueta: 'Drop 0.1 — 0.6 · 6 piezas',
     texto:
       'Una edición aparte: chaquetas vintage con carácter, listas para cerrar un look o llevarse solas.',
-  },
-
-  // PROVISIONAL
-  invitadas: {
-    eyebrow: 'Para invitadas',
-    titulo: ['Vestirse para una noche', 'muy especial'],
-    texto:
-      'Sedas, terciopelos y lentejuelas que brillan mejor cuando lo llevas tú. Una edición pensada para los eventos más importantes.',
   },
 
   // PROVISIONAL
@@ -97,42 +89,66 @@ export const textos = {
   tarjetaRegalo: {
     etiqueta: 'Regalo con historia',
     titulo: 'Tarjeta regalo',
-    texto:
-      'Para quien aún no ha encontrado su pieza. Una tarjeta regalo de Càrom Studio Vintage, lista para elegir el vestido único que marcará su ocasión.',
+    parrafos: [
+      'Regala la oportunidad de encontrar una pieza vintage única y especial.',
+      'Personaliza tu tarjeta con el importe que desees y elige entre formato físico o digital.',
+      'Sin fecha de caducidad, con acceso anticipado a nuevas piezas y asesoramiento personalizado para encontrar la prenda perfecta.',
+    ],
     cta: 'Consultar tarjeta regalo',
+    comoFunciona: {
+      titulo: '¿Cómo funciona?',
+      pasos: [
+        'Elige el importe: personalizamos la tarjeta con el nombre de la persona que la recibirá.',
+        'Escoge el formato: digital o físico, con envío a domicilio.',
+        'Canjea tu tarjeta: cada una incluye un código único para utilizar al realizar una compra.',
+        'Sin caducidad: podrá elegir su pieza favorita cuando quiera, sin prisas.',
+      ],
+    },
+    queIncluye: {
+      titulo: '¿Qué incluye?',
+      items: [
+        'Acceso anticipado a piezas antes de que salgan a la venta.',
+        'Asesoramiento personalizado para encontrar prendas que encajen con sus gustos.',
+        'Atención exclusiva: le avisaremos cuando lleguen piezas especiales que puedan interesarle.',
+      ],
+    },
   },
 };
 
-// PROVISIONAL: preguntas frecuentes (edítalas cuando el chico confirme textos)
 export const faq = [
   {
     pregunta: '¿Qué es The Private Edit?',
     respuesta:
-      'Es nuestro acceso privado de Black Friday: una selección de vestidos vintage de pieza única, abierta solo unos días al año.',
+      'Es nuestro acceso privado de Black Friday: una selección exclusiva de vestidos vintage de piezas únicas, disponibles solo durante unos días al año. Una oportunidad especial para encontrar ese vestido que no volverás a ver a precios únicos.',
   },
   {
     pregunta: '¿Cada vestido es realmente único?',
     respuesta:
-      'Sí. De cada modelo solo hay una unidad y una sola talla. Cuando alguien lo reserva, desaparece de la selección.',
+      'Sí. Cada vestido es una pieza vintage única, seleccionada cuidadosamente por su diseño, calidad y carácter especial. Solo existe una unidad de cada modelo, por lo que, una vez agotado, no volverá a estar disponible.',
   },
   {
     pregunta: '¿Cómo reservo un vestido?',
     respuesta:
-      'Pulsa «Lo quiero» en la pieza que te guste y escríbenos por mensaje directo en Instagram. Te confirmamos disponibilidad y te guiamos con el resto.',
+      'Si te has enamorado de alguna de nuestras piezas, escríbenos por Instagram indicándonos el nombre o mandándonos captura de tu pieza favorita, y nos encargaremos de gestionar tu reserva personalmente.\n\nRecuerda que cada vestido es una pieza única y las reservas se realizan por orden de confirmación. Una vez que se va, no vuelve.',
   },
   {
     pregunta: '¿Hacéis envíos?',
     respuesta:
-      'Sí, enviamos a toda España. Te confirmamos plazos y condiciones por Instagram cuando reserves tu pieza.',
+      'Sí, enviamos nuestros vestidos a toda España y también envíos internacionales. Los plazos de entrega son de 24 a 48 horas y el gasto de envío está incluido con tu compra.',
   },
   {
     pregunta: '¿Puedo probarme el vestido?',
     respuesta:
-      'Depende de la zona y de la pieza. Escríbenos por Instagram y te contamos las opciones para tu caso.',
+      'No disponemos de un espacio físico para realizar pruebas, pero estaremos encantados de asesorarte de forma personalizada. Si nos facilitas tus medidas, te orientaremos con total honestidad y transparencia sobre cómo puede quedarte cada vestido, para que puedas elegir con la mayor confianza posible.',
   },
   {
     pregunta: '¿Qué tallas tenéis?',
     respuesta:
-      'Cada vestido tiene su propia talla, indicada en la ficha. Si dudas, mándanos un MD y te ayudamos con medidas.',
+      'Al trabajar con vestidos vintage de pieza única, las tallas varían según cada modelo. En la descripción de cada pieza encontrarás las medidas de la prenda para que puedas comprobar cómo se adapta a ti. Si necesitas ayuda, escríbenos y te orientaremos para encontrar tu vestido ideal. Pero tenemos desde XS hasta XL.',
+  },
+  {
+    pregunta: '¿Se aceptan devoluciones?',
+    respuesta:
+      'Trabajamos con piezas únicas y exclusivas, por lo que, en principio, no aceptamos devoluciones.\n\nNo obstante, podemos valorar cada caso si, en un plazo de 48 horas desde la solicitud, otra clienta muestra interés en adquirir la prenda.\n\nPara garantizar una compra acertada, facilitamos las medidas exactas de cada pieza y ofrecemos asesoramiento personalizado, siempre con honestidad y transparencia.\n\nNuestra prioridad es que encuentres una prenda que te encante y te siente perfecta.',
   },
 ];
