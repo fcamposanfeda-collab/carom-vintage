@@ -2,6 +2,153 @@
   "_PROVISIONAL": "// precio = precio final (Ahora). descuento = % por pieza. talla/medidas vacíos hasta confirmar. imagenes en /public/img. estado: disponible | reservado | vendido.",
   "vestidos": [
     {
+      "id": "lessina",
+      "nombre": "Vestido Lessina",
+      "talla": "XS-M",
+      "medidas": "Pecho: 85-90 cm\nCintura: 75-80 cm\nCadera: hasta 100 cm\nLargo: 150 cm",
+      "precio": 275,
+      "descuento": 30,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/lessina/1.webp",
+        "/img/piezas/lessina/2.webp",
+        "/img/piezas/lessina/3.webp",
+        "/img/piezas/lessina/4.webp",
+        "/img/piezas/lessina/5.webp"
+      ],
+      "alt": "Vestido Lessina, pieza vintage única"
+    },
+    {
+      "id": "estigia",
+      "nombre": "Vestido Estigia",
+      "talla": "XS-S",
+      "medidas": "Pecho: 80-82 cm\nCintura: 75-78 cm\nCadera: hasta 100 cm\nLargo: 140 cm desde el pecho",
+      "precio": 220,
+      "descuento": 20,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/estigia/1.webp",
+        "/img/piezas/estigia/2.webp",
+        "/img/piezas/estigia/3.webp",
+        "/img/piezas/estigia/4.webp",
+        "/img/piezas/estigia/5.webp",
+        "/img/piezas/estigia/6.webp"
+      ],
+      "alt": "Vestido Estigia, pieza vintage única"
+    },
+    {
+      "id": "kali",
+      "nombre": "Vestido Kâli",
+      "talla": "XS-M",
+      "medidas": "Pecho: 78-99 cm (corpiño)\nCintura: 75-80 cm\nCadera: hasta 105 cm\nLargo: 140 cm desde el pecho",
+      "precio": 275,
+      "descuento": 25,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/kali/1.webp",
+        "/img/piezas/kali/2.webp",
+        "/img/piezas/kali/3.webp",
+        "/img/piezas/kali/4.webp",
+        "/img/piezas/kali/5.webp",
+        "/img/piezas/kali/6.webp"
+      ],
+      "alt": "Vestido Kâli, pieza vintage única"
+    },
+    {
+      "id": "aureline",
+      "nombre": "Vestido Aureline",
+      "talla": "XS-M",
+      "medidas": "Pecho: desde 80 cm hasta 100 cm\nCintura: 75-95 cm\nCadera: hasta 105 cm\nLargo: 130 cm",
+      "precio": 165,
+      "descuento": 30,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/aureline/1.webp",
+        "/img/piezas/aureline/2.webp",
+        "/img/piezas/aureline/3.webp",
+        "/img/piezas/aureline/4.webp"
+      ],
+      "alt": "Vestido Aureline, pieza vintage única"
+    },
+    {
+      "id": "aiko",
+      "nombre": "Vestido Aiko",
+      "talla": "S-L",
+      "medidas": "Pecho: 88-100 cm\nCintura: 78-85 cm\nCadera: hasta 110 cm\nLargo: 140 cm",
+      "precio": 180,
+      "descuento": 30,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/aiko/1.webp",
+        "/img/piezas/aiko/2.webp",
+        "/img/piezas/aiko/3.webp",
+        "/img/piezas/aiko/4.webp",
+        "/img/piezas/aiko/5.webp",
+        "/img/piezas/aiko/6.webp"
+      ],
+      "alt": "Vestido Aiko, pieza vintage única"
+    },
+    {
+      "id": "lorenza",
+      "nombre": "Vestido Lorenza",
+      "talla": "S-L",
+      "medidas": "Pecho: 88-98 cm\nCintura: 80 cm\nCadera: hasta 104 cm\nLargo: 141 cm",
+      "precio": 175,
+      "descuento": 30,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/lorenza/1.webp",
+        "/img/piezas/lorenza/2.webp",
+        "/img/piezas/lorenza/3.webp",
+        "/img/piezas/lorenza/4.webp",
+        "/img/piezas/lorenza/5.webp"
+      ],
+      "alt": "Vestido Lorenza, pieza vintage única"
+    },
+    {
+      "id": "mao",
+      "nombre": "Vestido Mao",
+      "talla": "XXS/XS",
+      "medidas": "Pecho: 80 cm\nCintura: 75 cm\nCadera: hasta 90 cm\nLargo: 150 cm",
+      "precio": 140,
+      "descuento": 35,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/mao/1.webp",
+        "/img/piezas/mao/2.webp",
+        "/img/piezas/mao/3.webp",
+        "/img/piezas/mao/4.webp",
+        "/img/piezas/mao/5.webp"
+      ],
+      "alt": "Vestido Mao, pieza vintage única"
+    },
+    {
+      "id": "gianna",
+      "nombre": "Vestido Gianna",
+      "talla": "S-M",
+      "medidas": "Pecho: 85-90 cm\nCintura: 75-80 cm\nCadera: hasta 110 cm\nLargo: 140 cm desde el pecho",
+      "precio": 275,
+      "descuento": 20,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/gianna/1.webp",
+        "/img/piezas/gianna/2.webp",
+        "/img/piezas/gianna/3.webp",
+        "/img/piezas/gianna/4.webp",
+        "/img/piezas/gianna/5.webp",
+        "/img/piezas/gianna/6.webp"
+      ],
+      "alt": "Vestido Gianna, pieza vintage única"
+    },
+    {
       "id": "esencia-dorada",
       "nombre": "Dos piezas Esencia Dorada",
       "talla": "M",
@@ -10,7 +157,11 @@
       "descuento": 20,
       "estado": "disponible",
       "descripcion": "",
-      "imagenes": ["/img/piezas/esencia-dorada/1.webp", "/img/piezas/esencia-dorada/2.webp", "/img/piezas/esencia-dorada/3.webp"],
+      "imagenes": [
+        "/img/piezas/esencia-dorada/1.webp",
+        "/img/piezas/esencia-dorada/2.webp",
+        "/img/piezas/esencia-dorada/3.webp"
+      ],
       "alt": "Dos piezas Esencia Dorada, pieza vintage única"
     },
     {
@@ -22,7 +173,12 @@
       "descuento": 25,
       "estado": "disponible",
       "descripcion": "",
-      "imagenes": ["/img/piezas/palma/1.webp", "/img/piezas/palma/2.webp", "/img/piezas/palma/3.webp", "/img/piezas/palma/4.webp"],
+      "imagenes": [
+        "/img/piezas/palma/1.webp",
+        "/img/piezas/palma/2.webp",
+        "/img/piezas/palma/3.webp",
+        "/img/piezas/palma/4.webp"
+      ],
       "alt": "Vestido Palma, pieza vintage única"
     },
     {
@@ -34,7 +190,11 @@
       "descuento": 25,
       "estado": "disponible",
       "descripcion": "",
-      "imagenes": ["/img/piezas/bencort/1.webp", "/img/piezas/bencort/2.webp", "/img/piezas/bencort/3.webp"],
+      "imagenes": [
+        "/img/piezas/bencort/1.webp",
+        "/img/piezas/bencort/2.webp",
+        "/img/piezas/bencort/3.webp"
+      ],
       "alt": "Dos piezas Bencort, pieza vintage única"
     },
     {
@@ -46,7 +206,12 @@
       "descuento": 15,
       "estado": "disponible",
       "descripcion": "",
-      "imagenes": ["/img/piezas/casilda/1.webp", "/img/piezas/casilda/2.webp", "/img/piezas/casilda/3.webp", "/img/piezas/casilda/4.webp"],
+      "imagenes": [
+        "/img/piezas/casilda/1.webp",
+        "/img/piezas/casilda/2.webp",
+        "/img/piezas/casilda/3.webp",
+        "/img/piezas/casilda/4.webp"
+      ],
       "alt": "Vestido Casilda, pieza vintage única"
     },
     {
@@ -58,7 +223,11 @@
       "descuento": 25,
       "estado": "disponible",
       "descripcion": "",
-      "imagenes": ["/img/piezas/philippa/1.webp", "/img/piezas/philippa/2.webp", "/img/piezas/philippa/3.webp"],
+      "imagenes": [
+        "/img/piezas/philippa/1.webp",
+        "/img/piezas/philippa/2.webp",
+        "/img/piezas/philippa/3.webp"
+      ],
       "alt": "Vestido Philippa, pieza vintage única"
     },
     {
@@ -70,7 +239,11 @@
       "descuento": 15,
       "estado": "disponible",
       "descripcion": "",
-      "imagenes": ["/img/piezas/amanda/1.webp", "/img/piezas/amanda/2.webp", "/img/piezas/amanda/3.webp"],
+      "imagenes": [
+        "/img/piezas/amanda/1.webp",
+        "/img/piezas/amanda/2.webp",
+        "/img/piezas/amanda/3.webp"
+      ],
       "alt": "Dos piezas Amanda, pieza vintage única"
     },
     {
@@ -82,7 +255,13 @@
       "descuento": 25,
       "estado": "disponible",
       "descripcion": "",
-      "imagenes": ["/img/piezas/aurora/1.webp", "/img/piezas/aurora/2.webp", "/img/piezas/aurora/3.webp", "/img/piezas/aurora/4.webp", "/img/piezas/aurora/5.webp"],
+      "imagenes": [
+        "/img/piezas/aurora/1.webp",
+        "/img/piezas/aurora/2.webp",
+        "/img/piezas/aurora/3.webp",
+        "/img/piezas/aurora/4.webp",
+        "/img/piezas/aurora/5.webp"
+      ],
       "alt": "Vestido Aurora, pieza vintage única"
     },
     {
@@ -94,7 +273,11 @@
       "descuento": 20,
       "estado": "disponible",
       "descripcion": "",
-      "imagenes": ["/img/piezas/grace/1.webp", "/img/piezas/grace/2.webp", "/img/piezas/grace/3.webp"],
+      "imagenes": [
+        "/img/piezas/grace/1.webp",
+        "/img/piezas/grace/2.webp",
+        "/img/piezas/grace/3.webp"
+      ],
       "alt": "Vestido Grace, pieza vintage única"
     },
     {
@@ -118,7 +301,11 @@
       "descuento": 20,
       "estado": "disponible",
       "descripcion": "",
-      "imagenes": ["/img/piezas/croatia/1.webp", "/img/piezas/croatia/2.mp4", "/img/piezas/croatia/3.mp4"],
+      "imagenes": [
+        "/img/piezas/croatia/1.webp",
+        "/img/piezas/croatia/2.mp4",
+        "/img/piezas/croatia/3.mp4"
+      ],
       "alt": "Vestido Croatia, pieza vintage única"
     },
     {
@@ -130,7 +317,10 @@
       "descuento": 15,
       "estado": "disponible",
       "descripcion": "",
-      "imagenes": ["/img/piezas/irati/1.webp", "/img/piezas/irati/2.webp"],
+      "imagenes": [
+        "/img/piezas/irati/1.webp",
+        "/img/piezas/irati/2.webp"
+      ],
       "alt": "Vestido Irati, pieza vintage única"
     },
     {
@@ -142,7 +332,12 @@
       "descuento": 15,
       "estado": "disponible",
       "descripcion": "",
-      "imagenes": ["/img/piezas/corina/1.webp", "/img/piezas/corina/2.webp", "/img/piezas/corina/3.webp", "/img/piezas/corina/4.webp"],
+      "imagenes": [
+        "/img/piezas/corina/1.webp",
+        "/img/piezas/corina/2.webp",
+        "/img/piezas/corina/3.webp",
+        "/img/piezas/corina/4.webp"
+      ],
       "alt": "Tres piezas Corina, pieza vintage única"
     },
     {
@@ -166,7 +361,12 @@
       "descuento": 20,
       "estado": "disponible",
       "descripcion": "",
-      "imagenes": ["/img/piezas/isol/1.webp", "/img/piezas/isol/2.webp", "/img/piezas/isol/3.webp", "/img/piezas/isol/4.webp"],
+      "imagenes": [
+        "/img/piezas/isol/1.webp",
+        "/img/piezas/isol/2.webp",
+        "/img/piezas/isol/3.webp",
+        "/img/piezas/isol/4.webp"
+      ],
       "alt": "Vestido Isol, pieza vintage única"
     },
     {
@@ -178,7 +378,11 @@
       "descuento": 25,
       "estado": "disponible",
       "descripcion": "",
-      "imagenes": ["/img/piezas/austria/1.webp", "/img/piezas/austria/2.webp", "/img/piezas/austria/3.webp"],
+      "imagenes": [
+        "/img/piezas/austria/1.webp",
+        "/img/piezas/austria/2.webp",
+        "/img/piezas/austria/3.webp"
+      ],
       "alt": "Dos piezas Austria, pieza vintage única"
     },
     {
@@ -190,7 +394,13 @@
       "descuento": 15,
       "estado": "disponible",
       "descripcion": "",
-      "imagenes": ["/img/piezas/celine/1.webp", "/img/piezas/celine/2.webp", "/img/piezas/celine/3.webp", "/img/piezas/celine/4.webp", "/img/piezas/celine/5.webp"],
+      "imagenes": [
+        "/img/piezas/celine/1.webp",
+        "/img/piezas/celine/2.webp",
+        "/img/piezas/celine/3.webp",
+        "/img/piezas/celine/4.webp",
+        "/img/piezas/celine/5.webp"
+      ],
       "alt": "Vestido Celine, pieza vintage única"
     },
     {
@@ -202,7 +412,10 @@
       "descuento": 25,
       "estado": "disponible",
       "descripcion": "",
-      "imagenes": ["/img/piezas/marilia/1.webp", "/img/piezas/marilia/2.webp"],
+      "imagenes": [
+        "/img/piezas/marilia/1.webp",
+        "/img/piezas/marilia/2.webp"
+      ],
       "alt": "Vestido Marilia, pieza vintage única"
     },
     {
@@ -214,7 +427,12 @@
       "descuento": 20,
       "estado": "disponible",
       "descripcion": "",
-      "imagenes": ["/img/piezas/magie/1.webp", "/img/piezas/magie/2.webp", "/img/piezas/magie/3.webp", "/img/piezas/magie/4.webp"],
+      "imagenes": [
+        "/img/piezas/magie/1.webp",
+        "/img/piezas/magie/2.webp",
+        "/img/piezas/magie/3.webp",
+        "/img/piezas/magie/4.webp"
+      ],
       "alt": "Dos piezas Magié, pieza vintage única"
     },
     {
@@ -226,7 +444,11 @@
       "descuento": 15,
       "estado": "disponible",
       "descripcion": "",
-      "imagenes": ["/img/piezas/fina/1.webp", "/img/piezas/fina/2.webp", "/img/piezas/fina/3.webp"],
+      "imagenes": [
+        "/img/piezas/fina/1.webp",
+        "/img/piezas/fina/2.webp",
+        "/img/piezas/fina/3.webp"
+      ],
       "alt": "Vestido Fina, pieza vintage única"
     },
     {
@@ -238,7 +460,12 @@
       "descuento": null,
       "estado": "disponible",
       "descripcion": "",
-      "imagenes": ["/img/piezas/cami/1.webp", "/img/piezas/cami/2.webp", "/img/piezas/cami/3.webp", "/img/piezas/cami/4.webp"],
+      "imagenes": [
+        "/img/piezas/cami/1.webp",
+        "/img/piezas/cami/2.webp",
+        "/img/piezas/cami/3.webp",
+        "/img/piezas/cami/4.webp"
+      ],
       "alt": "Vestido Cami, pieza vintage única en naranja con bordado floral"
     },
     {

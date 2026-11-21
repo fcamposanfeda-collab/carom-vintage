@@ -57,7 +57,7 @@ export const textos = {
   // PROVISIONAL
   novedades: {
     titulo: 'Novedades',
-    etiqueta: 'Acaban de llegar · 15 piezas',
+    etiqueta: 'Acaban de llegar · 8 piezas',
     texto:
       'Descubre antes que nadie nuestras próximas piezas, con descuentos exclusivos de Black Friday reservados únicamente para este acceso privado.',
   },
