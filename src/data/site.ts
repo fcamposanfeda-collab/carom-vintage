@@ -14,8 +14,8 @@ export const site = {
   instagramUsuario: '@carom_vintage',
   // Contacto: perfil (ig.me redirigía a otra cuenta)
   instagramMD: 'https://www.instagram.com/carom_vintage/',
-  // PROVISIONAL: email de contacto
-  email: 'hola@caromstudio.es',
+  // Email de contacto
+  email: 'Caromstudiovintage@gmail.com',
 
   // PROVISIONAL: ID de la web en Umami (cloud.umami.is → Settings → Websites)
   umamiWebsiteId: '00000000-0000-0000-0000-000000000000',
