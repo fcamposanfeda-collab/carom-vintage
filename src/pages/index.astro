@@ -13,7 +13,9 @@ const base = Astro.site ?? new URL(site.url);
 const abs = (ruta: string) => new URL(ruta, base).href;
 const idsNovedades = new Set<string>(novedadesIds);
 const idsJackets = new Set<string>(jacketsIds);
-const seleccion = vestidos.filter((v) => !idsNovedades.has(v.id) && !idsJackets.has(v.id));
+const enVenta = (v: (typeof vestidos)[number]) => v.estado !== 'vendido';
+const novedadesVisibles = novedades.filter(enVenta);
+const seleccion = vestidos.filter((v) => !idsNovedades.has(v.id) && !idsJackets.has(v.id) && enVenta(v));
 const disponibles = seleccion.filter((v) => v.estado === 'disponible').length;
 
 const disponibilidad = {
@@ -149,7 +151,7 @@ const schemaColeccion = {
         {textos.novedades.texto}
       </p>
       <div class="grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 sm:gap-y-12">
-        {novedades.map((v, i) => <DressCard vestido={v} prioridad={i < 2} />)}
+        {novedadesVisibles.map((v, i) => <DressCard vestido={v} prioridad={i < 2} />)}
       </div>
     </div>
   </section>

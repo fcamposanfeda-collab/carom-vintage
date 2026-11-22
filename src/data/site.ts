@@ -144,7 +144,7 @@ export const faq = [
   {
     pregunta: '¿Qué tallas tenéis?',
     respuesta:
-      'Al trabajar con vestidos vintage de pieza única, las tallas varían según cada modelo. En la descripción de cada pieza encontrarás las medidas de la prenda para que puedas comprobar cómo se adapta a ti. Si necesitas ayuda, escríbenos y te orientaremos para encontrar tu vestido ideal. Pero tenemos desde XS hasta XL.',
+      'Nuestras piezas vintage van desde la XS hasta la XL. Muchas se adaptan a diferentes tallas gracias a sus cortes al bies, corpiños ajustables o tejidos que ceden. Aunque veas un vestido en una modelo de talla S, puede adaptarse a otras tallas. Si necesitas ayuda, escríbenos y te asesoraremos para encontrar tu vestido ideal.',
   },
   {
     pregunta: '¿Se aceptan devoluciones?',
