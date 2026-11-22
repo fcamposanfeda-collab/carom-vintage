@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import DressCard from '../components/DressCard.astro';
 import Countdown from '../components/Countdown.astro';
 import { site, textos, faq, contactoLink } from '../data/site';
-import { blackFriday as bf, vestidos, novedades, novedadesIds, jackets, jacketsIds, imagenPrincipal, rutaVestido } from '../data/blackfriday';
+import { blackFriday as bf, vestidos, novedades, jackets, seleccion as seleccionOrden, imagenPrincipal, rutaVestido } from '../data/blackfriday';
 
 // PROVISIONAL: fotos de portada y nosotros
 const fotoPortada = '/img/fondo-portada-black-friday.webp';
@@ -11,11 +11,9 @@ const fotoNosotros = '/img/nosotros-foto.webp';
 
 const base = Astro.site ?? new URL(site.url);
 const abs = (ruta: string) => new URL(ruta, base).href;
-const idsNovedades = new Set<string>(novedadesIds);
-const idsJackets = new Set<string>(jacketsIds);
 const enVenta = (v: (typeof vestidos)[number]) => v.estado !== 'vendido';
 const novedadesVisibles = novedades.filter(enVenta);
-const seleccion = vestidos.filter((v) => !idsNovedades.has(v.id) && !idsJackets.has(v.id) && enVenta(v));
+const seleccion = seleccionOrden.filter(enVenta);
 const disponibles = seleccion.filter((v) => v.estado === 'disponible').length;
 
 const disponibilidad = {

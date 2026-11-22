@@ -216,6 +216,25 @@
       "alt": "Vestido Bibiana, pieza vintage única"
     },
     {
+      "id": "rosalde",
+      "nombre": "Vestido Rosalde",
+      "talla": "XS/S",
+      "medidas": "Pecho: 85 cm\nCintura: 75-78 cm\nCadera: hasta 120 cm\nLargo: 150 cm",
+      "precio": 260,
+      "descuento": 15,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/rosalde/1.webp",
+        "/img/piezas/rosalde/2.webp",
+        "/img/piezas/rosalde/3.webp",
+        "/img/piezas/rosalde/4.webp",
+        "/img/piezas/rosalde/5.webp",
+        "/img/piezas/rosalde/6.webp"
+      ],
+      "alt": "Vestido Rosalde, pieza vintage única"
+    },
+    {
       "id": "colette",
       "nombre": "Vestido Colette",
       "talla": "XS-S",

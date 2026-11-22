@@ -46,6 +46,7 @@ export const novedadesIds = [
   'nirvan',
   'velika',
   'bibiana',
+  'rosalde',
   'colette',
   'marlen',
   'accus',
@@ -62,6 +63,51 @@ export const novedadesIds = [
 ] as const;
 
 export const novedades = novedadesIds
+  .map((id) => vestidos.find((v) => v.id === id))
+  .filter((v): v is Vestido => Boolean(v));
+
+// Selección de piezas (orden pedido)
+export const seleccionIds = [
+  'rosalie',
+  'orsini',
+  'violette',
+  'montesion',
+  'mauricio',
+  'danna',
+  'eclat',
+  'franchesca',
+  'adelaida',
+  'sage',
+  'melissa',
+  'freya',
+  'carei',
+  'duna',
+  'esencia-dorada',
+  'palma',
+  'bencort',
+  'casilda',
+  'philippa',
+  'amanda',
+  'aurora',
+  'grace',
+  'parma',
+  'croatia',
+  'irati',
+  'corina',
+  'la-noak',
+  'isol',
+  'austria',
+  'celine',
+  'marilia',
+  'magie',
+  'fina',
+  'lois',
+  'leticia',
+  'manon',
+  'ccasur',
+] as const;
+
+export const seleccion = seleccionIds
   .map((id) => vestidos.find((v) => v.id === id))
   .filter((v): v is Vestido => Boolean(v));
 
