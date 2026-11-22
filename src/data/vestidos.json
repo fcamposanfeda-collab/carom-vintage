@@ -1017,25 +1017,6 @@
       "alt": "Vestido Orsini, pieza vintage única"
     },
     {
-      "id": "violette",
-      "nombre": "Dos piezas Violette",
-      "talla": "XS-L",
-      "medidas": "Top\nPecho: hasta 104 cm\nCintura: hasta 100 cm\nLargo: 65 cm\nFalda\nCintura: hasta 100 cm (elástica)\nCadera: hasta 110 cm (elástica)\nLargo: 86 cm",
-      "precio": 191.25,
-      "descuento": 15,
-      "estado": "disponible",
-      "descripcion": "",
-      "imagenes": [
-        "/img/piezas/violette/1.webp",
-        "/img/piezas/violette/2.webp",
-        "/img/piezas/violette/3.webp",
-        "/img/piezas/violette/4.webp",
-        "/img/piezas/violette/5.webp",
-        "/img/piezas/violette/6.webp"
-      ],
-      "alt": "Dos piezas Violette, pieza vintage única"
-    },
-    {
       "id": "montesion",
       "nombre": "Dos piezas Montesión",
       "talla": "M",
