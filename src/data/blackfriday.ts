@@ -32,16 +32,17 @@ export type Vestido = {
 
 export const vestidos = data.vestidos as Vestido[];
 
-// Novedades reales (orden del chico)
+// Novedades (orden del PDF; Caroline sin fotos aún)
 export const novedadesIds = [
-  'lessina',
-  'estigia',
-  'kali',
-  'aureline',
-  'aiko',
-  'lorenza',
-  'mao',
-  'gianna',
+  'monterroso',
+  'bordonau',
+  'baviera',
+  'petali',
+  'bruna',
+  'matilde',
+  'charlotte',
+  'tessicini',
+  'nirvan',
 ] as const;
 
 export const novedades = novedadesIds

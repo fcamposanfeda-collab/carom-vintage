@@ -1,6 +1,165 @@
 {
-  "_PROVISIONAL": "// precio = Ahora. descuento = % por pieza. Cami eliminada. Novedades al frente con % actualizados del PDF.",
+  "_PROVISIONAL": "// precio = Ahora. descuento = % por pieza. Novedades = piezas nuevas del PDF con fotos.",
   "vestidos": [
+    {
+      "id": "monterroso",
+      "nombre": "Vestido Monterroso",
+      "talla": "M",
+      "medidas": "Pecho: hasta 96 cm\nCintura: hasta 80 cm\nCadera: hasta 100 cm\nLargo: 153 cm desde el tirante",
+      "precio": 215,
+      "descuento": 15,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/monterroso/1.webp",
+        "/img/piezas/monterroso/2.webp",
+        "/img/piezas/monterroso/3.webp",
+        "/img/piezas/monterroso/4.webp",
+        "/img/piezas/monterroso/5.webp",
+        "/img/piezas/monterroso/6.webp"
+      ],
+      "alt": "Vestido Monterroso, pieza vintage única"
+    },
+    {
+      "id": "bordonau",
+      "nombre": "Vestido Bordonau",
+      "talla": "S-M",
+      "medidas": "Pecho: hasta 90 cm\nCintura: hasta 88 cm\nCadera: hasta 105 cm\nLargo: 160 cm",
+      "precio": 195,
+      "descuento": 10,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/bordonau/1.webp",
+        "/img/piezas/bordonau/2.webp",
+        "/img/piezas/bordonau/3.webp",
+        "/img/piezas/bordonau/4.webp",
+        "/img/piezas/bordonau/5.webp",
+        "/img/piezas/bordonau/6.webp"
+      ],
+      "alt": "Vestido Bordonau, pieza vintage única"
+    },
+    {
+      "id": "baviera",
+      "nombre": "Vestido Baviera",
+      "talla": "XS-S",
+      "medidas": "Pecho: 80-100 cm (es un tejido que cede)\nCintura: 75-85 cm\nCadera: hasta 110 cm\nLargo: 125 cm por delante y 147 cm por detrás",
+      "precio": 190,
+      "descuento": 15,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/baviera/1.webp",
+        "/img/piezas/baviera/2.webp",
+        "/img/piezas/baviera/3.webp",
+        "/img/piezas/baviera/4.webp"
+      ],
+      "alt": "Vestido Baviera, pieza vintage única"
+    },
+    {
+      "id": "petali",
+      "nombre": "Vestido Petali",
+      "talla": "XS-S",
+      "medidas": "Pecho: 80-90 cm (es un tejido que cede adaptándose a la silueta)\nCintura: 75-80 cm\nCadera: 104 cm\nLargo: 160 cm hasta el último pico",
+      "precio": 200,
+      "descuento": 20,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/petali/1.webp",
+        "/img/piezas/petali/2.webp",
+        "/img/piezas/petali/3.webp",
+        "/img/piezas/petali/4.webp",
+        "/img/piezas/petali/5.webp"
+      ],
+      "alt": "Vestido Petali, pieza vintage única"
+    },
+    {
+      "id": "bruna",
+      "nombre": "Dos piezas Bruna",
+      "talla": "M",
+      "medidas": "",
+      "precio": 215,
+      "descuento": 15,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/bruna/1.webp",
+        "/img/piezas/bruna/2.webp",
+        "/img/piezas/bruna/3.webp"
+      ],
+      "alt": "Dos piezas Bruna, pieza vintage única"
+    },
+    {
+      "id": "matilde",
+      "nombre": "Vestido Matilde",
+      "talla": "S-M",
+      "medidas": "Es un vestido estilo gabardina ajustable completamente con la lazada\nPecho: hasta 90 cm\nCintura: hasta 80 cm\nCadera: hasta 100 cm\nLargo: 150 cm",
+      "precio": 185,
+      "descuento": 25,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/matilde/1.webp",
+        "/img/piezas/matilde/2.webp",
+        "/img/piezas/matilde/3.webp",
+        "/img/piezas/matilde/4.webp",
+        "/img/piezas/matilde/5.webp"
+      ],
+      "alt": "Vestido Matilde, pieza vintage única"
+    },
+    {
+      "id": "charlotte",
+      "nombre": "Vestido Charlotte",
+      "talla": "XS-S",
+      "medidas": "Es un vestido cortado al bies\nPecho: 80-85 cm\nCintura: 80 cm\nCadera: 110 cm\nLargo: 143 cm",
+      "precio": 195,
+      "descuento": 15,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/charlotte/1.webp",
+        "/img/piezas/charlotte/2.webp",
+        "/img/piezas/charlotte/3.webp",
+        "/img/piezas/charlotte/4.webp"
+      ],
+      "alt": "Vestido Charlotte, pieza vintage única"
+    },
+    {
+      "id": "tessicini",
+      "nombre": "Vestido Tessicini",
+      "talla": "S",
+      "medidas": "Pecho: 82-95 cm\nCintura: 75-82 cm\nCadera: 110 cm\nLargo: 107 cm desde el pecho",
+      "precio": 210,
+      "descuento": 15,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/tessicini/1.webp",
+        "/img/piezas/tessicini/2.webp",
+        "/img/piezas/tessicini/3.webp",
+        "/img/piezas/tessicini/4.webp"
+      ],
+      "alt": "Vestido Tessicini, pieza vintage única"
+    },
+    {
+      "id": "nirvan",
+      "nombre": "Vestido Nirvan",
+      "talla": "S-M",
+      "medidas": "Pecho: 80-90 cm\nCintura: 75-80 cm\nCadera: hasta 100 cm\nLargo: 150 cm",
+      "precio": 250,
+      "descuento": 10,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/nirvan/1.webp",
+        "/img/piezas/nirvan/2.webp",
+        "/img/piezas/nirvan/3.webp",
+        "/img/piezas/nirvan/4.webp",
+        "/img/piezas/nirvan/5.webp"
+      ],
+      "alt": "Vestido Nirvan, pieza vintage única"
+    },
     {
       "id": "lessina",
       "nombre": "Vestido Lessina",
@@ -167,7 +326,7 @@
     {
       "id": "palma",
       "nombre": "Vestido Palma",
-      "talla": "",
+      "talla": "S-L",
       "medidas": "Pecho: 80-90 cm\nCintura: 80 cm\nCadera: 90 cm\nLargo: 130 cm",
       "precio": 116.25,
       "descuento": 25,
@@ -184,7 +343,7 @@
     {
       "id": "bencort",
       "nombre": "Dos piezas Bencort",
-      "talla": "",
+      "talla": "S-M",
       "medidas": "Pecho: 84 cm\nCintura: 70 cm\nCadera: 80 cm\nLargo: 105 cm",
       "precio": 93.75,
       "descuento": 25,
@@ -200,7 +359,7 @@
     {
       "id": "casilda",
       "nombre": "Vestido Casilda",
-      "talla": "",
+      "talla": "XS-S",
       "medidas": "Pecho: 85-95 cm\nCintura: 80 cm\nCadera: 90 cm\nLargo: 155 cm",
       "precio": 97.75,
       "descuento": 15,
@@ -217,7 +376,7 @@
     {
       "id": "philippa",
       "nombre": "Vestido Philippa",
-      "talla": "",
+      "talla": "XS-S",
       "medidas": "Pecho: 92 cm\nCintura: 84 cm\nCadera: 90 cm\nLargo: 130 cm",
       "precio": 86.25,
       "descuento": 25,
@@ -233,8 +392,8 @@
     {
       "id": "amanda",
       "nombre": "Dos piezas Amanda",
-      "talla": "",
-      "medidas": "",
+      "talla": "M",
+      "medidas": "Top\nPecho: 93-100 cm\nCintura: pendiente\nLargo: pendiente\n\nFalda\nCintura: 70 cm\nCadera: 98-100 cm\nLargo: 104 cm",
       "precio": 85,
       "descuento": 15,
       "estado": "disponible",
@@ -249,9 +408,9 @@
     {
       "id": "aurora",
       "nombre": "Vestido Aurora",
-      "talla": "",
+      "talla": "S-M",
       "medidas": "Pecho: 80 cm\nCintura: 77 cm\nCadera: 100 cm\nLargo: 145 cm hasta el último pico",
-      "precio": 123.75,
+      "precio": 75.8,
       "descuento": 25,
       "estado": "disponible",
       "descripcion": "",
@@ -267,7 +426,7 @@
     {
       "id": "grace",
       "nombre": "Vestido Grace",
-      "talla": "",
+      "talla": "M",
       "medidas": "Pecho: 85-92 cm\nCintura: 80 cm\nCadera: 98 cm\nLargo: 134 cm",
       "precio": 104,
       "descuento": 20,
@@ -283,7 +442,7 @@
     {
       "id": "parma",
       "nombre": "Vestido Parma",
-      "talla": "",
+      "talla": "XS-S",
       "medidas": "Pecho: 80-90 cm\nCintura: 76 cm\nCadera: 100 cm\nLargo: 148 cm",
       "precio": 116.25,
       "descuento": 25,
@@ -299,7 +458,7 @@
     {
       "id": "croatia",
       "nombre": "Vestido Croatia",
-      "talla": "",
+      "talla": "S",
       "medidas": "Pecho: 80-90 cm\nCintura: 80 cm\nCadera: 100-110 cm\nLargo: 115 cm",
       "precio": 120,
       "descuento": 20,
@@ -315,7 +474,7 @@
     {
       "id": "irati",
       "nombre": "Vestido Irati",
-      "talla": "",
+      "talla": "S",
       "medidas": "Pecho: 80 cm\nCintura: 72 cm\nCadera: 98 cm\nLargo: 130 cm desde el pecho",
       "precio": 110.5,
       "descuento": 15,
@@ -330,7 +489,7 @@
     {
       "id": "corina",
       "nombre": "Tres piezas Corina",
-      "talla": "",
+      "talla": "XS-S",
       "medidas": "Top\nPecho: 80-110 cm (ajustable tipo corset con lazada)\nCintura: 80-110 cm (ajustable tipo corset con lazada)\nLargo: pendiente\n\nFalda\nCintura: 70 cm\nCadera: 84 cm\nLargo: 110 cm",
       "precio": 144.5,
       "descuento": 15,
@@ -347,7 +506,7 @@
     {
       "id": "la-noak",
       "nombre": "Vestido La Noak",
-      "talla": "",
+      "talla": "XS-S",
       "medidas": "Pecho: 88 cm\nCintura: 80 cm\nCadera: 94 cm\nLargo: 123 cm",
       "precio": 75,
       "descuento": 25,
@@ -361,7 +520,7 @@
     {
       "id": "isol",
       "nombre": "Vestido Isol",
-      "talla": "",
+      "talla": "S",
       "medidas": "Pecho: 80 cm\nCintura: 74 cm\nCadera: 92 cm\nLargo: 150 cm",
       "precio": 104,
       "descuento": 20,
@@ -378,7 +537,7 @@
     {
       "id": "austria",
       "nombre": "Dos piezas Austria",
-      "talla": "",
+      "talla": "S-M",
       "medidas": "Top\nPecho: 90-93 cm\nCintura: 80 cm\n\nPantalón\nCintura: 70 cm\nCadera: 100 cm\nLargo: 100 cm",
       "precio": 116.25,
       "descuento": 25,
@@ -394,7 +553,7 @@
     {
       "id": "celine",
       "nombre": "Vestido Celine",
-      "talla": "",
+      "talla": "XS-M",
       "medidas": "Pecho: 90 cm\nCintura: 80 cm\nCadera: 88 cm\nLargo: 126 cm",
       "precio": 136,
       "descuento": 15,
@@ -411,9 +570,9 @@
     {
       "id": "marilia",
       "nombre": "Vestido Marilia",
-      "talla": "",
+      "talla": "S-M",
       "medidas": "Pecho: 80-85 cm\nCintura: 80 cm\nCadera: 100 cm\nLargo: 150 cm",
-      "precio": null,
+      "precio": 90,
       "descuento": 25,
       "estado": "disponible",
       "descripcion": "",
@@ -426,7 +585,7 @@
     {
       "id": "magie",
       "nombre": "Dos piezas Magié",
-      "talla": "",
+      "talla": "XS",
       "medidas": "Top\nPecho: 80 cm\nCintura: 75 cm\nCadera: pendiente\nLargo: pendiente\n\nFalda\nCintura: 75 cm\nCadera: 82 cm\nLargo: 69 cm",
       "precio": 124,
       "descuento": 20,
@@ -443,7 +602,7 @@
     {
       "id": "fina",
       "nombre": "Vestido Fina",
-      "talla": "",
+      "talla": "S-M",
       "medidas": "Pecho: 80-90 cm\nCintura: 80 cm\nCadera: 100 cm\nLargo: 133 cm desde el pecho",
       "precio": 148.75,
       "descuento": 15,
@@ -459,7 +618,7 @@
     {
       "id": "lois",
       "nombre": "Vestido Lois",
-      "talla": "",
+      "talla": "S",
       "medidas": "Pecho: desde 80-97 cm. Tiene la espalda abierta y se ajusta con la lazada\nCintura: 70-85 cm\nCadera: hasta 100 cm\nLargo: 145 cm",
       "precio": 86.25,
       "descuento": 25,
@@ -476,7 +635,7 @@
     {
       "id": "leticia",
       "nombre": "Vestido Leticia",
-      "talla": "",
+      "talla": "S-M",
       "medidas": "Pecho: hasta 132 cm\nCintura: hasta 112 cm\nCadera: 124 cm\nLargo: 124 cm por delante, 139 cm por detrás (asimétrico)",
       "precio": 128,
       "descuento": 20,
@@ -493,7 +652,7 @@
     {
       "id": "manon",
       "nombre": "Vestido Mañon",
-      "talla": "",
+      "talla": "S-M",
       "medidas": "Pecho: 78-80 cm\nCintura: 75-80 cm\nCadera: 120 cm\nLargo: 130 cm",
       "precio": 130.5,
       "descuento": 10,
@@ -509,7 +668,7 @@
     {
       "id": "ccasur",
       "nombre": "Vestido Ccasur",
-      "talla": "",
+      "talla": "S-M",
       "medidas": "Pecho: 90-95 cm\nCintura: 78-80 cm\nCadera: 103 cm\nLargo: 130 cm",
       "precio": 144,
       "descuento": 10,
@@ -527,7 +686,7 @@
     {
       "id": "franchesca",
       "nombre": "Tres piezas Franchesca",
-      "talla": "",
+      "talla": "S-M",
       "medidas": "Top\nPecho: 92-100 cm\nCintura: ajustable con fajín\nLargo: pendiente\n\nFalda\nCintura: 80 cm\nCadera: pendiente\nLargo: 95 cm",
       "precio": 246.5,
       "descuento": 15,
@@ -544,7 +703,7 @@
     {
       "id": "adelaida",
       "nombre": "Vestido Adelaida",
-      "talla": "",
+      "talla": "S-M",
       "medidas": "",
       "precio": 233.75,
       "descuento": 15,
@@ -561,7 +720,7 @@
     {
       "id": "sage",
       "nombre": "Vestido y bolero Sage",
-      "talla": "",
+      "talla": "S-M",
       "medidas": "Pecho: 90-100 cm\nCintura: 90-100 cm\nCadera: 105 cm\nLargo: 105 cm desde el pecho",
       "precio": 187.5,
       "descuento": 25,
@@ -578,7 +737,7 @@
     {
       "id": "melissa",
       "nombre": "Vestido Melissa",
-      "talla": "",
+      "talla": "XS-S",
       "medidas": "Pecho: 80-100 cm\nCintura: 80-100 cm\nCadera: hasta 110 cm\nLargo: 140 cm",
       "precio": 148,
       "descuento": 20,
@@ -594,8 +753,8 @@
     {
       "id": "freya",
       "nombre": "Vestido Freya",
-      "talla": "",
-      "medidas": "",
+      "talla": "S",
+      "medidas": "Pecho: desde 78 cm hasta 110 cm\nCintura: 78-110 cm\nCadera: 78-115 cm\nLargo: 128 cm",
       "precio": 225,
       "descuento": 10,
       "estado": "disponible",
@@ -611,7 +770,7 @@
     {
       "id": "carei",
       "nombre": "Vestido Carei",
-      "talla": "",
+      "talla": "XS-S",
       "medidas": "Pecho: 79 cm\nCintura: 70 cm\nCadera: 90 cm\nLargo: 155 cm",
       "precio": 182.75,
       "descuento": 15,
@@ -630,7 +789,7 @@
     {
       "id": "duna",
       "nombre": "Vestido Duna",
-      "talla": "",
+      "talla": "S-M",
       "medidas": "Pecho: 80-95 cm\nCintura: 75-85 cm\nCadera: 98 cm\nLargo: 112 cm",
       "precio": 148,
       "descuento": 20,
@@ -646,7 +805,7 @@
     {
       "id": "rosalie",
       "nombre": "Vestido Rosalie",
-      "talla": "",
+      "talla": "S",
       "medidas": "Pecho: 80-91 cm\nCintura: 80 cm\nCadera: 92 cm\nLargo: 125 cm",
       "precio": 187,
       "descuento": 15,
@@ -663,7 +822,7 @@
     {
       "id": "orsini",
       "nombre": "Vestido Orsini",
-      "talla": "",
+      "talla": "S-M",
       "medidas": "Pecho: 80-85 cm\nCintura: 75 cm\nCadera: 105 cm\nLargo: 135 cm desde el pecho",
       "precio": 176,
       "descuento": 20,
@@ -680,7 +839,7 @@
     {
       "id": "violette",
       "nombre": "Dos piezas Violette",
-      "talla": "",
+      "talla": "M-L",
       "medidas": "Top\nPecho: hasta 104 cm\nCintura: hasta 100 cm\nLargo: pendiente\n\nFalda\nCintura: hasta 100 cm (elástica)\nCadera: hasta 110 cm (elástica)\nLargo: 86 cm",
       "precio": 191.25,
       "descuento": 15,
@@ -699,7 +858,7 @@
     {
       "id": "montesion",
       "nombre": "Dos piezas Montesión",
-      "talla": "",
+      "talla": "M",
       "medidas": "Top\nPecho: hasta 100 cm\nCintura: hasta 90 cm\nLargo: 60 cm\n\nFalda\nCintura: 76 cm\nCadera: hasta 120 cm\nLargo: 88 cm hasta el último pico",
       "precio": 220,
       "descuento": 20,
@@ -717,7 +876,7 @@
     {
       "id": "mauricio",
       "nombre": "Dos piezas Mauricio",
-      "talla": "",
+      "talla": "S-M",
       "medidas": "Top\nPecho: hasta 88 cm\nCintura: hasta 76 cm\nLargo: 34 cm\n\nFalda\nCintura: hasta 80 cm\nCadera: hasta 110 cm\nLargo: 106 cm",
       "precio": 187,
       "descuento": 15,
@@ -733,7 +892,7 @@
     {
       "id": "danna",
       "nombre": "Dos piezas Danna",
-      "talla": "",
+      "talla": "S-M",
       "medidas": "Top\nPecho: hasta 88 cm\nCintura: hasta 80 cm\nLargo: 50 cm desde el tirante\n\nPantalón\nCintura: 74 cm\nCadera: hasta 96 cm\nLargo: 100 cm",
       "precio": 200,
       "descuento": 20,
@@ -751,7 +910,7 @@
     {
       "id": "eclat",
       "nombre": "Vestido Éclat",
-      "talla": "",
+      "talla": "S-M",
       "medidas": "Pecho: 94 cm\nCintura: hasta 80 cm\nCadera: hasta 90 cm\nLargo: 145 cm",
       "precio": 199.75,
       "descuento": 15,
@@ -769,7 +928,7 @@
     {
       "id": "drop-01",
       "nombre": "Drop 0.1",
-      "talla": "",
+      "talla": "M",
       "medidas": "Pecho: hasta 100 cm\nSisa: 21 cm\nLargo: 60 cm",
       "precio": 63,
       "descuento": 10,
@@ -784,7 +943,7 @@
     {
       "id": "drop-02",
       "nombre": "Drop 0.2",
-      "talla": "",
+      "talla": "XS-S",
       "medidas": "Pecho: hasta 104 cm\nSisa: 24 cm\nLargo: 54 cm",
       "precio": 76.5,
       "descuento": 10,
@@ -799,7 +958,7 @@
     {
       "id": "drop-03",
       "nombre": "Drop 0.3",
-      "talla": "",
+      "talla": "XS-M",
       "medidas": "Pecho: hasta 90 cm\nSisa: 20 cm\nLargo: 55 cm",
       "precio": 90,
       "descuento": 10,
@@ -814,7 +973,7 @@
     {
       "id": "drop-04",
       "nombre": "Drop 0.4",
-      "talla": "",
+      "talla": "S-M",
       "medidas": "Pecho: hasta 88 cm\nSisa: 20 cm\nLargo: 52 cm",
       "precio": 54,
       "descuento": 10,
@@ -829,7 +988,7 @@
     {
       "id": "drop-05",
       "nombre": "Drop 0.5",
-      "talla": "",
+      "talla": "S-M",
       "medidas": "Pecho: hasta 96 cm\nSisa: 25 cm\nLargo: 59 cm",
       "precio": 67.5,
       "descuento": 10,
@@ -844,7 +1003,7 @@
     {
       "id": "drop-06",
       "nombre": "Drop 0.6",
-      "talla": "",
+      "talla": "M",
       "medidas": "Abierta completamente, no tiene botones\nPecho: 96 cm\nSisa: 23 cm\nLargo: 60 cm",
       "precio": 76.5,
       "descuento": 10,
