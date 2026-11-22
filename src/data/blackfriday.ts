@@ -32,7 +32,7 @@ export type Vestido = {
 
 export const vestidos = data.vestidos as Vestido[];
 
-// Novedades (orden del PDF + bloque Lessina–Gianna)
+// Novedades (orden del PDF; Rosalde añadida aparte)
 export const novedadesIds = [
   'monterroso',
   'bordonau',
@@ -42,16 +42,10 @@ export const novedadesIds = [
   'charlotte',
   'tessicini',
   'carol',
-  'caroline',
   'nirvan',
-  'velika',
   'bibiana',
   'rosalde',
-  'colette',
-  'marlen',
-  'accus',
-  'brela',
-  'lola',
+  'velika',
   'lessina',
   'estigia',
   'kali',
@@ -60,6 +54,15 @@ export const novedadesIds = [
   'lorenza',
   'mao',
   'gianna',
+  'manre',
+  'leandra',
+  'reiss',
+  'colette',
+  'marlen',
+  'accus',
+  'brela',
+  'caroline',
+  'lola',
 ] as const;
 
 export const novedades = novedadesIds
