@@ -78,7 +78,6 @@ export const seleccionIds = [
   'danna',
   'eclat',
   'franchesca',
-  'adelaida',
   'sage',
   'melissa',
   'freya',

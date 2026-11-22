@@ -881,23 +881,6 @@
       "alt": "Tres piezas Franchesca, pieza vintage única"
     },
     {
-      "id": "adelaida",
-      "nombre": "Vestido Adelaida",
-      "talla": "S-M",
-      "medidas": "Pecho: 80 cm\nCintura: 72 cm\nCadera: 96 cm\nLargo: 135 cm desde el pecho",
-      "precio": 233.75,
-      "descuento": 15,
-      "estado": "disponible",
-      "descripcion": "",
-      "imagenes": [
-        "/img/piezas/adelaida/1.webp",
-        "/img/piezas/adelaida/2.webp",
-        "/img/piezas/adelaida/3.webp",
-        "/img/piezas/adelaida/4.webp"
-      ],
-      "alt": "Vestido Adelaida, pieza vintage única"
-    },
-    {
       "id": "sage",
       "nombre": "Vestido y bolero Sage",
       "talla": "S-M",
