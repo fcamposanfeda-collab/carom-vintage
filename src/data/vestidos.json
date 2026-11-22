@@ -143,6 +143,24 @@
       "alt": "Vestido Tessicini, pieza vintage única"
     },
     {
+      "id": "caroline",
+      "nombre": "Vestido Caroline",
+      "talla": "S-M",
+      "medidas": "Pecho: 80-95 cm\nCintura: 75-85 cm\nCadera: 100 cm\nLargo: por delante 130 cm, por detrás 146 cm",
+      "precio": 220,
+      "descuento": 15,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/caroline/1.webp",
+        "/img/piezas/caroline/2.webp",
+        "/img/piezas/caroline/3.webp",
+        "/img/piezas/caroline/4.webp",
+        "/img/piezas/caroline/5.webp"
+      ],
+      "alt": "Vestido Caroline, pieza vintage única"
+    },
+    {
       "id": "nirvan",
       "nombre": "Vestido Nirvan",
       "talla": "S-M",
@@ -159,6 +177,24 @@
         "/img/piezas/nirvan/5.webp"
       ],
       "alt": "Vestido Nirvan, pieza vintage única"
+    },
+    {
+      "id": "velika",
+      "nombre": "Dos piezas Velika",
+      "talla": "XS-S",
+      "medidas": "Chaqueta\nPecho: ajustable con la lazada pero cerrado completamente hasta 100 cm\nCintura: hasta 92 cm cerrado completamente\nLargo: 54 cm\n\nFalda\nCintura: 74 cm\nCadera: hasta 100 cm\nLargo: 79 cm",
+      "precio": 285,
+      "descuento": 10,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/velika/1.webp",
+        "/img/piezas/velika/2.webp",
+        "/img/piezas/velika/3.webp",
+        "/img/piezas/velika/4.webp",
+        "/img/piezas/velika/5.webp"
+      ],
+      "alt": "Dos piezas Velika, pieza vintage única"
     },
     {
       "id": "lessina",
