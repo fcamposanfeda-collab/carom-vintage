@@ -88,16 +88,19 @@ const schemaColeccion = {
     </div>
 
     <div class="contenedor flex flex-col gap-7 py-12 sm:gap-8 sm:py-16">
-      <div class="reveal relative aspect-[965/581] w-full overflow-hidden bg-noche">
+      <div class="relative aspect-[965/581] w-full overflow-hidden bg-noche">
         <video
           class="absolute inset-0 h-full w-full object-cover"
           src="/img/editorial-portada.mp4"
+          poster="/img/portada-black.webp"
           autoplay
           muted
           loop
           playsinline
-          preload="auto"
+          webkit-playsinline
+          preload="metadata"
           aria-label="Editorial Cárom Studio Vintage"
+          data-editorial-video
         />
         <div class="pointer-events-none absolute inset-0 z-10 flex items-center overflow-hidden" aria-hidden="true">
           <svg class="editorial-marquee" viewBox="0 0 2200 220" preserveAspectRatio="xMidYMid slice" fill="currentColor">
@@ -291,6 +294,44 @@ const schemaColeccion = {
       </p>
     </div>
   </section>
+
+  <script>
+    const video = document.querySelector<HTMLVideoElement>('[data-editorial-video]');
+    if (video) {
+      video.muted = true;
+      video.setAttribute('muted', '');
+      video.setAttribute('playsinline', '');
+      video.setAttribute('webkit-playsinline', '');
+
+      const intentarPlay = () => {
+        void video.play().catch(() => {});
+      };
+
+      intentarPlay();
+      video.addEventListener('loadeddata', intentarPlay, { once: true });
+      document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) intentarPlay();
+      });
+
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver(
+          (entradas) => {
+            for (const e of entradas) {
+              if (e.isIntersecting) intentarPlay();
+              else video.pause();
+            }
+          },
+          { threshold: 0.2 },
+        );
+        io.observe(video);
+      }
+
+      // Tras abrir la puerta, iOS a menudo necesita un play explícito
+      document.getElementById('boton-puerta')?.addEventListener('click', () => {
+        setTimeout(intentarPlay, 400);
+      });
+    }
+  </script>
 </BaseLayout>
 
 <style>
