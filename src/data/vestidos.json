@@ -881,6 +881,23 @@
       "alt": "Tres piezas Franchesca, pieza vintage única"
     },
     {
+      "id": "adelaida",
+      "nombre": "Vestido Adelaida",
+      "talla": "S-M",
+      "medidas": "Pecho: 80 cm\nCintura: 72 cm\nCadera: 96 cm\nLargo: 135 cm desde el pecho",
+      "precio": 233.75,
+      "descuento": 15,
+      "estado": "vendido",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/adelaida/1.webp",
+        "/img/piezas/adelaida/2.webp",
+        "/img/piezas/adelaida/3.webp",
+        "/img/piezas/adelaida/4.webp"
+      ],
+      "alt": "Vestido Adelaida, pieza vintage única"
+    },
+    {
       "id": "sage",
       "nombre": "Vestido y bolero Sage",
       "talla": "S-M",
@@ -998,6 +1015,25 @@
         "/img/piezas/orsini/4.webp"
       ],
       "alt": "Vestido Orsini, pieza vintage única"
+    },
+    {
+      "id": "violette",
+      "nombre": "Dos piezas Violette",
+      "talla": "XS-L",
+      "medidas": "Top\nPecho: hasta 104 cm\nCintura: hasta 100 cm\nLargo: 65 cm\nFalda\nCintura: hasta 100 cm (elástica)\nCadera: hasta 110 cm (elástica)\nLargo: 86 cm",
+      "precio": 191.25,
+      "descuento": 15,
+      "estado": "vendido",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/violette/1.webp",
+        "/img/piezas/violette/2.webp",
+        "/img/piezas/violette/3.webp",
+        "/img/piezas/violette/4.webp",
+        "/img/piezas/violette/5.webp",
+        "/img/piezas/violette/6.webp"
+      ],
+      "alt": "Dos piezas Violette, pieza vintage única"
     },
     {
       "id": "montesion",

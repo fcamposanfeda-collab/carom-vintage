@@ -73,11 +73,13 @@ export const novedades = novedadesIds
 export const seleccionIds = [
   'rosalie',
   'orsini',
+  'violette',
   'montesion',
   'mauricio',
   'danna',
   'eclat',
   'franchesca',
+  'adelaida',
   'sage',
   'melissa',
   'freya',
