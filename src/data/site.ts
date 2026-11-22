@@ -21,7 +21,7 @@ export const site = {
   umamiWebsiteId: '00000000-0000-0000-0000-000000000000',
 
   logo: '/img/logo.png',
-  ogImagePorDefecto: '/img/og-carom-studio-vestidos-vintage.jpg',
+  ogImagePorDefecto: '/img/og-carom-portada.jpg',
 };
 
 export function rutaLimpia(pathname: string) {

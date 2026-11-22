@@ -867,7 +867,7 @@
       "id": "franchesca",
       "nombre": "Tres piezas Franchesca",
       "talla": "S-M",
-      "medidas": "Top\nPecho: 92-100 cm\nCintura: ajustable con fajín\nLargo:\nFalda\nCintura: 80 cm\nCadera: 86 cm\nLargo: 95 cm",
+      "medidas": "Top\nPecho: 92-100 cm\nCintura: ajustable con fajín\n\nFalda\nCintura: 80 cm\nCadera: 86 cm\nLargo: 95 cm",
       "precio": 246.5,
       "descuento": 15,
       "estado": "disponible",
@@ -1237,7 +1237,7 @@
       "talla": "XS-S",
       "precio": 225,
       "descuento": 15,
-      "medidas": "",
+      "medidas": "Pecho: 80-90 cm\nCintura: 75-80 cm\nCadera: hasta 105 cm\nLargo: 147 cm",
       "imagenes": [
         "/img/piezas/reiss/1.webp",
         "/img/piezas/reiss/2.webp",
