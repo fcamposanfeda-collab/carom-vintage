@@ -70,39 +70,63 @@ const schemaProducto = {
       <!-- GALERÍA -->
       <div class="lg:col-span-7">
         {v.imagenes.length > 0 ? (
-          <div class="grid gap-4 sm:grid-cols-2">
+          <div class="grid gap-4 sm:grid-cols-2" data-galeria>
             {v.imagenes.map((src, i) =>
               esVideo(src) ? (
-                <video
-                  src={src}
-                  autoplay
-                  muted
-                  loop
-                  playsinline
-                  preload="metadata"
-                  aria-label={`${v.alt}, vídeo`}
-                  data-galeria-video
+                <button
+                  type="button"
                   class:list={[
-                    'aspect-[3/4] w-full bg-noche object-cover',
+                    'group relative block aspect-[3/4] w-full overflow-hidden bg-noche text-left',
                     i === 0 && 'sm:col-span-2',
-                    !disponible && 'opacity-50 grayscale',
                   ]}
-                />
+                  data-galeria-item
+                  data-galeria-index={i}
+                  data-galeria-tipo="video"
+                  data-galeria-src={src}
+                  aria-label={`Ampliar vídeo ${i + 1} de ${v.imagenes.length}`}
+                >
+                  <video
+                    src={src}
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                    aria-hidden="true"
+                    data-galeria-video
+                    class:list={[
+                      'h-full w-full object-cover transition duration-500 group-hover:scale-[1.02]',
+                      !disponible && 'opacity-50 grayscale',
+                    ]}
+                  />
+                </button>
               ) : (
-                <img
-                  src={src}
-                  alt={`${v.alt}${v.imagenes.length > 1 ? `, foto ${i + 1}` : ''}`}
-                  width="900"
-                  height="1200"
-                  loading={i === 0 ? 'eager' : 'lazy'}
-                  decoding="async"
-                  fetchpriority={i === 0 ? 'high' : undefined}
+                <button
+                  type="button"
                   class:list={[
-                    'aspect-[3/4] w-full bg-noche object-cover',
+                    'group relative block aspect-[3/4] w-full overflow-hidden bg-noche text-left',
                     i === 0 && 'sm:col-span-2',
-                    !disponible && 'opacity-50 grayscale',
                   ]}
-                />
+                  data-galeria-item
+                  data-galeria-index={i}
+                  data-galeria-tipo="imagen"
+                  data-galeria-src={src}
+                  aria-label={`Ampliar foto ${i + 1} de ${v.imagenes.length}`}
+                >
+                  <img
+                    src={src}
+                    alt={`${v.alt}${v.imagenes.length > 1 ? `, foto ${i + 1}` : ''}`}
+                    width="900"
+                    height="1200"
+                    loading={i === 0 ? 'eager' : 'lazy'}
+                    decoding="async"
+                    fetchpriority={i === 0 ? 'high' : undefined}
+                    class:list={[
+                      'h-full w-full object-cover transition duration-500 group-hover:scale-[1.02]',
+                      !disponible && 'opacity-50 grayscale',
+                    ]}
+                  />
+                </button>
               )
             )}
           </div>
@@ -174,6 +198,67 @@ const schemaProducto = {
     </div>
   </article>
 
+  {v.imagenes.length > 0 && (
+    <div
+      id="lightbox"
+      class="fixed inset-0 z-[80] hidden items-center justify-center bg-noche/92 p-4 sm:p-8"
+      role="dialog"
+      aria-modal="true"
+      aria-label={`Galería de ${v.nombre}`}
+      hidden
+    >
+      <button
+        type="button"
+        data-lightbox-cerrar
+        class="absolute top-4 right-4 z-10 flex h-11 w-11 items-center justify-center text-crema/70 transition hover:text-crema sm:top-6 sm:right-6"
+        aria-label="Cerrar galería"
+      >
+        <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18"></path>
+        </svg>
+      </button>
+
+      {v.imagenes.length > 1 && (
+        <>
+          <button
+            type="button"
+            data-lightbox-prev
+            class="absolute top-1/2 left-2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center text-crema/70 transition hover:text-crema sm:left-5"
+            aria-label="Foto anterior"
+          >
+            <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true">
+              <path d="M15 5l-7 7 7 7"></path>
+            </svg>
+          </button>
+          <button
+            type="button"
+            data-lightbox-next
+            class="absolute top-1/2 right-2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center text-crema/70 transition hover:text-crema sm:right-5"
+            aria-label="Foto siguiente"
+          >
+            <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true">
+              <path d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </>
+      )}
+
+      <div class="flex max-h-full max-w-5xl items-center justify-center" data-lightbox-escena>
+        <img data-lightbox-img class="hidden max-h-[min(88vh,100%)] max-w-full object-contain" alt="" />
+        <video
+          data-lightbox-video
+          class="hidden max-h-[min(88vh,100%)] max-w-full object-contain"
+          controls
+          playsinline
+        ></video>
+      </div>
+
+      {v.imagenes.length > 1 && (
+        <p class="etiqueta absolute bottom-5 left-1/2 -translate-x-1/2 text-crema/55" data-lightbox-contador aria-live="polite"></p>
+      )}
+    </div>
+  )}
+
   <script>
     const videos = document.querySelectorAll<HTMLVideoElement>('[data-galeria-video]');
     if (videos.length && 'IntersectionObserver' in window) {
@@ -188,6 +273,90 @@ const schemaProducto = {
         { threshold: 0.35 },
       );
       videos.forEach((v) => io.observe(v));
+    }
+
+    const lightbox = document.getElementById('lightbox');
+    const items = [...document.querySelectorAll<HTMLElement>('[data-galeria-item]')];
+    if (lightbox && items.length) {
+      const imgEl = lightbox.querySelector<HTMLImageElement>('[data-lightbox-img]');
+      const videoEl = lightbox.querySelector<HTMLVideoElement>('[data-lightbox-video]');
+      const contador = lightbox.querySelector<HTMLElement>('[data-lightbox-contador]');
+      const btnCerrar = lightbox.querySelector<HTMLButtonElement>('[data-lightbox-cerrar]');
+      const btnPrev = lightbox.querySelector<HTMLButtonElement>('[data-lightbox-prev]');
+      const btnNext = lightbox.querySelector<HTMLButtonElement>('[data-lightbox-next]');
+      let indice = 0;
+      let ultimoFoco: HTMLElement | null = null;
+
+      const pieza = (i: number) => {
+        const el = items[i];
+        return {
+          src: el.dataset.galeriaSrc || '',
+          tipo: el.dataset.galeriaTipo || 'imagen',
+          alt: el.querySelector('img')?.alt || '',
+        };
+      };
+
+      const mostrar = (i: number) => {
+        indice = (i + items.length) % items.length;
+        const actual = pieza(indice);
+        if (imgEl && videoEl) {
+          if (actual.tipo === 'video') {
+            imgEl.classList.add('hidden');
+            imgEl.removeAttribute('src');
+            videoEl.classList.remove('hidden');
+            videoEl.src = actual.src;
+            void videoEl.play().catch(() => {});
+          } else {
+            videoEl.pause();
+            videoEl.removeAttribute('src');
+            videoEl.classList.add('hidden');
+            imgEl.classList.remove('hidden');
+            imgEl.src = actual.src;
+            imgEl.alt = actual.alt;
+          }
+        }
+        if (contador) contador.textContent = `${indice + 1} / ${items.length}`;
+      };
+
+      const abrir = (i: number) => {
+        ultimoFoco = document.activeElement as HTMLElement | null;
+        mostrar(i);
+        lightbox.hidden = false;
+        lightbox.classList.remove('hidden');
+        lightbox.classList.add('flex');
+        document.documentElement.style.overflow = 'hidden';
+        btnCerrar?.focus();
+      };
+
+      const cerrar = () => {
+        if (videoEl) {
+          videoEl.pause();
+          videoEl.removeAttribute('src');
+        }
+        lightbox.classList.add('hidden');
+        lightbox.classList.remove('flex');
+        lightbox.hidden = true;
+        document.documentElement.style.overflow = '';
+        ultimoFoco?.focus();
+      };
+
+      items.forEach((el, i) => {
+        el.addEventListener('click', () => abrir(i));
+      });
+      btnCerrar?.addEventListener('click', cerrar);
+      btnPrev?.addEventListener('click', () => mostrar(indice - 1));
+      btnNext?.addEventListener('click', () => mostrar(indice + 1));
+
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) cerrar();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (lightbox.hidden) return;
+        if (e.key === 'Escape') cerrar();
+        if (e.key === 'ArrowLeft') mostrar(indice - 1);
+        if (e.key === 'ArrowRight') mostrar(indice + 1);
+      });
     }
   </script>
 </BaseLayout>
