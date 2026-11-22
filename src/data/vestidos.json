@@ -692,7 +692,8 @@
       "estado": "disponible",
       "descripcion": "",
       "imagenes": [
-        "/img/piezas/la-noak/1.webp"
+        "/img/piezas/la-noak/1.webp",
+        "/img/piezas/la-noak/2.mp4"
       ],
       "alt": "Vestido La Noak, pieza vintage única"
     },
