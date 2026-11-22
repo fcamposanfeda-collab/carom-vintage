@@ -6,7 +6,7 @@ import { site, textos, faq, contactoLink } from '../data/site';
 import { blackFriday as bf, vestidos, novedades, jackets, seleccion as seleccionOrden, imagenPrincipal, rutaVestido } from '../data/blackfriday';
 
 // PROVISIONAL: fotos de portada y nosotros
-const fotoPortada = '/img/fondo-portada-black-friday.webp';
+const fotoPortada = '/img/portada-black.webp';
 const fotoNosotros = '/img/nosotros-foto.webp';
 
 const base = Astro.site ?? new URL(site.url);
@@ -72,8 +72,8 @@ const schemaColeccion = {
     <img
       src={fotoPortada}
       alt="Editorial Black Friday Càrom Studio Vintage"
-      width="965"
-      height="581"
+      width="2400"
+      height="1445"
       fetchpriority="high"
       decoding="async"
       class="block h-auto w-full"
