@@ -4,8 +4,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  // PROVISIONAL: dominio definitivo (igual que en src/data/site.ts)
-  site: 'https://caromstudio.es',
+  // Dominio definitivo (igual que en src/data/site.ts)
+  site: 'https://caromvintage.com',
   trailingSlash: 'never',
   build: {
     format: 'file',

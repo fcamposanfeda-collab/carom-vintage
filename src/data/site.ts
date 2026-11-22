@@ -6,8 +6,8 @@
 export const site = {
   nombre: 'Càrom Studio Vintage',
 
-  // PROVISIONAL: dominio definitivo (cámbialo también en astro.config.mjs → site)
-  url: 'https://caromvintage.es',
+  // Dominio definitivo (cámbialo también en astro.config.mjs → site)
+  url: 'https://caromvintage.com',
 
   // Perfil de Instagram
   instagram: 'https://www.instagram.com/carom_vintage/',

@@ -39,7 +39,7 @@ const tienda = {
   '@type': 'ClothingStore',
   '@id': `${base.origin}/#tienda`,
   name: site.nombre,
-  description: 'Vestidos vintage de pieza única: una sola unidad y una sola talla de cada modelo. Envíos a toda España.',
+  description: 'Vestidos vintage de pieza única: una sola unidad y una sola talla de cada modelo. Envíos a España e internacionales.',
   url: base.origin,
   logo: new URL(site.logo, base).href,
   image: new URL(site.ogImagePorDefecto, base).href,
@@ -52,6 +52,7 @@ const tienda = {
     { '@type': 'AdministrativeArea', name: 'Castilla-La Mancha' },
     { '@type': 'AdministrativeArea', name: 'Andalucía' },
     { '@type': 'Country', name: 'España' },
+    { '@type': 'Place', name: 'Internacional' },
   ],
   contactPoint: {
     '@type': 'ContactPoint',
