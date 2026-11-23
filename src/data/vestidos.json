@@ -915,6 +915,23 @@
       "alt": "Vestido y bolero Sage, pieza vintage única"
     },
     {
+      "id": "guatape",
+      "nombre": "Vestido y chal Guatapé",
+      "talla": "S-M",
+      "medidas": "Pecho: 88 cm\nCintura: 78 cm\nCadera: hasta 100 cm\nLargo: 128 cm desde el pecho",
+      "precio": 166.5,
+      "descuento": 10,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/guatape/1.webp",
+        "/img/piezas/guatape/2.webp",
+        "/img/piezas/guatape/3.webp",
+        "/img/piezas/guatape/4.webp"
+      ],
+      "alt": "Vestido y chal Guatapé, pieza vintage única"
+    },
+    {
       "id": "melissa",
       "nombre": "Vestido Melissa",
       "talla": "XS-S",

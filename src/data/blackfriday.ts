@@ -81,6 +81,7 @@ export const seleccionIds = [
   'franchesca',
   'adelaida',
   'sage',
+  'guatape',
   'melissa',
   'freya',
   'carei',
