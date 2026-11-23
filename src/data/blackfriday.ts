@@ -35,6 +35,7 @@ export const vestidos = data.vestidos as Vestido[];
 // Novedades (orden del PDF; Rosalde añadida aparte)
 export const novedadesIds = [
   'monterroso',
+  'malena',
   'bordonau',
   'baviera',
   'petali',

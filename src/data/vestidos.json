@@ -21,6 +21,22 @@
       "alt": "Vestido Monterroso, pieza vintage única"
     },
     {
+      "id": "malena",
+      "nombre": "Vestido Malena",
+      "talla": "S-M",
+      "medidas": "Pecho: hasta 88 cm\nCintura: 75-80 cm\nCadera: hasta 110 cm\nLargo: 150 cm",
+      "precio": 195,
+      "descuento": 20,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/malena-1.webp",
+        "/img/piezas/malena-2.webp",
+        "/img/piezas/malena-3.webp"
+      ],
+      "alt": "Vestido Malena, pieza vintage única"
+    },
+    {
       "id": "bordonau",
       "nombre": "Vestido Bordonau",
       "talla": "XS-M",
