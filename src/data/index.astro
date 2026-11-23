@@ -1,0 +1,369 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import DressCard from '../components/DressCard.astro';
+import Countdown from '../components/Countdown.astro';
+import { site, textos, faq, contactoLink } from '../data/site';
+import { blackFriday as bf, vestidos, novedades, jackets, seleccion as seleccionOrden, imagenPrincipal, rutaVestido } from '../data/blackfriday';
+
+// PROVISIONAL: fotos de portada y nosotros
+const fotoPortada = '/img/portada-black.webp';
+const fotoNosotros = '/img/nosotros-foto.webp';
+
+const base = Astro.site ?? new URL(site.url);
+const abs = (ruta: string) => new URL(ruta, base).href;
+// Las piezas vendidas se muestran con la etiqueta "Vendido"
+const novedadesVisibles = novedades;
+// Las piezas vendidas de la selección se muestran con la etiqueta "Vendido"
+const seleccion = seleccionOrden;
+const disponibles = seleccion.filter((v) => v.estado === 'disponible').length;
+
+const disponibilidad = {
+  disponible: 'https://schema.org/InStock',
+  reservado: 'https://schema.org/LimitedAvailability',
+  vendido: 'https://schema.org/SoldOut',
+};
+
+const schemaFaq = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((f) => ({
+    '@type': 'Question',
+    name: f.pregunta,
+    acceptedAnswer: { '@type': 'Answer', text: f.respuesta },
+  })),
+};
+
+const schemaColeccion = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: bf.activo ? `Black Friday ${site.nombre}` : `Colección ${site.nombre}`,
+  itemListElement: vestidos.map((v, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: {
+      '@type': 'Product',
+      name: v.nombre,
+      description: v.descripcion || `${v.nombre}: pieza vintage única.`,
+      url: abs(rutaVestido(v.id)),
+      ...(imagenPrincipal(v) && { image: abs(imagenPrincipal(v)) }),
+      ...(v.talla && { size: v.talla }),
+      brand: { '@type': 'Brand', name: site.nombre },
+      ...(v.precio !== null && {
+        offers: {
+          '@type': 'Offer',
+          price: v.precio.toFixed(2),
+          priceCurrency: 'EUR',
+          availability: disponibilidad[v.estado],
+          itemCondition: 'https://schema.org/UsedCondition',
+          ...(bf.activo && { priceValidUntil: bf.fin.slice(0, 10) }),
+        },
+      }),
+    },
+  })),
+};
+---
+<BaseLayout
+  title={bf.activo ? `Black Friday · Vestidos vintage de pieza única | ${site.nombre}` : `Vestidos vintage de pieza única | ${site.nombre}`}
+  description={`${textos.portada.claim} ${textos.portada.texto} Acceso privado ${bf.fechasTexto.toLowerCase()}.`}
+  preloadImage={fotoPortada}
+  schemas={[schemaColeccion, schemaFaq]}
+>
+  <!-- HERO -->
+  <section class="relative bg-oliva text-crema" aria-label="Black Friday">
+    <img
+      src={fotoPortada}
+      alt="Editorial Black Friday Càrom Studio Vintage"
+      width="2400"
+      height="1445"
+      fetchpriority="high"
+      decoding="async"
+      class="block h-auto w-full"
+    />
+
+    {bf.activo && <Countdown inicio={bf.inicio} fin={bf.fin} />}
+
+    <div class="bg-white">
+      <div class="contenedor py-8 sm:py-10">
+        <p class="reveal etiqueta text-oliva">{textos.manifiesto.etiqueta}</p>
+      </div>
+    </div>
+
+    <div class="contenedor flex flex-col gap-7 py-12 sm:gap-8 sm:py-16">
+      <div class="relative aspect-[965/581] w-full overflow-hidden bg-noche">
+        <video
+          class="absolute inset-0 h-full w-full object-cover"
+          src="/img/editorial-portada.mp4"
+          poster="/img/portada-black.webp"
+          autoplay
+          muted
+          loop
+          playsinline
+          webkit-playsinline
+          preload="metadata"
+          aria-label="Editorial Cárom Studio Vintage"
+          data-editorial-video
+        />
+        <div class="pointer-events-none absolute inset-0 z-10 flex items-center overflow-hidden" aria-hidden="true">
+          <svg class="editorial-marquee" viewBox="0 0 2200 220" preserveAspectRatio="xMidYMid slice" fill="currentColor">
+            <defs>
+              <path
+                id="editorial-onda"
+                d="M-550,46.34 L-550,46.34 S-183.15,196.34 0,196.34 S366.85,46.34 550,46.34 S916.85,196.34 1100,196.34 S1466.85,46.34 1650,46.34 S2016.85,196.34 2200,196.34 S2566.85,46.34 2750,46.34"
+                fill="none"
+              />
+            </defs>
+            <text class="editorial-marquee__texto">
+              <textPath href="#editorial-onda" startOffset="0">
+                Welcome to the exceptional · Welcome to the exceptional · Welcome to the exceptional · Welcome to the exceptional · Welcome to the exceptional · Welcome to the exceptional ·
+                <animate attributeName="startOffset" from="0%" to="-50%" dur="32s" repeatCount="indefinite" />
+              </textPath>
+            </text>
+          </svg>
+        </div>
+        <p class="sr-only">Welcome to the exceptional</p>
+      </div>
+      <div class="reveal flex flex-wrap items-end justify-between gap-8">
+        <div class="max-w-lg">
+          <p class="etiqueta text-crema/70">{textos.portada.etiqueta}</p>
+          <h1 class="mt-4 font-serif text-[1.45rem] leading-snug font-light sm:text-[1.75rem]">{textos.portada.claim}</h1>
+          <p class="mt-3 text-[0.95rem] leading-relaxed text-crema/85 sm:text-base">{textos.portada.texto}</p>
+        </div>
+        <a
+          href={contactoLink()}
+          target="_blank"
+          rel="noopener"
+          class="btn-claro w-full sm:w-auto"
+          data-umami-event="instagram-md-click"
+          data-umami-event-origen="portada"
+        >
+          Contáctanos
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOVEDADES -->
+  <section id="novedades" class="scroll-mt-8 bg-white pb-16 text-oliva sm:pb-24" aria-labelledby="titulo-novedades">
+    <div class="contenedor">
+      <div class="mb-6 flex flex-wrap items-baseline justify-between gap-4 border-t border-noche/15 pt-7">
+        <h2 id="titulo-novedades" class="text-4xl font-normal">{textos.novedades.titulo}</h2>
+        <p class="etiqueta text-oliva">{textos.novedades.etiqueta}</p>
+      </div>
+      <p class="mb-10 max-w-2xl text-[1.05rem] leading-relaxed text-oliva/80">
+        {textos.novedades.texto}
+      </p>
+      <div class="grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 sm:gap-y-12">
+        {novedadesVisibles.map((v, i) => <DressCard vestido={v} prioridad={i < 2} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- COLECCIÓN -->
+  <section id="coleccion" class="scroll-mt-8 bg-oliva pb-16 text-crema sm:pb-24" aria-labelledby="titulo-coleccion">
+    <div class="contenedor">
+      <div class="mb-10 flex flex-wrap items-baseline justify-between gap-4 border-t border-crema/20 pt-7">
+        <h2 id="titulo-coleccion" class="text-4xl font-normal">{textos.coleccion.titulo}</h2>
+        <a href={contactoLink()} target="_blank" rel="noopener" class="etiqueta text-crema/80 transition-colors hover:text-crema" data-umami-event="instagram-md-click" data-umami-event-origen="coleccion-cabecera">
+          {disponibles} {disponibles === 1 ? 'pieza disponible' : 'piezas disponibles'}
+        </a>
+      </div>
+      <div class="grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 sm:gap-y-12 lg:grid-cols-4">
+        {seleccion.map((v, i) => <DressCard vestido={v} prioridad={i < 4} tono="oscuro" />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- THE JACKET EDITION -->
+  <section id="jackets" class="scroll-mt-8 bg-white pb-20 text-oliva sm:pb-28" aria-labelledby="titulo-jackets">
+    <div class="contenedor">
+      <div class="mb-6 flex flex-wrap items-baseline justify-between gap-4 border-t border-noche/15 pt-7">
+        <h2 id="titulo-jackets" class="text-4xl font-normal">{textos.jackets.titulo}</h2>
+      </div>
+      <p class="mb-10 max-w-2xl text-[1.05rem] leading-relaxed text-oliva/80">
+        {textos.jackets.texto}
+      </p>
+      {jackets.length > 0 ? (
+        <div class="grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 sm:gap-y-12">
+          {jackets.map((v, i) => <DressCard vestido={v} prioridad={i < 2} />)}
+        </div>
+      ) : (
+        <p class="etiqueta text-oliva/70">Próximamente</p>
+      )}
+    </div>
+  </section>
+
+  <!-- TARJETA REGALO -->
+  <section id="tarjeta-regalo" class="scroll-mt-8 border-t border-noche/10 bg-white py-20 text-oliva sm:py-28" aria-labelledby="titulo-tarjeta-regalo">
+    <div class="contenedor grid items-center gap-12 md:grid-cols-2 md:gap-16">
+      <div class="reveal">
+        <p class="etiqueta text-oliva/70">{textos.tarjetaRegalo.etiqueta}</p>
+        <h2 id="titulo-tarjeta-regalo" class="mt-5 text-5xl sm:text-6xl">{textos.tarjetaRegalo.titulo}</h2>
+        <div class="mt-8 max-w-md space-y-4 text-[1.05rem] leading-relaxed text-oliva/80">
+          {textos.tarjetaRegalo.parrafos.map((p) => <p>{p}</p>)}
+        </div>
+        <a
+          href={contactoLink()}
+          target="_blank"
+          rel="noopener"
+          class="btn-oscuro mt-10 inline-flex"
+          data-umami-event="instagram-md-click"
+          data-umami-event-origen="tarjeta-regalo"
+        >
+          {textos.tarjetaRegalo.cta}
+        </a>
+      </div>
+      <img
+        src="/img/tarjeta-regalo.webp"
+        alt="Tarjeta regalo Càrom Studio Vintage"
+        width="1024"
+        height="1024"
+        loading="lazy"
+        decoding="async"
+        class="reveal mx-auto w-full max-w-md object-contain md:max-w-none"
+      />
+    </div>
+
+    <div class="contenedor mt-16 grid gap-12 border-t border-noche/10 pt-14 md:mt-20 md:grid-cols-2 md:gap-16 md:pt-16">
+      <div class="reveal">
+        <h3 class="font-serif text-3xl font-light sm:text-4xl">{textos.tarjetaRegalo.comoFunciona.titulo}</h3>
+        <ol class="mt-8 space-y-5 text-[1.05rem] leading-relaxed text-oliva/80">
+          {textos.tarjetaRegalo.comoFunciona.pasos.map((paso, i) => (
+            <li class="flex gap-4">
+              <span class="etiqueta shrink-0 pt-1 text-oliva">{i + 1}.</span>
+              <span>{paso}</span>
+            </li>
+          ))}
+        </ol>
+      </div>
+      <div class="reveal">
+        <h3 class="font-serif text-3xl font-light sm:text-4xl">{textos.tarjetaRegalo.queIncluye.titulo}</h3>
+        <ul class="mt-8 space-y-5 text-[1.05rem] leading-relaxed text-oliva/80">
+          {textos.tarjetaRegalo.queIncluye.items.map((item) => (
+            <li class="flex gap-4">
+              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-oliva/50" aria-hidden="true" />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOSOTROS -->
+  <section id="nosotros" class="scroll-mt-8 bg-oliva py-20 text-crema sm:py-28" aria-labelledby="titulo-nosotros">
+    <div class="contenedor grid items-center gap-12 md:grid-cols-12 md:gap-8">
+      <img
+        src={fotoNosotros}
+        alt="Vestidos vintage colgados en el estudio de Cárom Studio Vintage"
+        width="952"
+        height="1500"
+        loading="lazy"
+        decoding="async"
+        class="reveal aspect-[4/5] w-full object-cover md:col-span-5"
+      />
+      <div class="md:col-span-6 md:col-start-7">
+        <p class="reveal etiqueta text-crema/70">CÀROM Studio Vintage</p>
+        <h2 id="titulo-nosotros" class="reveal mt-6 text-6xl sm:text-7xl">{textos.nosotros.titulo}</h2>
+        <p class="reveal mt-8 font-serif text-3xl leading-snug text-crema/80 italic sm:text-4xl">{textos.nosotros.entradilla}</p>
+        {textos.nosotros.parrafos.map((p) => (
+          <p class="reveal mt-6 max-w-lg text-crema/85">{p}</p>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="scroll-mt-8 border-t border-noche/10 bg-white py-20 text-oliva sm:py-28" aria-labelledby="titulo-faq">
+    <div class="contenedor max-w-3xl">
+      <p class="reveal etiqueta text-oliva">Preguntas frecuentes</p>
+      <h2 id="titulo-faq" class="reveal mt-5 text-5xl sm:text-6xl">FAQ</h2>
+      <div class="mt-12 divide-y divide-noche/15 border-y border-noche/15">
+        {faq.map((f, i) => (
+          <details class="reveal group py-6" open={i === 0}>
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-serif text-2xl [&::-webkit-details-marker]:hidden">
+              <h3 class="text-2xl font-light">{f.pregunta}</h3>
+              <span class="text-3xl text-oliva transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+            </summary>
+            <p class="mt-4 whitespace-pre-line text-oliva/80">{f.respuesta}</p>
+          </details>
+        ))}
+      </div>
+      <p class="reveal mt-10 text-center">
+        <a href={contactoLink()} target="_blank" rel="noopener" class="etiqueta text-oliva transition-colors hover:text-oliva/70" data-umami-event="instagram-md-click" data-umami-event-origen="faq">
+          ¿Otra duda? Escríbenos por Instagram
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <script>
+    const video = document.querySelector<HTMLVideoElement>('[data-editorial-video]');
+    if (video) {
+      video.muted = true;
+      video.setAttribute('muted', '');
+      video.setAttribute('playsinline', '');
+      video.setAttribute('webkit-playsinline', '');
+
+      const intentarPlay = () => {
+        void video.play().catch(() => {});
+      };
+
+      intentarPlay();
+      video.addEventListener('loadeddata', intentarPlay, { once: true });
+      document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) intentarPlay();
+      });
+
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver(
+          (entradas) => {
+            for (const e of entradas) {
+              if (e.isIntersecting) intentarPlay();
+              else video.pause();
+            }
+          },
+          { threshold: 0.2 },
+        );
+        io.observe(video);
+      }
+
+      // Tras abrir la puerta, iOS a menudo necesita un play explícito
+      document.getElementById('boton-puerta')?.addEventListener('click', () => {
+        setTimeout(intentarPlay, 400);
+      });
+    }
+  </script>
+</BaseLayout>
+
+<style>
+  .editorial-marquee {
+    display: block;
+    width: 160%;
+    max-width: none;
+    height: auto;
+    margin-left: -20%;
+    color: #fff;
+    overflow: visible;
+  }
+  .editorial-marquee__texto {
+    fill: #fff;
+    font-family: var(--font-serif);
+    font-size: 4.5rem;
+    font-weight: 300;
+    font-style: italic;
+  }
+  @media (min-width: 768px) {
+    .editorial-marquee {
+      width: 140%;
+      margin-left: -12%;
+    }
+    .editorial-marquee__texto {
+      font-size: 5.25rem;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .editorial-marquee__texto animate {
+      display: none;
+    }
+  }
+</style>
