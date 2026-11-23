@@ -80,6 +80,7 @@ export const seleccionIds = [
   'eclat',
   'franchesca',
   'adelaida',
+  'barden',
   'sage',
   'guatape',
   'melissa',

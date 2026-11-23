@@ -898,6 +898,24 @@
       "alt": "Vestido Adelaida, pieza vintage única"
     },
     {
+      "id": "barden",
+      "nombre": "Vestido Barden",
+      "talla": "S",
+      "medidas": "Pecho: 76 cm\nCintura: 70 cm\nCadera: hasta 100 cm\nLargo: 106 cm desde el pecho",
+      "precio": 195,
+      "descuento": 10,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/barden-1.webp",
+        "/img/piezas/barden-2.webp",
+        "/img/piezas/barden-3.webp",
+        "/img/piezas/barden-4.webp",
+        "/img/piezas/barden-5.webp"
+      ],
+      "alt": "Vestido Barden, pieza vintage única"
+    },
+    {
       "id": "sage",
       "nombre": "Vestido y bolero Sage",
       "talla": "S-M",
