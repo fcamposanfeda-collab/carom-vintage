@@ -12,7 +12,7 @@ const fotoNosotros = '/img/nosotros-foto.webp';
 const base = Astro.site ?? new URL(site.url);
 const abs = (ruta: string) => new URL(ruta, base).href;
 const enVenta = (v: (typeof vestidos)[number]) => v.estado !== 'vendido';
-const novedadesVisibles = novedades.filter(enVenta);
+const novedadesVisibles = novedades;
 // Las piezas vendidas de la selección se muestran con la etiqueta "Vendido"
 const seleccion = seleccionOrden;
 const disponibles = seleccion.filter((v) => v.estado === 'disponible').length;
