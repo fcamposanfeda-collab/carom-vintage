@@ -63,7 +63,7 @@
       "estado": "disponible",
       "descripcion": "",
       "imagenes": [
-        "/img/piezas/calabria-1.webp",
+        "/img/piezas/calabria-1.webp?v=2",
         "/img/piezas/calabria-2.webp",
         "/img/piezas/calabria-3.webp",
         "/img/piezas/calabria-4.webp"
@@ -131,7 +131,7 @@
       "medidas": "Es un vestido estilo gabardina ajustable completamente con la lazada\nPecho: hasta 90 cm\nCintura: hasta 80 cm\nCadera: hasta 100 cm\nLargo: 150 cm",
       "precio": 185,
       "descuento": 25,
-      "estado": "disponible",
+      "estado": "vendido",
       "descripcion": "",
       "imagenes": [
         "/img/piezas/matilde/1.webp",
@@ -920,7 +920,7 @@
       "medidas": "Top\nPecho: 92-100 cm\nCintura: ajustable con fajín\n\nFalda\nCintura: 80 cm\nCadera: 86 cm\nLargo: 95 cm",
       "precio": 246.5,
       "descuento": 15,
-      "estado": "disponible",
+      "estado": "vendido",
       "descripcion": "",
       "imagenes": [
         "/img/piezas/franchesca/1.webp",
