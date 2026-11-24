@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "(cp src/data/*.webp public/img/piezas/ 2>/dev/null || true) && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "imagenes": "node scripts/generar-imagenes.mjs"
