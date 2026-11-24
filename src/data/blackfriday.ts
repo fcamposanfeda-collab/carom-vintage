@@ -36,6 +36,7 @@ export const vestidos = data.vestidos as Vestido[];
 export const novedadesIds = [
   'monterroso',
   'malena',
+  'le-plum',
   'bordonau',
   'baviera',
   'petali',

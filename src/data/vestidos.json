@@ -37,6 +37,23 @@
       "alt": "Vestido Malena, pieza vintage única"
     },
     {
+      "id": "le-plum",
+      "nombre": "Set Le Plum",
+      "talla": "S-M",
+      "medidas": "Top\nPecho: hasta 86 cm\nCintura: hasta 72 cm\nLargo: 47 cm\nFalda\nCintura: 72 cm\nCadera: hasta 94 cm\nLargo: 110 cm",
+      "precio": 235,
+      "descuento": 15,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/le-plum-1.webp",
+        "/img/piezas/le-plum-2.webp",
+        "/img/piezas/le-plum-3.webp",
+        "/img/piezas/le-plum-4.webp"
+      ],
+      "alt": "Set Le Plum, pieza vintage única"
+    },
+    {
       "id": "bordonau",
       "nombre": "Vestido Bordonau",
       "talla": "XS-M",
