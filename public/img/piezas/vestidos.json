@@ -1,0 +1,1322 @@
+{
+  "_PROVISIONAL": "// Sync PDF ARTICULOS DE BLACK (3). precio=Ahora. Tessicini según PDF 210€.",
+  "vestidos": [
+    {
+      "id": "monterroso",
+      "nombre": "Vestido Monterroso",
+      "talla": "S-M",
+      "medidas": "Pecho: hasta 96 cm\nCintura: hasta 80 cm\nCadera: hasta 100 cm\nLargo: 153 cm desde el tirante",
+      "precio": 215,
+      "descuento": 15,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/monterroso/1.webp",
+        "/img/piezas/monterroso/2.webp",
+        "/img/piezas/monterroso/3.webp",
+        "/img/piezas/monterroso/4.webp",
+        "/img/piezas/monterroso/5.webp",
+        "/img/piezas/monterroso/6.webp"
+      ],
+      "alt": "Vestido Monterroso, pieza vintage única"
+    },
+    {
+      "id": "malena",
+      "nombre": "Vestido Malena",
+      "talla": "S-M",
+      "medidas": "Pecho: hasta 88 cm\nCintura: 75-80 cm\nCadera: hasta 110 cm\nLargo: 150 cm",
+      "precio": 195,
+      "descuento": 20,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/malena-1.webp",
+        "/img/piezas/malena-2.webp",
+        "/img/piezas/malena-3.webp"
+      ],
+      "alt": "Vestido Malena, pieza vintage única"
+    },
+    {
+      "id": "le-plum",
+      "nombre": "Set Le Plum",
+      "talla": "S-M",
+      "medidas": "Top\nPecho: hasta 86 cm\nCintura: hasta 72 cm\nLargo: 47 cm\nFalda\nCintura: 72 cm\nCadera: hasta 94 cm\nLargo: 110 cm",
+      "precio": 235,
+      "descuento": 15,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/le-plum-1.webp",
+        "/img/piezas/le-plum-2.webp",
+        "/img/piezas/le-plum-3.webp",
+        "/img/piezas/le-plum-4.webp"
+      ],
+      "alt": "Set Le Plum, pieza vintage única"
+    },
+    {
+      "id": "bordonau",
+      "nombre": "Vestido Bordonau",
+      "talla": "XS-M",
+      "medidas": "Pecho: hasta 90 cm\nCintura: hasta 88 cm\nCadera: hasta 105 cm\nLargo: 160 cm",
+      "precio": 195,
+      "descuento": 10,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/bordonau/4.webp",
+        "/img/piezas/bordonau/1.webp",
+        "/img/piezas/bordonau/2.webp",
+        "/img/piezas/bordonau/3.webp",
+        "/img/piezas/bordonau/5.webp",
+        "/img/piezas/bordonau/6.webp"
+      ],
+      "alt": "Vestido Bordonau, pieza vintage única"
+    },
+    {
+      "id": "baviera",
+      "nombre": "Vestido Baviera",
+      "talla": "XS-M",
+      "medidas": "Pecho: 80-100 cm (es un tejido que cede)\nCintura: 75-85 cm\nCadera: hasta 110 cm\nLargo: 125 cm por delante y 147 cm por detrás",
+      "precio": 190,
+      "descuento": 15,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/baviera/3.webp",
+        "/img/piezas/baviera/1.webp",
+        "/img/piezas/baviera/2.webp",
+        "/img/piezas/baviera/4.webp"
+      ],
+      "alt": "Vestido Baviera, pieza vintage única"
+    },
+    {
+      "id": "petali",
+      "nombre": "Vestido Petali",
+      "talla": "XS-M",
+      "medidas": "Pecho: 80-90 cm (es un tejido que cede adaptándose a la silueta)\nCintura: 75-80 cm\nCadera: 104 cm\nLargo: 160 cm hasta el último pico",
+      "precio": 185,
+      "descuento": 20,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/petali/4.webp",
+        "/img/piezas/petali/1.webp",
+        "/img/piezas/petali/2.webp",
+        "/img/piezas/petali/3.webp",
+        "/img/piezas/petali/5.webp"
+      ],
+      "alt": "Vestido Petali, pieza vintage única"
+    },
+    {
+      "id": "matilde",
+      "nombre": "Vestido Matilde",
+      "talla": "S-M",
+      "medidas": "Es un vestido estilo gabardina ajustable completamente con la lazada\nPecho: hasta 90 cm\nCintura: hasta 80 cm\nCadera: hasta 100 cm\nLargo: 150 cm",
+      "precio": 185,
+      "descuento": 25,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/matilde/1.webp",
+        "/img/piezas/matilde/2.webp",
+        "/img/piezas/matilde/3.webp",
+        "/img/piezas/matilde/4.webp",
+        "/img/piezas/matilde/5.webp"
+      ],
+      "alt": "Vestido Matilde, pieza vintage única"
+    },
+    {
+      "id": "charlotte",
+      "nombre": "Vestido Charlotte",
+      "talla": "XS-S",
+      "medidas": "Es un vestido cortado al bies\nPecho: 80-85 cm\nCintura: 80 cm\nCadera: 110 cm\nLargo: 143 cm",
+      "precio": 195,
+      "descuento": 15,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/charlotte/1.webp",
+        "/img/piezas/charlotte/2.webp",
+        "/img/piezas/charlotte/3.webp",
+        "/img/piezas/charlotte/4.webp"
+      ],
+      "alt": "Vestido Charlotte, pieza vintage única"
+    },
+    {
+      "id": "tessicini",
+      "nombre": "Vestido Tessicini",
+      "talla": "S",
+      "medidas": "Pecho: 82-95 cm\nCintura: 75-82 cm\nCadera: 110 cm\nLargo: 107 cm desde el pecho",
+      "precio": 210,
+      "descuento": 15,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/tessicini/1.webp",
+        "/img/piezas/tessicini/2.webp",
+        "/img/piezas/tessicini/3.webp",
+        "/img/piezas/tessicini/4.webp"
+      ],
+      "alt": "Vestido Tessicini, pieza vintage única"
+    },
+    {
+      "id": "carol",
+      "nombre": "Vestido Carol",
+      "talla": "XS-M",
+      "medidas": "Pecho: 80-95 cm\nCintura: 75-85 cm\nCadera: 100 cm\nLargo: por delante 130 cm, por detrás 146 cm",
+      "precio": 220,
+      "descuento": 15,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/carol/1.webp",
+        "/img/piezas/carol/2.webp",
+        "/img/piezas/carol/3.webp",
+        "/img/piezas/carol/4.webp",
+        "/img/piezas/carol/5.webp"
+      ],
+      "alt": "Vestido Carol, pieza vintage única"
+    },
+    {
+      "id": "caroline",
+      "nombre": "Dos piezas Caroline",
+      "talla": "S-L",
+      "medidas": "Top\nPecho: 80-100 cm\nFalda\nCintura: 84 cm\nCadera: 102 cm\nLargo: 76 cm",
+      "precio": 215,
+      "descuento": 15,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/caroline/1.webp",
+        "/img/piezas/caroline/2.webp",
+        "/img/piezas/caroline/3.webp",
+        "/img/piezas/caroline/4.webp",
+        "/img/piezas/caroline/5.webp"
+      ],
+      "alt": "Dos piezas Caroline, pieza vintage única"
+    },
+    {
+      "id": "nirvan",
+      "nombre": "Vestido Nirvan",
+      "talla": "XS-S",
+      "medidas": "Pecho: 80-90 cm\nCintura: 75-80 cm\nCadera: hasta 100 cm\nLargo: 150 cm",
+      "precio": 250,
+      "descuento": 10,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/nirvan/1.webp",
+        "/img/piezas/nirvan/2.webp",
+        "/img/piezas/nirvan/3.webp",
+        "/img/piezas/nirvan/4.webp",
+        "/img/piezas/nirvan/5.webp"
+      ],
+      "alt": "Vestido Nirvan, pieza vintage única"
+    },
+    {
+      "id": "velika",
+      "nombre": "Dos piezas Velika",
+      "talla": "XS-S",
+      "medidas": "Chaqueta\nPecho: ajustable con la lazada pero cerrado completamente hasta 100 cm\nCintura: hasta 92 cm cerrado completamente\nLargo: 54 cm\nFalda\nCintura: 74 cm\nCadera: hasta 100 cm\nLargo: 79 cm",
+      "precio": 285,
+      "descuento": 10,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/velika/3.webp",
+        "/img/piezas/velika/1.webp",
+        "/img/piezas/velika/2.webp",
+        "/img/piezas/velika/4.webp",
+        "/img/piezas/velika/5.webp"
+      ],
+      "alt": "Dos piezas Velika, pieza vintage única"
+    },
+    {
+      "id": "bibiana",
+      "nombre": "Vestido Bibiana",
+      "talla": "XS-L",
+      "medidas": "Pecho: 80-100 cm (cortado al bies)\nCintura: hasta 82 cm\nCadera: hasta 120 cm\nLargo: 150 cm",
+      "precio": 255,
+      "descuento": 10,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/bibiana/1.webp",
+        "/img/piezas/bibiana/2.webp",
+        "/img/piezas/bibiana/3.webp",
+        "/img/piezas/bibiana/4.webp",
+        "/img/piezas/bibiana/5.mp4"
+      ],
+      "alt": "Vestido Bibiana, pieza vintage única"
+    },
+    {
+      "id": "rosalde",
+      "nombre": "Vestido Rosalde",
+      "talla": "XS/S",
+      "medidas": "Pecho: 85 cm\nCintura: 75-78 cm\nCadera: hasta 120 cm\nLargo: 150 cm",
+      "precio": 260,
+      "descuento": 15,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/rosalde/1.webp",
+        "/img/piezas/rosalde/2.webp",
+        "/img/piezas/rosalde/3.webp",
+        "/img/piezas/rosalde/4.webp",
+        "/img/piezas/rosalde/5.webp",
+        "/img/piezas/rosalde/6.webp"
+      ],
+      "alt": "Vestido Rosalde, pieza vintage única"
+    },
+    {
+      "id": "colette",
+      "nombre": "Vestido Colette",
+      "talla": "XS-S",
+      "medidas": "Pecho: 100 cm\nCintura: 75-80 cm\nCadera: 104 cm\nLargo: 140 cm",
+      "precio": 185,
+      "descuento": 20,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/colette/1.webp",
+        "/img/piezas/colette/2.webp",
+        "/img/piezas/colette/3.webp"
+      ],
+      "alt": "Vestido Colette, pieza vintage única"
+    },
+    {
+      "id": "marlen",
+      "nombre": "Vestido Marlen",
+      "talla": "XS-M",
+      "medidas": "Pecho: 85-95 cm\nCintura: 85-95 cm\nCadera: 110 cm\nLargo: 140 cm",
+      "precio": 225,
+      "descuento": 10,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/marlen/1.webp",
+        "/img/piezas/marlen/2.webp",
+        "/img/piezas/marlen/3.webp",
+        "/img/piezas/marlen/4.webp",
+        "/img/piezas/marlen/5.webp"
+      ],
+      "alt": "Vestido Marlen, pieza vintage única"
+    },
+    {
+      "id": "accus",
+      "nombre": "Vestido Accus",
+      "talla": "XS-S",
+      "medidas": "Pecho: 85-90 cm\nCintura: 75-80 cm\nCadera: hasta 100 cm\nLargo: 140 cm desde el pecho",
+      "precio": 225,
+      "descuento": 10,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/accus/1.webp",
+        "/img/piezas/accus/2.webp",
+        "/img/piezas/accus/3.webp"
+      ],
+      "alt": "Vestido Accus, pieza vintage única"
+    },
+    {
+      "id": "brela",
+      "nombre": "Vestido Brela",
+      "talla": "XS-S",
+      "medidas": "Pecho: 80-85 cm\nCintura: igual\nCadera: hasta 110 cm\nLargo: 147 cm",
+      "precio": 235,
+      "descuento": 10,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/brela/1.webp",
+        "/img/piezas/brela/2.webp",
+        "/img/piezas/brela/3.webp",
+        "/img/piezas/brela/4.webp",
+        "/img/piezas/brela/5.webp"
+      ],
+      "alt": "Vestido Brela, pieza vintage única"
+    },
+    {
+      "id": "lola",
+      "nombre": "Vestido y bolero Lola",
+      "talla": "XS-S",
+      "medidas": "Vestido\nPecho: hasta 84 cm\nCintura: hasta 76 cm\nCadera: hasta 100 cm\nLargo: 146 cm desde el tirante hasta el último vuelo\nChaqueta\nPecho: abierta completamente\nLargo: 59 cm",
+      "precio": 190,
+      "descuento": 15,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/lola/1.webp",
+        "/img/piezas/lola/2.webp",
+        "/img/piezas/lola/3.webp",
+        "/img/piezas/lola/4.webp",
+        "/img/piezas/lola/5.webp",
+        "/img/piezas/lola/6.webp",
+        "/img/piezas/lola/7.webp"
+      ],
+      "alt": "Vestido y bolero Lola, pieza vintage única"
+    },
+    {
+      "id": "bruna",
+      "nombre": "Dos piezas Bruna",
+      "talla": "M",
+      "medidas": "",
+      "precio": 215,
+      "descuento": 15,
+      "estado": "vendido",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/bruna/1.webp",
+        "/img/piezas/bruna/2.webp",
+        "/img/piezas/bruna/3.webp"
+      ],
+      "alt": "Dos piezas Bruna, pieza vintage única"
+    },
+    {
+      "id": "lessina",
+      "nombre": "Vestido Lessina",
+      "talla": "XS-M",
+      "medidas": "Pecho: 85-90 cm\nCintura: 75-80 cm\nCadera: hasta 100 cm\nLargo: 150 cm",
+      "precio": 280,
+      "descuento": 20,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/lessina/1.webp",
+        "/img/piezas/lessina/2.webp",
+        "/img/piezas/lessina/3.webp",
+        "/img/piezas/lessina/4.webp",
+        "/img/piezas/lessina/5.webp"
+      ],
+      "alt": "Vestido Lessina, pieza vintage única"
+    },
+    {
+      "id": "estigia",
+      "nombre": "Vestido Estigia",
+      "talla": "XS-S",
+      "medidas": "Pecho: 80-82 cm\nCintura: 75-78 cm\nCadera: hasta 100 cm\nLargo: 140 cm desde el pecho",
+      "precio": 220,
+      "descuento": 20,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/estigia/1.webp",
+        "/img/piezas/estigia/2.webp",
+        "/img/piezas/estigia/3.webp",
+        "/img/piezas/estigia/4.webp",
+        "/img/piezas/estigia/5.webp",
+        "/img/piezas/estigia/6.webp"
+      ],
+      "alt": "Vestido Estigia, pieza vintage única"
+    },
+    {
+      "id": "kali",
+      "nombre": "Vestido Kâli",
+      "talla": "XS-M",
+      "medidas": "Pecho: 78-99 cm (corpiño)\nCintura: 75-80 cm\nCadera: hasta 105 cm\nLargo: 140 cm desde el pecho",
+      "precio": 275,
+      "descuento": 15,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/kali/1.webp",
+        "/img/piezas/kali/2.webp",
+        "/img/piezas/kali/3.webp",
+        "/img/piezas/kali/4.webp",
+        "/img/piezas/kali/5.webp",
+        "/img/piezas/kali/6.webp"
+      ],
+      "alt": "Vestido Kâli, pieza vintage única"
+    },
+    {
+      "id": "aureline",
+      "nombre": "Vestido Aureline",
+      "talla": "XS-M",
+      "medidas": "Pecho: desde 80 cm hasta 100 cm\nCintura: 75-95 cm\nCadera: hasta 105 cm\nLargo: 130 cm",
+      "precio": 165,
+      "descuento": 25,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/aureline/1.webp",
+        "/img/piezas/aureline/2.webp",
+        "/img/piezas/aureline/3.webp",
+        "/img/piezas/aureline/4.webp"
+      ],
+      "alt": "Vestido Aureline, pieza vintage única"
+    },
+    {
+      "id": "aiko",
+      "nombre": "Vestido Aiko",
+      "talla": "S-L",
+      "medidas": "Pecho: 88-100 cm\nCintura: 78-85 cm\nCadera: hasta 110 cm\nLargo: 140 cm",
+      "precio": 180,
+      "descuento": 15,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/aiko/1.webp",
+        "/img/piezas/aiko/2.webp",
+        "/img/piezas/aiko/3.webp",
+        "/img/piezas/aiko/4.webp",
+        "/img/piezas/aiko/5.webp",
+        "/img/piezas/aiko/6.webp"
+      ],
+      "alt": "Vestido Aiko, pieza vintage única"
+    },
+    {
+      "id": "lorenza",
+      "nombre": "Vestido Lorenza",
+      "talla": "S-L",
+      "medidas": "Pecho: 88-98 cm\nCintura: 80 cm\nCadera: hasta 104 cm\nLargo: 141 cm",
+      "precio": 175,
+      "descuento": 10,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/lorenza/1.webp",
+        "/img/piezas/lorenza/2.webp",
+        "/img/piezas/lorenza/3.webp",
+        "/img/piezas/lorenza/4.webp",
+        "/img/piezas/lorenza/5.webp"
+      ],
+      "alt": "Vestido Lorenza, pieza vintage única"
+    },
+    {
+      "id": "mao",
+      "nombre": "Vestido Mao",
+      "talla": "XXS/XS",
+      "medidas": "Pecho: 80 cm\nCintura: 75 cm\nCadera: hasta 90 cm\nLargo: 150 cm",
+      "precio": 140,
+      "descuento": 15,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/mao/1.webp",
+        "/img/piezas/mao/2.webp",
+        "/img/piezas/mao/3.webp",
+        "/img/piezas/mao/4.webp",
+        "/img/piezas/mao/5.webp"
+      ],
+      "alt": "Vestido Mao, pieza vintage única"
+    },
+    {
+      "id": "gianna",
+      "nombre": "Vestido Gianna",
+      "talla": "S-M",
+      "medidas": "Pecho: 85-90 cm\nCintura: 75-80 cm\nCadera: hasta 110 cm\nLargo: 140 cm desde el pecho",
+      "precio": 275,
+      "descuento": 10,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/gianna/1.webp",
+        "/img/piezas/gianna/2.webp",
+        "/img/piezas/gianna/3.webp",
+        "/img/piezas/gianna/4.webp",
+        "/img/piezas/gianna/5.webp",
+        "/img/piezas/gianna/6.webp"
+      ],
+      "alt": "Vestido Gianna, pieza vintage única"
+    },
+    {
+      "id": "esencia-dorada",
+      "nombre": "Dos piezas Esencia Dorada",
+      "talla": "M",
+      "medidas": "Chaqueta\nPecho: hasta 100 cm\nSisa: 24 cm\nLargo: 56 cm\nPantalón\nCintura: 68 cm (ajustable con la cuerda del fajín)\nCadera: 100 cm\nLargo: 105 cm",
+      "precio": 168,
+      "descuento": 20,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/esencia-dorada/1.webp",
+        "/img/piezas/esencia-dorada/2.webp",
+        "/img/piezas/esencia-dorada/3.webp"
+      ],
+      "alt": "Dos piezas Esencia Dorada, pieza vintage única"
+    },
+    {
+      "id": "palma",
+      "nombre": "Vestido Palma",
+      "talla": "S-L",
+      "medidas": "Pecho: 80-90 cm\nCintura: 80 cm\nCadera: 90 cm\nLargo: 130 cm",
+      "precio": 116.25,
+      "descuento": 25,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/palma/1.webp",
+        "/img/piezas/palma/2.webp",
+        "/img/piezas/palma/3.webp",
+        "/img/piezas/palma/4.webp"
+      ],
+      "alt": "Vestido Palma, pieza vintage única"
+    },
+    {
+      "id": "bencort",
+      "nombre": "Dos piezas Bencort",
+      "talla": "S-M",
+      "medidas": "Pecho: 84 cm\nCintura: 70 cm\nCadera: 80 cm\nLargo: 105 cm",
+      "precio": 93.75,
+      "descuento": 25,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/bencort/1.webp",
+        "/img/piezas/bencort/2.webp",
+        "/img/piezas/bencort/3.webp"
+      ],
+      "alt": "Dos piezas Bencort, pieza vintage única"
+    },
+    {
+      "id": "casilda",
+      "nombre": "Vestido Casilda",
+      "talla": "XS-S",
+      "medidas": "Pecho: 85-95 cm\nCintura: 80 cm\nCadera: 90 cm\nLargo: 155 cm",
+      "precio": 97.75,
+      "descuento": 15,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/casilda/1.webp",
+        "/img/piezas/casilda/2.webp",
+        "/img/piezas/casilda/3.webp",
+        "/img/piezas/casilda/4.webp"
+      ],
+      "alt": "Vestido Casilda, pieza vintage única"
+    },
+    {
+      "id": "philippa",
+      "nombre": "Vestido Philippa",
+      "talla": "XS-S",
+      "medidas": "Pecho: 92 cm\nCintura: 84 cm\nCadera: 90 cm\nLargo: 130 cm",
+      "precio": 86.25,
+      "descuento": 25,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/philippa/1.webp",
+        "/img/piezas/philippa/2.webp",
+        "/img/piezas/philippa/3.webp"
+      ],
+      "alt": "Vestido Philippa, pieza vintage única"
+    },
+    {
+      "id": "amanda",
+      "nombre": "Dos piezas Amanda",
+      "talla": "M",
+      "medidas": "Top\nPecho: 92 cm\nCintura: 80 cm\nLargo: 45 cm\nFalda\nCintura: 70 cm\nCadera: 98-100 cm\nLargo: 104 cm",
+      "precio": 85,
+      "descuento": 15,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/amanda/1.webp",
+        "/img/piezas/amanda/2.webp",
+        "/img/piezas/amanda/3.webp"
+      ],
+      "alt": "Dos piezas Amanda, pieza vintage única"
+    },
+    {
+      "id": "aurora",
+      "nombre": "Vestido Aurora",
+      "talla": "S-M",
+      "medidas": "Pecho: 80 cm\nCintura: 77 cm\nCadera: 100 cm\nLargo: 145 cm hasta el último pico",
+      "precio": 75.8,
+      "descuento": 25,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/aurora/1.webp",
+        "/img/piezas/aurora/2.webp",
+        "/img/piezas/aurora/3.webp",
+        "/img/piezas/aurora/4.webp",
+        "/img/piezas/aurora/5.webp"
+      ],
+      "alt": "Vestido Aurora, pieza vintage única"
+    },
+    {
+      "id": "grace",
+      "nombre": "Vestido Grace",
+      "talla": "M",
+      "medidas": "Pecho: 85-92 cm\nCintura: 80 cm\nCadera: 98 cm\nLargo: 134 cm",
+      "precio": 104,
+      "descuento": 20,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/grace/1.webp",
+        "/img/piezas/grace/2.webp",
+        "/img/piezas/grace/3.webp"
+      ],
+      "alt": "Vestido Grace, pieza vintage única"
+    },
+    {
+      "id": "parma",
+      "nombre": "Vestido Parma",
+      "talla": "XS-S",
+      "medidas": "Pecho: 80-90 cm\nCintura: 76 cm\nCadera: 100 cm\nLargo: 148 cm",
+      "precio": 116.25,
+      "descuento": 25,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/parma/1.webp",
+        "/img/piezas/parma/2.webp",
+        "/img/piezas/parma/3.webp"
+      ],
+      "alt": "Vestido Parma, pieza vintage única"
+    },
+    {
+      "id": "croatia",
+      "nombre": "Vestido Croatia",
+      "talla": "S",
+      "medidas": "Pecho: 80-90 cm\nCintura: 80 cm\nCadera: 100-110 cm\nLargo: 115 cm",
+      "precio": 120,
+      "descuento": 20,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/croatia/1.webp",
+        "/img/piezas/croatia/2.mp4",
+        "/img/piezas/croatia/3.mp4"
+      ],
+      "alt": "Vestido Croatia, pieza vintage única"
+    },
+    {
+      "id": "irati",
+      "nombre": "Vestido Irati",
+      "talla": "S",
+      "medidas": "Pecho: 80 cm\nCintura: 72 cm\nCadera: 98 cm\nLargo: 130 cm desde el pecho",
+      "precio": 110.5,
+      "descuento": 15,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/irati/1.webp",
+        "/img/piezas/irati/2.webp"
+      ],
+      "alt": "Vestido Irati, pieza vintage única"
+    },
+    {
+      "id": "corina",
+      "nombre": "Tres piezas Corina",
+      "talla": "XS-S",
+      "medidas": "Top\nPecho: 80-110 cm (ajustable tipo corset con lazada)\nCintura: 80-110 cm (ajustable tipo corset con lazada)\nLargo: 47 cm\nFalda\nCintura: 70 cm\nCadera: 84 cm\nLargo: 110 cm",
+      "precio": 144.5,
+      "descuento": 15,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/corina/1.webp",
+        "/img/piezas/corina/2.webp",
+        "/img/piezas/corina/3.webp",
+        "/img/piezas/corina/4.webp"
+      ],
+      "alt": "Tres piezas Corina, pieza vintage única"
+    },
+    {
+      "id": "la-noak",
+      "nombre": "Vestido La Noak",
+      "talla": "XS-S",
+      "medidas": "Pecho: 88 cm\nCintura: 80 cm\nCadera: 94 cm\nLargo: 123 cm",
+      "precio": 75,
+      "descuento": 25,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/la-noak/1.webp",
+        "/img/piezas/la-noak/2.mp4"
+      ],
+      "alt": "Vestido La Noak, pieza vintage única"
+    },
+    {
+      "id": "isol",
+      "nombre": "Vestido Isol",
+      "talla": "S",
+      "medidas": "Pecho: 80 cm\nCintura: 74 cm\nCadera: 92 cm\nLargo: 150 cm",
+      "precio": 104,
+      "descuento": 20,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/isol/1.webp",
+        "/img/piezas/isol/2.webp",
+        "/img/piezas/isol/3.webp",
+        "/img/piezas/isol/4.webp"
+      ],
+      "alt": "Vestido Isol, pieza vintage única"
+    },
+    {
+      "id": "austria",
+      "nombre": "Dos piezas Austria",
+      "talla": "S-M",
+      "medidas": "Top\nPecho: 90-93 cm\nCintura: 80 cm\nPantalón\nCintura: 70 cm\nCadera: 100 cm\nLargo: 100 cm",
+      "precio": 116.25,
+      "descuento": 25,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/austria/1.webp",
+        "/img/piezas/austria/2.webp",
+        "/img/piezas/austria/3.webp"
+      ],
+      "alt": "Dos piezas Austria, pieza vintage única"
+    },
+    {
+      "id": "celine",
+      "nombre": "Vestido Celine",
+      "talla": "XS-M",
+      "medidas": "Pecho: 90 cm\nCintura: 80 cm\nCadera: 88 cm\nLargo: 126 cm",
+      "precio": 136,
+      "descuento": 15,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/celine/1.webp",
+        "/img/piezas/celine/2.webp",
+        "/img/piezas/celine/3.webp",
+        "/img/piezas/celine/4.webp"
+      ],
+      "alt": "Vestido Celine, pieza vintage única"
+    },
+    {
+      "id": "marilia",
+      "nombre": "Vestido Marilia",
+      "talla": "S-M",
+      "medidas": "Pecho: 80-85 cm\nCintura: 80 cm\nCadera: 100 cm\nLargo: 150 cm",
+      "precio": 90,
+      "descuento": 25,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/marilia/1.webp",
+        "/img/piezas/marilia/2.webp"
+      ],
+      "alt": "Vestido Marilia, pieza vintage única"
+    },
+    {
+      "id": "magie",
+      "nombre": "Dos piezas Magié",
+      "talla": "XS",
+      "medidas": "Top\nPecho: 80 cm\nCintura: 75 cm\nFalda\nCintura: 75 cm\nCadera: 82 cm\nLargo: 69 cm",
+      "precio": 124,
+      "descuento": 20,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/magie/1.webp",
+        "/img/piezas/magie/2.webp",
+        "/img/piezas/magie/3.webp",
+        "/img/piezas/magie/4.webp"
+      ],
+      "alt": "Dos piezas Magié, pieza vintage única"
+    },
+    {
+      "id": "fina",
+      "nombre": "Vestido Fina",
+      "talla": "S-M",
+      "medidas": "Pecho: 80-90 cm\nCintura: 80 cm\nCadera: 100 cm\nLargo: 133 cm desde el pecho",
+      "precio": 148.75,
+      "descuento": 15,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/fina/1.webp",
+        "/img/piezas/fina/2.webp",
+        "/img/piezas/fina/3.webp"
+      ],
+      "alt": "Vestido Fina, pieza vintage única"
+    },
+    {
+      "id": "lois",
+      "nombre": "Vestido Lois",
+      "talla": "S",
+      "medidas": "Pecho: desde 80-97 cm. Tiene la espalda abierta y se ajusta con la lazada\nCintura: 70-85 cm\nCadera: hasta 100 cm\nLargo: 145 cm",
+      "precio": 86.25,
+      "descuento": 25,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/lois/1.webp",
+        "/img/piezas/lois/2.webp",
+        "/img/piezas/lois/3.webp",
+        "/img/piezas/lois/4.webp"
+      ],
+      "alt": "Vestido Lois, pieza vintage única"
+    },
+    {
+      "id": "leticia",
+      "nombre": "Vestido Leticia",
+      "talla": "S-M",
+      "medidas": "Pecho: hasta 132 cm\nCintura: hasta 112 cm\nCadera: 124 cm\nLargo: 124 cm por delante, 139 cm por detrás (asimétrico)",
+      "precio": 128,
+      "descuento": 20,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/leticia/1.webp",
+        "/img/piezas/leticia/2.webp",
+        "/img/piezas/leticia/3.webp",
+        "/img/piezas/leticia/4.webp"
+      ],
+      "alt": "Vestido Leticia, pieza vintage única"
+    },
+    {
+      "id": "manon",
+      "nombre": "Vestido Mañon",
+      "talla": "S-M",
+      "medidas": "Pecho: 78-80 cm\nCintura: 75-80 cm\nCadera: 120 cm\nLargo: 130 cm",
+      "precio": 130.5,
+      "descuento": 10,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/manon/1.webp",
+        "/img/piezas/manon/2.webp",
+        "/img/piezas/manon/3.webp"
+      ],
+      "alt": "Vestido Mañon, pieza vintage única"
+    },
+    {
+      "id": "ccasur",
+      "nombre": "Vestido Ccasur",
+      "talla": "S-M",
+      "medidas": "Pecho: 90-95 cm\nCintura: 78-80 cm\nCadera: 103 cm\nLargo: 130 cm",
+      "precio": 144,
+      "descuento": 10,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/ccasur/1.webp",
+        "/img/piezas/ccasur/2.webp",
+        "/img/piezas/ccasur/3.webp",
+        "/img/piezas/ccasur/4.webp",
+        "/img/piezas/ccasur/5.webp"
+      ],
+      "alt": "Vestido Ccasur, pieza vintage única"
+    },
+    {
+      "id": "franchesca",
+      "nombre": "Tres piezas Franchesca",
+      "talla": "S-M",
+      "medidas": "Top\nPecho: 92-100 cm\nCintura: ajustable con fajín\n\nFalda\nCintura: 80 cm\nCadera: 86 cm\nLargo: 95 cm",
+      "precio": 246.5,
+      "descuento": 15,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/franchesca/1.webp",
+        "/img/piezas/franchesca/2.webp",
+        "/img/piezas/franchesca/3.webp",
+        "/img/piezas/franchesca/4.webp"
+      ],
+      "alt": "Tres piezas Franchesca, pieza vintage única"
+    },
+    {
+      "id": "adelaida",
+      "nombre": "Vestido Adelaida",
+      "talla": "S-M",
+      "medidas": "Pecho: 80 cm\nCintura: 72 cm\nCadera: 96 cm\nLargo: 135 cm desde el pecho",
+      "precio": 233.75,
+      "descuento": 15,
+      "estado": "vendido",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/adelaida/1.webp",
+        "/img/piezas/adelaida/2.webp",
+        "/img/piezas/adelaida/3.webp",
+        "/img/piezas/adelaida/4.webp"
+      ],
+      "alt": "Vestido Adelaida, pieza vintage única"
+    },
+    {
+      "id": "barden",
+      "nombre": "Vestido Barden",
+      "talla": "S",
+      "medidas": "Pecho: 76 cm\nCintura: 70 cm\nCadera: hasta 100 cm\nLargo: 106 cm desde el pecho",
+      "precio": 195,
+      "descuento": 10,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/Captura%20de%20pantalla%202026-11-23%20a%20las%2020.21.27.png",
+        "/img/piezas/Captura%20de%20pantalla%202026-11-23%20a%20las%2020.21.37.png",
+        "/img/piezas/Captura%20de%20pantalla%202026-11-23%20a%20las%2020.21.44.png",
+        "/img/piezas/Captura%20de%20pantalla%202026-11-23%20a%20las%2020.21.54.png",
+        "/img/piezas/Captura%20de%20pantalla%202026-11-23%20a%20las%2020.22.11.png"
+      ],
+      "alt": "Vestido Barden, pieza vintage única"
+    },
+    {
+      "id": "sage",
+      "nombre": "Vestido y bolero Sage",
+      "talla": "S-M",
+      "medidas": "Pecho: 90-100 cm\nCintura: 90-100 cm\nCadera: 105 cm\nLargo: 105 cm desde el pecho",
+      "precio": 187.5,
+      "descuento": 25,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/sage/1.webp",
+        "/img/piezas/sage/2.webp",
+        "/img/piezas/sage/3.webp",
+        "/img/piezas/sage/4.webp"
+      ],
+      "alt": "Vestido y bolero Sage, pieza vintage única"
+    },
+    {
+      "id": "guatape",
+      "nombre": "Vestido y chal Guatapé",
+      "talla": "S-M",
+      "medidas": "Pecho: 88 cm\nCintura: 78 cm\nCadera: hasta 100 cm\nLargo: 128 cm desde el pecho",
+      "precio": 166.5,
+      "descuento": 10,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/IMG_7336.jpg",
+        "/img/piezas/IMG_7337.jpg",
+        "/img/piezas/IMG_7338.jpg",
+        "/img/piezas/IMG_7339.jpg"
+      ],
+      "alt": "Vestido y chal Guatapé, pieza vintage única"
+    },
+    {
+      "id": "melissa",
+      "nombre": "Vestido Melissa",
+      "talla": "XS-S",
+      "medidas": "Pecho: 80-100 cm\nCintura: 80-100 cm\nCadera: hasta 110 cm\nLargo: 140 cm",
+      "precio": 148,
+      "descuento": 20,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/melissa/1.webp",
+        "/img/piezas/melissa/2.webp",
+        "/img/piezas/melissa/3.webp"
+      ],
+      "alt": "Vestido Melissa, pieza vintage única"
+    },
+    {
+      "id": "freya",
+      "nombre": "Vestido Freya",
+      "talla": "S",
+      "medidas": "Pecho: desde 78 cm hasta 110 cm\nCintura: 78-110 cm\nCadera: 78-115 cm\nLargo: 128 cm",
+      "precio": 225,
+      "descuento": 10,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/freya/1.webp",
+        "/img/piezas/freya/2.webp",
+        "/img/piezas/freya/3.webp",
+        "/img/piezas/freya/4.webp"
+      ],
+      "alt": "Vestido Freya, pieza vintage única"
+    },
+    {
+      "id": "carei",
+      "nombre": "Vestido Carei",
+      "talla": "XS-S",
+      "medidas": "Pecho: 79 cm\nCintura: 70 cm\nCadera: 90 cm\nLargo: 155 cm",
+      "precio": 182.75,
+      "descuento": 15,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/carei/1.webp",
+        "/img/piezas/carei/2.webp",
+        "/img/piezas/carei/3.webp",
+        "/img/piezas/carei/4.webp",
+        "/img/piezas/carei/5.webp",
+        "/img/piezas/carei/6.webp"
+      ],
+      "alt": "Vestido Carei, pieza vintage única"
+    },
+    {
+      "id": "duna",
+      "nombre": "Vestido Duna",
+      "talla": "S-M",
+      "medidas": "Pecho: 80-95 cm\nCintura: 75-85 cm\nCadera: 98 cm\nLargo: 112 cm",
+      "precio": 148,
+      "descuento": 20,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/duna/1.webp",
+        "/img/piezas/duna/2.webp",
+        "/img/piezas/duna/3.webp"
+      ],
+      "alt": "Vestido Duna, pieza vintage única"
+    },
+    {
+      "id": "rosalie",
+      "nombre": "Vestido Rosalie",
+      "talla": "S",
+      "medidas": "Pecho: 80-91 cm\nCintura: 80 cm\nCadera: 92 cm\nLargo: 125 cm",
+      "precio": 187,
+      "descuento": 15,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/rosalie/1.webp",
+        "/img/piezas/rosalie/2.webp",
+        "/img/piezas/rosalie/3.webp",
+        "/img/piezas/rosalie/4.webp"
+      ],
+      "alt": "Vestido Rosalie, pieza vintage única"
+    },
+    {
+      "id": "orsini",
+      "nombre": "Vestido Orsini",
+      "talla": "S-M",
+      "medidas": "Pecho: 80-85 cm\nCintura: 75 cm\nCadera: 105 cm\nLargo: 135 cm desde el pecho",
+      "precio": 176,
+      "descuento": 20,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/orsini/1.webp",
+        "/img/piezas/orsini/2.webp",
+        "/img/piezas/orsini/3.webp",
+        "/img/piezas/orsini/4.webp"
+      ],
+      "alt": "Vestido Orsini, pieza vintage única"
+    },
+    {
+      "id": "violette",
+      "nombre": "Dos piezas Violette",
+      "talla": "XS-L",
+      "medidas": "Top\nPecho: hasta 104 cm\nCintura: hasta 100 cm\nLargo: 65 cm\nFalda\nCintura: hasta 100 cm (elástica)\nCadera: hasta 110 cm (elástica)\nLargo: 86 cm",
+      "precio": 191.25,
+      "descuento": 15,
+      "estado": "vendido",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/violette/1.webp",
+        "/img/piezas/violette/2.webp",
+        "/img/piezas/violette/3.webp",
+        "/img/piezas/violette/4.webp",
+        "/img/piezas/violette/5.webp",
+        "/img/piezas/violette/6.webp"
+      ],
+      "alt": "Dos piezas Violette, pieza vintage única"
+    },
+    {
+      "id": "montesion",
+      "nombre": "Dos piezas Montesión",
+      "talla": "M",
+      "medidas": "Top\nPecho: hasta 100 cm\nCintura: hasta 90 cm\nLargo: 60 cm\nFalda\nCintura: 76 cm\nCadera: hasta 120 cm\nLargo: 88 cm hasta el último pico",
+      "precio": 220,
+      "descuento": 20,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/montesion/1.webp",
+        "/img/piezas/montesion/2.webp",
+        "/img/piezas/montesion/3.webp",
+        "/img/piezas/montesion/4.webp",
+        "/img/piezas/montesion/5.webp"
+      ],
+      "alt": "Dos piezas Montesión, pieza vintage única"
+    },
+    {
+      "id": "mauricio",
+      "nombre": "Dos piezas Mauricio",
+      "talla": "S-M",
+      "medidas": "Top\nPecho: hasta 88 cm\nCintura: hasta 76 cm\nLargo: 34 cm\nFalda\nCintura: hasta 80 cm\nCadera: hasta 110 cm\nLargo: 106 cm",
+      "precio": 187,
+      "descuento": 15,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/mauricio/1.webp",
+        "/img/piezas/mauricio/2.webp",
+        "/img/piezas/mauricio/3.webp"
+      ],
+      "alt": "Dos piezas Mauricio, pieza vintage única"
+    },
+    {
+      "id": "danna",
+      "nombre": "Dos piezas Danna",
+      "talla": "S-M",
+      "medidas": "Top\nPecho: hasta 88 cm\nCintura: hasta 80 cm\nLargo: 50 cm desde el tirante\nPantalón\nCintura: 74 cm\nCadera: hasta 96 cm\nLargo: 100 cm",
+      "precio": 200,
+      "descuento": 20,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/danna/1.webp",
+        "/img/piezas/danna/2.webp",
+        "/img/piezas/danna/3.webp",
+        "/img/piezas/danna/4.webp",
+        "/img/piezas/danna/5.webp"
+      ],
+      "alt": "Dos piezas Danna, pieza vintage única"
+    },
+    {
+      "id": "eclat",
+      "nombre": "Vestido Éclat",
+      "talla": "S-M",
+      "medidas": "Pecho: 94 cm\nCintura: hasta 80 cm\nCadera: hasta 90 cm\nLargo: 145 cm",
+      "precio": 199.75,
+      "descuento": 15,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/eclat/1.webp",
+        "/img/piezas/eclat/2.webp",
+        "/img/piezas/eclat/3.webp",
+        "/img/piezas/eclat/4.webp",
+        "/img/piezas/eclat/5.webp"
+      ],
+      "alt": "Vestido Éclat, pieza vintage única"
+    },
+    {
+      "id": "drop-01",
+      "nombre": "Drop 0.1",
+      "talla": "M",
+      "medidas": "Pecho: hasta 100 cm\nSisa: 21 cm\nLargo: 60 cm",
+      "precio": 63,
+      "descuento": 10,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/drop-01/1.webp",
+        "/img/piezas/drop-01/2.webp"
+      ],
+      "alt": "Drop 0.1, chaqueta vintage de pieza única"
+    },
+    {
+      "id": "drop-02",
+      "nombre": "Drop 0.2",
+      "talla": "XS-S",
+      "medidas": "Pecho: hasta 104 cm\nSisa: 24 cm\nLargo: 54 cm",
+      "precio": 76.5,
+      "descuento": 10,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/drop-02/1.webp",
+        "/img/piezas/drop-02/2.webp"
+      ],
+      "alt": "Drop 0.2, chaqueta vintage de pieza única"
+    },
+    {
+      "id": "drop-03",
+      "nombre": "Drop 0.3",
+      "talla": "XS-M",
+      "medidas": "Pecho: hasta 90 cm\nSisa: 20 cm\nLargo: 55 cm",
+      "precio": 90,
+      "descuento": 10,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/drop-03/1.webp",
+        "/img/piezas/drop-03/2.webp"
+      ],
+      "alt": "Drop 0.3, chaqueta vintage de pieza única"
+    },
+    {
+      "id": "drop-04",
+      "nombre": "Drop 0.4",
+      "talla": "S-M",
+      "medidas": "Pecho: hasta 88 cm\nSisa: 20 cm\nLargo: 52 cm",
+      "precio": 54,
+      "descuento": 10,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/drop-04/1.webp",
+        "/img/piezas/drop-04/2.webp"
+      ],
+      "alt": "Drop 0.4, chaqueta vintage de pieza única"
+    },
+    {
+      "id": "drop-05",
+      "nombre": "Drop 0.5",
+      "talla": "S-M",
+      "medidas": "Pecho: hasta 96 cm\nSisa: 25 cm\nLargo: 59 cm",
+      "precio": 67.5,
+      "descuento": 10,
+      "estado": "vendido",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/drop-05/1.webp",
+        "/img/piezas/drop-05/2.webp"
+      ],
+      "alt": "Drop 0.5, chaqueta vintage de pieza única"
+    },
+    {
+      "id": "drop-06",
+      "nombre": "Drop 0.6",
+      "talla": "M",
+      "medidas": "Abierta completamente, no tiene botones\nPecho: 96 cm\nSisa: 23 cm\nLargo: 60 cm",
+      "precio": 76.5,
+      "descuento": 10,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/drop-06/1.webp",
+        "/img/piezas/drop-06/2.webp"
+      ],
+      "alt": "Drop 0.6, chaqueta vintage de pieza única"
+    },
+    {
+      "id": "manre",
+      "nombre": "Vestido Manre",
+      "talla": "XS-M",
+      "precio": 160,
+      "descuento": 15,
+      "medidas": "Pecho: 80-100 cm (corpiño)\nCintura: 75-95 cm\nCadera: hasta 105 cm\nLargo: 142 cm",
+      "imagenes": [
+        "/img/piezas/manre/1.webp",
+        "/img/piezas/manre/2.webp",
+        "/img/piezas/manre/3.webp",
+        "/img/piezas/manre/4.webp",
+        "/img/piezas/manre/5.webp"
+      ],
+      "estado": "disponible",
+      "descripcion": "",
+      "alt": "Vestido Manre, pieza vintage única"
+    },
+    {
+      "id": "leandra",
+      "nombre": "Vestido Leandra",
+      "talla": "S-L",
+      "precio": 250,
+      "descuento": 10,
+      "medidas": "Pecho: 88-100 cm\nCintura: 80 cm\nCadera: hasta 100 cm\nLargo: 150 cm",
+      "imagenes": [
+        "/img/piezas/leandra/1.webp",
+        "/img/piezas/leandra/2.webp",
+        "/img/piezas/leandra/3.webp",
+        "/img/piezas/leandra/4.webp",
+        "/img/piezas/leandra/5.webp"
+      ],
+      "estado": "disponible",
+      "descripcion": "",
+      "alt": "Vestido Leandra, pieza vintage única"
+    },
+    {
+      "id": "reiss",
+      "nombre": "Vestido y bolero Reiss",
+      "talla": "XS-S",
+      "precio": 225,
+      "descuento": 15,
+      "medidas": "Pecho: 80-90 cm\nCintura: 75-80 cm\nCadera: hasta 105 cm\nLargo: 147 cm",
+      "imagenes": [
+        "/img/piezas/reiss/1.webp",
+        "/img/piezas/reiss/2.webp",
+        "/img/piezas/reiss/3.webp",
+        "/img/piezas/reiss/4.webp",
+        "/img/piezas/reiss/5.webp",
+        "/img/piezas/reiss/6.webp"
+      ],
+      "estado": "vendido",
+      "descripcion": "",
+      "alt": "Vestido y bolero Reiss, pieza vintage única"
+    }
+  ]
+}
