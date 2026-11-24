@@ -37,6 +37,7 @@ export const novedadesIds = [
   'monterroso',
   'malena',
   'le-plum',
+  'calabria',
   'bordonau',
   'baviera',
   'petali',

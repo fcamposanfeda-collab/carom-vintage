@@ -54,6 +54,23 @@
       "alt": "Set Le Plum, pieza vintage única"
     },
     {
+      "id": "calabria",
+      "nombre": "Vestido Calabria",
+      "talla": "M-L",
+      "medidas": "Pecho: hasta 100 cm\nCintura: hasta 90 cm (ajustable con lazada)\nCadera: hasta 114 cm\nLargo: 150 cm",
+      "precio": 185,
+      "descuento": 10,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/calabria-1.webp",
+        "/img/piezas/calabria-2.webp",
+        "/img/piezas/calabria-3.webp",
+        "/img/piezas/calabria-4.webp"
+      ],
+      "alt": "Vestido Calabria, pieza vintage única"
+    },
+    {
       "id": "bordonau",
       "nombre": "Vestido Bordonau",
       "talla": "XS-M",
