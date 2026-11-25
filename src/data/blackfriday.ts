@@ -40,6 +40,7 @@ export const novedadesIds = [
   'calabria',
   'bordonau',
   'saffiano',
+  'barbara',
   'baviera',
   'petali',
   'matilde',

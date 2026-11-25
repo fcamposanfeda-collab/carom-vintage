@@ -108,6 +108,24 @@
       "alt": "Vestido y chal Saffiano, pieza vintage única"
     },
     {
+      "id": "barbara",
+      "nombre": "Vestido Barbara",
+      "talla": "S-M",
+      "medidas": "Pecho: hasta 92 cm\nCintura: hasta 78 cm\nCadera: hasta 100 cm\nLargo: 150 cm",
+      "precio": 185,
+      "descuento": 15,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/barbara-1.webp",
+        "/img/piezas/barbara-2.webp",
+        "/img/piezas/barbara-3.webp",
+        "/img/piezas/barbara-4.webp",
+        "/img/piezas/barbara-5.webp"
+      ],
+      "alt": "Vestido Barbara, pieza vintage única"
+    },
+    {
       "id": "baviera",
       "nombre": "Vestido Baviera",
       "talla": "XS-M",
