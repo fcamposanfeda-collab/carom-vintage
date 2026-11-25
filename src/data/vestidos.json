@@ -90,6 +90,24 @@
       "alt": "Vestido Bordonau, pieza vintage única"
     },
     {
+      "id": "saffiano",
+      "nombre": "Vestido y chal Saffiano",
+      "talla": "S-M",
+      "medidas": "Pecho: hasta 94 cm (ajustable, espalda tipo corsé)\nCintura: hasta 86 cm\nCadera: hasta 105 cm\nLargo: 150 cm hasta el último vuelo",
+      "precio": 195,
+      "descuento": 10,
+      "estado": "disponible",
+      "descripcion": "",
+      "imagenes": [
+        "/img/piezas/saffiano-1.webp",
+        "/img/piezas/saffiano-2.webp",
+        "/img/piezas/saffiano-3.webp",
+        "/img/piezas/saffiano-4.webp",
+        "/img/piezas/saffiano-5.webp"
+      ],
+      "alt": "Vestido y chal Saffiano, pieza vintage única"
+    },
+    {
       "id": "baviera",
       "nombre": "Vestido Baviera",
       "talla": "XS-M",

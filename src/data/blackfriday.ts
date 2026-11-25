@@ -39,6 +39,7 @@ export const novedadesIds = [
   'le-plum',
   'calabria',
   'bordonau',
+  'saffiano',
   'baviera',
   'petali',
   'matilde',
