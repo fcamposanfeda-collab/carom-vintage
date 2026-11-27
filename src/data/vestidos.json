@@ -921,7 +921,7 @@
       "talla": "S-M",
       "medidas": "Pecho: 78-80 cm\nCintura: 75-80 cm\nCadera: 120 cm\nLargo: 130 cm",
       "precio": 130.5,
-      "descuento": 10,
+      "descuento": 35,
       "estado": "disponible",
       "descripcion": "",
       "imagenes": [
@@ -937,7 +937,7 @@
       "talla": "S-M",
       "medidas": "Pecho: 90-95 cm\nCintura: 78-80 cm\nCadera: 103 cm\nLargo: 130 cm",
       "precio": 144,
-      "descuento": 10,
+      "descuento": 30,
       "estado": "disponible",
       "descripcion": "",
       "imagenes": [
@@ -1024,7 +1024,7 @@
       "talla": "S-M",
       "medidas": "Pecho: 88 cm\nCintura: 78 cm\nCadera: hasta 100 cm\nLargo: 128 cm desde el pecho",
       "precio": 166.5,
-      "descuento": 10,
+      "descuento": 30,
       "estado": "disponible",
       "descripcion": "",
       "imagenes": [
@@ -1041,7 +1041,7 @@
       "talla": "XS-S",
       "medidas": "Pecho: 80-100 cm\nCintura: 80-100 cm\nCadera: hasta 110 cm\nLargo: 140 cm",
       "precio": 148,
-      "descuento": 20,
+      "descuento": 30,
       "estado": "disponible",
       "descripcion": "",
       "imagenes": [
@@ -1074,7 +1074,7 @@
       "talla": "XS-S",
       "medidas": "Pecho: 79 cm\nCintura: 70 cm\nCadera: 90 cm\nLargo: 155 cm",
       "precio": 182.75,
-      "descuento": 15,
+      "descuento": 35,
       "estado": "disponible",
       "descripcion": "",
       "imagenes": [
@@ -1093,7 +1093,7 @@
       "talla": "S-M",
       "medidas": "Pecho: 80-95 cm\nCintura: 75-85 cm\nCadera: 98 cm\nLargo: 112 cm",
       "precio": 148,
-      "descuento": 20,
+      "descuento": 35,
       "estado": "disponible",
       "descripcion": "",
       "imagenes": [
@@ -1196,7 +1196,7 @@
       "talla": "S-M",
       "medidas": "Top\nPecho: hasta 88 cm\nCintura: hasta 80 cm\nLargo: 50 cm desde el tirante\nPantalón\nCintura: 74 cm\nCadera: hasta 96 cm\nLargo: 100 cm",
       "precio": 175,
-      "descuento": 35,
+      "descuento": 25,
       "estado": "disponible",
       "descripcion": "",
       "imagenes": [
